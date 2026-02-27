@@ -6,6 +6,10 @@ const dark = "#1A1814";
 const warm = "#F5F0E8";
 const soft = "#8A8478";
 
+const heading = "DM Sans,Helvetica Neue,sans-serif";
+const body = "DM Sans,Helvetica Neue,sans-serif";
+const mono = "DM Mono,monospace";
+
 function Reveal({ children, delay = 0 }: { children: ReactNode; delay?: number }) {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -32,15 +36,15 @@ function Slide({ children, bg = "transparent", style: s, id }: { children: React
 }
 
 function Big({ children, size = "clamp(2.5rem,7vw,5.5rem)", color = dark, weight = 900, style: s }: { children: ReactNode; size?: string; color?: string; weight?: number; style?: CSSProperties }) {
-  return <Reveal><div style={{ fontFamily: "Playfair Display,Georgia,serif", fontSize: size, fontWeight: weight, color, lineHeight: 1.1, maxWidth: 900, ...s }}>{children}</div></Reveal>;
+  return <Reveal><div style={{ fontFamily: heading, fontSize: size, fontWeight: weight, color, lineHeight: 1.1, maxWidth: 900, letterSpacing: "-0.02em", ...s }}>{children}</div></Reveal>;
 }
 
 function Sub({ children, color: c = soft, size = "clamp(1.1rem,2.5vw,1.5rem)", style: s }: { children: ReactNode; color?: string; size?: string; style?: CSSProperties }) {
-  return <Reveal delay={0.12}><div style={{ fontFamily: "Source Serif 4,Georgia,serif", fontSize: size, color: c, lineHeight: 1.75, maxWidth: 560, marginTop: 28, ...s }}>{children}</div></Reveal>;
+  return <Reveal delay={0.12}><div style={{ fontFamily: body, fontSize: size, color: c, lineHeight: 1.75, maxWidth: 560, marginTop: 28, fontWeight: 400, ...s }}>{children}</div></Reveal>;
 }
 
 function Chant({ children, color: c = dark }: { children: ReactNode; color?: string }) {
-  return <Reveal><div style={{ fontFamily: "Playfair Display,Georgia,serif", fontSize: "clamp(1.4rem,3.5vw,2.2rem)", fontWeight: 700, fontStyle: "italic", color: c, marginTop: 40, lineHeight: 1.4 }}>{children}</div></Reveal>;
+  return <Reveal><div style={{ fontFamily: heading, fontSize: "clamp(1.4rem,3.5vw,2.2rem)", fontWeight: 700, fontStyle: "italic", color: c, marginTop: 40, lineHeight: 1.4 }}>{children}</div></Reveal>;
 }
 
 function Spacer({ h = 40 }: { h?: number }) { return <div style={{ height: h }} />; }
@@ -59,7 +63,7 @@ function FlashZero() {
   }, []);
   return (
     <div ref={ref} className="flash-eq" style={{
-      fontFamily: "Playfair Display,Georgia,serif", fontSize: "clamp(2.2rem,5.5vw,4rem)",
+      fontFamily: heading, fontSize: "clamp(2.2rem,5.5vw,4rem)",
       fontWeight: 900, padding: "48px 20px", textAlign: "center",
     }}>
       <span className="flash-me">me</span>
@@ -85,9 +89,9 @@ function AnimatedNotEqual() {
   }, []);
   return (
     <div ref={ref} className="neq-wrap">
-      <span style={{ fontFamily: "Playfair Display,Georgia,serif", fontSize: "clamp(2.5rem,6vw,4.5rem)", fontWeight: 900, color: dark }}>me </span>
-      <span className="neq-symbol" style={{ fontFamily: "Playfair Display,Georgia,serif", fontSize: "clamp(2.5rem,6vw,4.5rem)", fontWeight: 900, display: "inline-block" }}>≠</span>
-      <span style={{ fontFamily: "Playfair Display,Georgia,serif", fontSize: "clamp(2.5rem,6vw,4.5rem)", fontWeight: 900, color: dark }}> you</span>
+      <span style={{ fontFamily: heading, fontSize: "clamp(2.5rem,6vw,4.5rem)", fontWeight: 900, color: dark }}>me </span>
+      <span className="neq-symbol" style={{ fontFamily: heading, fontSize: "clamp(2.5rem,6vw,4.5rem)", fontWeight: 900, display: "inline-block" }}>≠</span>
+      <span style={{ fontFamily: heading, fontSize: "clamp(2.5rem,6vw,4.5rem)", fontWeight: 900, color: dark }}> you</span>
     </div>
   );
 }
@@ -105,7 +109,7 @@ const SplitFlap = memo(function SplitFlap() {
   }, []);
   return (
     <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 16, flexWrap: "wrap", marginTop: 32 }}>
-      <span style={{ fontFamily: "Playfair Display,Georgia,serif", fontSize: "clamp(1.8rem,4vw,2.8rem)", fontWeight: 400, color: dark }}>We are their:</span>
+      <span style={{ fontFamily: heading, fontSize: "clamp(1.8rem,4vw,2.8rem)", fontWeight: 400, color: dark }}>We are their:</span>
       <div style={{
         display: "inline-flex", alignItems: "center", justifyContent: "center",
         width: 280, height: 60, background: "#111", borderRadius: 6,
@@ -114,7 +118,7 @@ const SplitFlap = memo(function SplitFlap() {
       }}>
         <div style={{ position: "absolute", top: "50%", left: 0, right: 0, height: 1, background: "rgba(255,255,255,0.08)", zIndex: 2 }} />
         <div style={{
-          fontFamily: "JetBrains Mono,monospace", fontSize: "clamp(1.1rem,2.2vw,1.5rem)",
+          fontFamily: mono, fontSize: "clamp(1.1rem,2.2vw,1.5rem)",
           fontWeight: 700, color: gold, letterSpacing: "0.12em", textTransform: "uppercase" as const,
           textAlign: "center" as const, width: "100%",
           transition: flipping ? "all 0.2s ease-in" : "all 0.2s ease-out",
@@ -156,11 +160,11 @@ function BrandLogo({ name, bg: bgc, text: tc, accent, targeted, float: fl }: { n
       }}>🎯</div>}
       {name === "76" ? (
         <div style={{ width: 32, height: 32, borderRadius: "50%", background: "#003B71", display: "flex", alignItems: "center", justifyContent: "center" }}>
-          <span style={{ fontFamily: "Playfair Display,Georgia,serif", fontSize: "1rem", fontWeight: 900, color: "#FF6200" }}>76</span>
+          <span style={{ fontFamily: heading, fontSize: "1rem", fontWeight: 900, color: "#FF6200" }}>76</span>
         </div>
       ) : (
         <span style={{
-          fontFamily: "JetBrains Mono,monospace", fontSize: name.length > 8 ? "0.7rem" : "0.85rem",
+          fontFamily: mono, fontSize: name.length > 8 ? "0.7rem" : "0.85rem",
           fontWeight: 900, color: tc, letterSpacing: name.length > 8 ? "-0.01em" : "0.1em",
           textTransform: "uppercase" as const, whiteSpace: "nowrap" as const,
         }}>{name}</span>
@@ -300,7 +304,7 @@ const InteractiveMap = memo(function InteractiveMap() {
                 onMouseLeave={() => setHovered(null)}
                 style={{
                   aspectRatio: "1", borderRadius: 5, display: "flex", alignItems: "center", justifyContent: "center",
-                  fontSize: "clamp(0.5rem,1.2vw,0.7rem)", fontFamily: "JetBrains Mono,monospace", fontWeight: 700,
+                  fontSize: "clamp(0.5rem,1.2vw,0.7rem)", fontFamily: mono, fontWeight: 700,
                   background: !st ? "transparent" : rat
                     ? isHovered ? "linear-gradient(135deg, #E5C644, #D4AF37)" : gold
                     : isHovered ? "rgba(245,240,232,0.15)" : "rgba(245,240,232,0.06)",
@@ -339,9 +343,9 @@ const InteractiveMap = memo(function InteractiveMap() {
               background: info.ratified ? gold : red,
               boxShadow: info.ratified ? "0 0 8px rgba(212,175,55,0.6)" : "0 0 8px rgba(155,58,58,0.6)",
             }} />
-            <span style={{ fontFamily: "Playfair Display,Georgia,serif", fontSize: "1.15rem", fontWeight: 700, color: warm }}>{info.name}</span>
+            <span style={{ fontFamily: heading, fontSize: "1.15rem", fontWeight: 700, color: warm }}>{info.name}</span>
           </div>
-          <div style={{ fontFamily: "JetBrains Mono,monospace", fontSize: "0.65rem", color: "rgba(245,240,232,0.45)", lineHeight: 2.2 }}>
+          <div style={{ fontFamily: mono, fontSize: "0.65rem", color: "rgba(245,240,232,0.45)", lineHeight: 2.2 }}>
             <div style={{ display: "flex", justifyContent: "space-between", gap: 20 }}><span>STATUS</span><span style={{ color: info.ratified ? gold : red, fontWeight: 700 }}>{info.ratified ? "✓ RATIFIED" : "✗ NEEDED"}</span></div>
             <div style={{ display: "flex", justifyContent: "space-between", gap: 20 }}><span>POPULATION</span><span style={{ color: warm }}>{info.pop}</span></div>
             <div style={{ display: "flex", justifyContent: "space-between", gap: 20 }}><span>ELECTORAL VOTES</span><span style={{ color: warm }}>{info.ev}</span></div>
@@ -350,7 +354,7 @@ const InteractiveMap = memo(function InteractiveMap() {
         </div>
       )}
       <div style={{ maxWidth: 500, margin: "32px auto 0" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", fontFamily: "JetBrains Mono,monospace", fontSize: "0.6rem", color: soft, marginBottom: 8 }}>
+        <div style={{ display: "flex", justifyContent: "space-between", fontFamily: mono, fontSize: "0.6rem", color: soft, marginBottom: 8 }}>
           <span>{ratifiedCount} ratified</span>
           <span>38 needed</span>
         </div>
@@ -364,15 +368,15 @@ const InteractiveMap = memo(function InteractiveMap() {
         </div>
       </div>
       <div style={{ display: "flex", justifyContent: "center", gap: 24, marginTop: 20, flexWrap: "wrap" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 6, fontFamily: "JetBrains Mono,monospace", fontSize: "0.6rem", color: soft }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 6, fontFamily: mono, fontSize: "0.6rem", color: soft }}>
           <div style={{ width: 12, height: 12, borderRadius: 3, background: gold, boxShadow: "0 0 4px rgba(212,175,55,0.3)" }} /> Ratified ({ratifiedCount})
         </div>
-        <div style={{ display: "flex", alignItems: "center", gap: 6, fontFamily: "JetBrains Mono,monospace", fontSize: "0.6rem", color: soft }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 6, fontFamily: mono, fontSize: "0.6rem", color: soft }}>
           <div style={{ width: 12, height: 12, borderRadius: 3, background: "rgba(245,240,232,0.06)", border: "1px solid rgba(245,240,232,0.15)" }} /> Need {neededCount} more
         </div>
       </div>
-      <div style={{ fontFamily: "Playfair Display,Georgia,serif", fontSize: "clamp(1.3rem,3vw,1.8rem)", color: gold, marginTop: 20, fontWeight: 700 }}>{ratifiedCount} down. {neededCount} to go.</div>
-      <div style={{ fontFamily: "Source Serif 4,Georgia,serif", fontSize: "0.8rem", color: "rgba(245,240,232,0.3)", marginTop: 8 }}>Hover over any state for details</div>
+      <div style={{ fontFamily: heading, fontSize: "clamp(1.3rem,3vw,1.8rem)", color: gold, marginTop: 20, fontWeight: 700 }}>{ratifiedCount} down. {neededCount} to go.</div>
+      <div style={{ fontFamily: body, fontSize: "0.8rem", color: "rgba(245,240,232,0.3)", marginTop: 8 }}>Hover over any state for details</div>
     </div>
   );
 });
@@ -380,7 +384,7 @@ const InteractiveMap = memo(function InteractiveMap() {
 const Counter = memo(function Counter() {
   const [n, setN] = useState(14847);
   useEffect(() => { const id = setInterval(() => setN(v => v + Math.floor(Math.random() * 3)), 5000); return () => clearInterval(id); }, []);
-  return <div style={{ fontFamily: "Playfair Display,Georgia,serif", fontSize: "clamp(3rem,8vw,6rem)", fontWeight: 900, color: gold }}>{n.toLocaleString()}</div>;
+  return <div style={{ fontFamily: heading, fontSize: "clamp(3rem,8vw,6rem)", fontWeight: 900, color: gold, letterSpacing: "-0.03em" }}>{n.toLocaleString()}</div>;
 });
 
 const EmailSignup = memo(function EmailSignup() {
@@ -389,18 +393,18 @@ const EmailSignup = memo(function EmailSignup() {
   const [done, setDone] = useState(false);
   if (done) return (
     <div style={{ textAlign: "center", padding: 40 }}>
-      <div style={{ fontFamily: "Playfair Display,Georgia,serif", fontSize: "1.5rem", color: gold, fontWeight: 700 }}>You're in the equation.</div>
-      <div style={{ fontFamily: "Source Serif 4,Georgia,serif", fontSize: "1rem", color: soft, marginTop: 12 }}>We'll be in touch.</div>
+      <div style={{ fontFamily: heading, fontSize: "1.5rem", color: gold, fontWeight: 700 }}>You're in the equation.</div>
+      <div style={{ fontFamily: body, fontSize: "1rem", color: soft, marginTop: 12 }}>We'll be in touch.</div>
     </div>
   );
   return (
     <div style={{ maxWidth: 420, margin: "0 auto", textAlign: "left" }}>
-      <input value={email} onChange={e => setEmail(e.target.value)} placeholder="Your email" style={{ width: "100%", padding: "16px 20px", background: "rgba(245,240,232,0.06)", border: "1px solid rgba(245,240,232,0.12)", borderRadius: 6, color: warm, fontFamily: "Source Serif 4,Georgia,serif", fontSize: "1rem", marginBottom: 12, outline: "none" }} />
-      <select value={st} onChange={e => setSt(e.target.value)} style={{ width: "100%", padding: "16px 20px", background: "rgba(245,240,232,0.06)", border: "1px solid rgba(245,240,232,0.12)", borderRadius: 6, color: st ? warm : soft, fontFamily: "Source Serif 4,Georgia,serif", fontSize: "1rem", marginBottom: 16, outline: "none" }}>
+      <input value={email} onChange={e => setEmail(e.target.value)} placeholder="Your email" style={{ width: "100%", padding: "16px 20px", background: "rgba(245,240,232,0.06)", border: "1px solid rgba(245,240,232,0.12)", borderRadius: 6, color: warm, fontFamily: body, fontSize: "1rem", marginBottom: 12, outline: "none" }} />
+      <select value={st} onChange={e => setSt(e.target.value)} style={{ width: "100%", padding: "16px 20px", background: "rgba(245,240,232,0.06)", border: "1px solid rgba(245,240,232,0.12)", borderRadius: 6, color: st ? warm : soft, fontFamily: body, fontSize: "1rem", marginBottom: 16, outline: "none" }}>
         <option value="" style={{ background: dark }}>Your state</option>
         {Object.keys(stateInfo).sort().map(s => <option key={s} value={s} style={{ background: dark }}>{s}</option>)}
       </select>
-      <button onClick={() => { if (email && st) setDone(true); }} style={{ width: "100%", padding: "16px 20px", background: gold, color: dark, border: "none", borderRadius: 6, fontFamily: "Playfair Display,Georgia,serif", fontSize: "1.05rem", fontWeight: 700, cursor: "pointer" }}>Join the Equation</button>
+      <button onClick={() => { if (email && st) setDone(true); }} style={{ width: "100%", padding: "16px 20px", background: gold, color: dark, border: "none", borderRadius: 6, fontFamily: heading, fontSize: "1.05rem", fontWeight: 700, cursor: "pointer" }}>Join the Equation</button>
     </div>
   );
 });
@@ -411,8 +415,8 @@ function Step({ num, emoji, title, desc }: { num: number; emoji: string; title: 
       <div style={{ display: "flex", gap: 20, alignItems: "flex-start", textAlign: "left", padding: "28px 0", borderBottom: "1px solid rgba(26,24,20,0.08)" }}>
         <div style={{ width: 56, height: 56, borderRadius: "50%", flexShrink: 0, background: gold, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1.5rem" }}>{emoji}</div>
         <div>
-          <div style={{ fontFamily: "Playfair Display,Georgia,serif", fontSize: "1.3rem", fontWeight: 700, color: dark }}>{title}</div>
-          <div style={{ fontFamily: "Source Serif 4,Georgia,serif", fontSize: "1.05rem", color: soft, marginTop: 6, lineHeight: 1.6 }}>{desc}</div>
+          <div style={{ fontFamily: heading, fontSize: "1.3rem", fontWeight: 700, color: dark }}>{title}</div>
+          <div style={{ fontFamily: body, fontSize: "1.05rem", color: soft, marginTop: 6, lineHeight: 1.6 }}>{desc}</div>
         </div>
       </div>
     </Reveal>
@@ -427,7 +431,7 @@ const Index = () => {
       {/* 1. HERO */}
       <Slide>
         <Big size="clamp(3.5rem,10vw,8rem)">me + you</Big>
-        <Reveal delay={0.3}><div style={{ fontFamily: "Playfair Display,Georgia,serif", fontSize: "clamp(2rem,5vw,3.5rem)", fontStyle: "italic", color: gold, marginTop: 24 }}>= democracy</div></Reveal>
+        <Reveal delay={0.3}><div style={{ fontFamily: heading, fontSize: "clamp(2rem,5vw,3.5rem)", fontStyle: "italic", color: gold, marginTop: 24 }}>= democracy</div></Reveal>
       </Slide>
 
       {/* 2. SIMPLE */}
@@ -460,7 +464,7 @@ const Index = () => {
       {/* 6. STAGE 4 */}
       <Slide bg={dark} style={{ color: warm }}>
         <Big size="clamp(1.6rem,3.5vw,2.5rem)" color={warm}>Our Country Has</Big>
-        <Reveal delay={0.1}><div style={{ fontFamily: "Playfair Display,Georgia,serif", fontSize: "clamp(2.5rem,7vw,5rem)", fontWeight: 900, color: red, marginTop: 8 }}>Stage 4 Cancer.</div></Reveal>
+        <Reveal delay={0.1}><div style={{ fontFamily: heading, fontSize: "clamp(2.5rem,7vw,5rem)", fontWeight: 900, color: red, marginTop: 8 }}>Stage 4 Cancer.</div></Reveal>
         <Spacer h={48} />
         <Reveal delay={0.2}>
           <div style={{ maxWidth: 580, textAlign: "left" }}>
@@ -473,9 +477,9 @@ const Index = () => {
               <div key={i} style={{ marginBottom: 36, paddingBottom: 36, borderBottom: i < 3 ? "1px solid rgba(245,240,232,0.06)" : "none" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 12 }}>
                   <span style={{ fontSize: "1.4em" }}>{item.icon}</span>
-                  <span style={{ fontFamily: "Playfair Display,Georgia,serif", fontSize: "clamp(1.3rem,3vw,1.8rem)", fontWeight: 900, color: gold }}>{item.num}. {item.title}</span>
+                  <span style={{ fontFamily: heading, fontSize: "clamp(1.3rem,3vw,1.8rem)", fontWeight: 900, color: gold }}>{item.num}. {item.title}</span>
                 </div>
-                <div style={{ fontFamily: "Source Serif 4,Georgia,serif", fontSize: "clamp(1.05rem,2.2vw,1.3rem)", color: "rgba(245,240,232,0.6)", lineHeight: 1.8, paddingLeft: 44 }}>
+                <div style={{ fontFamily: body, fontSize: "clamp(1.05rem,2.2vw,1.3rem)", color: "rgba(245,240,232,0.6)", lineHeight: 1.8, paddingLeft: 44 }}>
                   {item.l1}<B>{item.b}</B>{item.l2}<br />{item.l3}
                 </div>
               </div>
@@ -489,7 +493,7 @@ const Index = () => {
         <Big size="clamp(1.5rem,3vw,2.2rem)" color={soft} weight={400}>Cancer is when</Big>
         <Spacer h={16} />
         <Reveal delay={0.15}>
-          <div style={{ fontFamily: "Playfair Display,Georgia,serif", fontSize: "clamp(2.2rem,5.5vw,4rem)", fontWeight: 900 }}>
+          <div style={{ fontFamily: heading, fontSize: "clamp(2.2rem,5.5vw,4rem)", fontWeight: 900 }}>
             <span style={{ color: red }}>any-me</span>
             <span style={{ color: soft, fontSize: "0.5em", margin: "0 16px" }}>&gt;&gt;</span>
             <span style={{ color: gold }}>all of you</span>
@@ -542,13 +546,13 @@ const Index = () => {
         <Spacer h={16} />
         <Reveal delay={0.15}>
           <div style={{ background: "rgba(26,24,20,0.04)", border: "1px solid rgba(26,24,20,0.08)", borderRadius: 12, padding: "28px 36px", maxWidth: 480, margin: "0 auto" }}>
-            <div style={{ fontFamily: "Playfair Display,Georgia,serif", fontSize: "clamp(1.3rem,3vw,2rem)", fontWeight: 900, color: dark }}>One month of diverted sales</div>
-            <div style={{ fontFamily: "Playfair Display,Georgia,serif", fontSize: "clamp(1.3rem,3vw,2rem)", fontWeight: 900, color: gold }}>redirects $51 million in profits.</div>
-            <div style={{ fontFamily: "JetBrains Mono,monospace", fontSize: "0.6rem", color: soft, marginTop: 12, lineHeight: 1.8 }}>
+            <div style={{ fontFamily: heading, fontSize: "clamp(1.3rem,3vw,2rem)", fontWeight: 900, color: dark }}>One month of diverted sales</div>
+            <div style={{ fontFamily: heading, fontSize: "clamp(1.3rem,3vw,2rem)", fontWeight: 900, color: gold }}>redirects $51 million in profits.</div>
+            <div style={{ fontFamily: mono, fontSize: "0.6rem", color: soft, marginTop: 12, lineHeight: 1.8 }}>
               12,283 stations × $4,200 avg. monthly corporate margin
             </div>
             <div style={{ width: 40, height: 2, background: gold, margin: "16px auto 0", opacity: 0.4 }} />
-            <div style={{ fontFamily: "Playfair Display,Georgia,serif", fontSize: "clamp(1.1rem,2.5vw,1.4rem)", fontStyle: "italic", color: dark, marginTop: 16 }}>And the impact is priceless.</div>
+            <div style={{ fontFamily: heading, fontSize: "clamp(1.1rem,2.5vw,1.4rem)", fontStyle: "italic", color: dark, marginTop: 16 }}>And the impact is priceless.</div>
           </div>
         </Reveal>
         <Spacer h={20} />
@@ -568,8 +572,8 @@ const Index = () => {
               { num: "3", text: "\"We are proud to support Pass the Pump to pass the 29th Amendment. We call on every other company to join us in giving complete power back to the people.\"" },
             ].map((d, i) => (
               <div key={i} style={{ display: "flex", gap: 20, alignItems: "flex-start", textAlign: "left", marginBottom: 32, paddingBottom: 32, borderBottom: i < 2 ? "1px solid rgba(245,240,232,0.06)" : "none" }}>
-                <div style={{ fontFamily: "Playfair Display,Georgia,serif", fontSize: "2.5rem", fontWeight: 900, color: gold, lineHeight: 1, minWidth: 40 }}>{d.num}</div>
-                <div style={{ fontFamily: "Playfair Display,Georgia,serif", fontSize: "clamp(1.1rem,2.5vw,1.4rem)", fontStyle: "italic", color: warm, lineHeight: 1.5 }}>{d.text}</div>
+                <div style={{ fontFamily: heading, fontSize: "2.5rem", fontWeight: 900, color: gold, lineHeight: 1, minWidth: 40 }}>{d.num}</div>
+                <div style={{ fontFamily: heading, fontSize: "clamp(1.1rem,2.5vw,1.4rem)", fontStyle: "italic", color: warm, lineHeight: 1.5 }}>{d.text}</div>
               </div>
             ))}
           </div>
@@ -581,13 +585,13 @@ const Index = () => {
             <div style={{ display: "flex", alignItems: "center", gap: 16, padding: "16px 24px", borderRadius: 8, background: "rgba(212,175,55,0.08)", border: "1px solid rgba(212,175,55,0.2)" }}>
               <span style={{ fontSize: "1.4rem" }}>✅</span>
               <div>
-                <div style={{ fontFamily: "Playfair Display,Georgia,serif", fontSize: "1.1rem", fontWeight: 700, color: gold }}>Pledge = Off the list.</div>
+                <div style={{ fontFamily: heading, fontSize: "1.1rem", fontWeight: 700, color: gold }}>Pledge = Off the list.</div>
               </div>
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: 16, padding: "16px 24px", borderRadius: 8, background: "rgba(155,58,58,0.08)", border: "1px solid rgba(155,58,58,0.2)" }}>
               <span style={{ fontSize: "1.4rem" }}>🔴</span>
               <div>
-                <div style={{ fontFamily: "Playfair Display,Georgia,serif", fontSize: "1.1rem", fontWeight: 700, color: red }}>Failure = Back on the list.</div>
+                <div style={{ fontFamily: heading, fontSize: "1.1rem", fontWeight: 700, color: red }}>Failure = Back on the list.</div>
               </div>
             </div>
           </div>
@@ -597,11 +601,11 @@ const Index = () => {
       {/* 13. THE LIST */}
       <section style={{ padding: "clamp(80px,12vw,140px) 32px", background: dark, textAlign: "center" }}>
         <div style={{ maxWidth: 700, margin: "0 auto" }}>
-          <Reveal><div style={{ fontFamily: "JetBrains Mono,monospace", fontSize: "0.65rem", letterSpacing: "0.3em", color: soft, marginBottom: 12 }}>THE LIST</div></Reveal>
+          <Reveal><div style={{ fontFamily: mono, fontSize: "0.65rem", letterSpacing: "0.3em", color: soft, marginBottom: 12 }}>THE LIST</div></Reveal>
 
           <Reveal>
             <div style={{ marginBottom: 56, maxWidth: 480, margin: "0 auto 56px" }}>
-              <div style={{ fontFamily: "Playfair Display,Georgia,serif", fontSize: "clamp(1.5rem,3vw,2.2rem)", fontWeight: 700, color: gold, marginBottom: 24 }}>Why gas stations?</div>
+              <div style={{ fontFamily: heading, fontSize: "clamp(1.5rem,3vw,2.2rem)", fontWeight: 700, color: gold, marginBottom: 24 }}>Why gas stations?</div>
               <div style={{ textAlign: "left" }}>
                 {[
                   { emoji: "🔄", text: "It's easy. You just vote with your steering wheel and go to the next one." },
@@ -610,14 +614,14 @@ const Index = () => {
                 ].map((b, i) => (
                   <div key={i} style={{ display: "flex", gap: 14, alignItems: "flex-start", marginBottom: 16 }}>
                     <span style={{ fontSize: "1.2rem", flexShrink: 0, marginTop: 2 }}>{b.emoji}</span>
-                    <span style={{ fontFamily: "Source Serif 4,Georgia,serif", fontSize: "clamp(0.95rem,2vw,1.1rem)", color: "rgba(245,240,232,0.6)", lineHeight: 1.6 }}>{b.text}</span>
+                    <span style={{ fontFamily: body, fontSize: "clamp(0.95rem,2vw,1.1rem)", color: "rgba(245,240,232,0.6)", lineHeight: 1.6 }}>{b.text}</span>
                   </div>
                 ))}
               </div>
             </div>
           </Reveal>
 
-          <Reveal><div style={{ fontFamily: "Playfair Display,Georgia,serif", fontSize: "clamp(1.8rem,4vw,2.8rem)", fontWeight: 700, color: warm, marginBottom: 40 }}>Largest to smallest.</div></Reveal>
+          <Reveal><div style={{ fontFamily: heading, fontSize: "clamp(1.8rem,4vw,2.8rem)", fontWeight: 700, color: warm, marginBottom: 40 }}>Largest to smallest.</div></Reveal>
 
           {companies.map((c, i) => (
             <Reveal key={c.name} delay={i * 0.06}>
@@ -631,27 +635,27 @@ const Index = () => {
                   width: 44, height: 44, borderRadius: "50%",
                   background: i === 0 ? red : "rgba(245,240,232,0.06)",
                   display: "flex", alignItems: "center", justifyContent: "center",
-                  fontFamily: "JetBrains Mono,monospace", fontSize: i === 0 ? "1.1rem" : "0.75rem",
+                  fontFamily: mono, fontSize: i === 0 ? "1.1rem" : "0.75rem",
                   color: i === 0 ? "white" : soft, fontWeight: 700,
                 }}>{i === 0 ? "🎯" : i + 1}</div>
                 <div style={{ textAlign: "left" }}>
                   <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                     <div style={{ padding: "5px 14px", borderRadius: 5, background: c.bg, minWidth: 60, textAlign: "center", boxShadow: "0 2px 6px rgba(0,0,0,0.15)", borderBottom: `2px solid ${c.accent}` }}>
-                      <span style={{ fontFamily: "JetBrains Mono,monospace", fontSize: "0.6rem", fontWeight: 900, color: c.text, letterSpacing: "0.05em" }}>{c.name.toUpperCase()}</span>
+                      <span style={{ fontFamily: mono, fontSize: "0.6rem", fontWeight: 900, color: c.text, letterSpacing: "0.05em" }}>{c.name.toUpperCase()}</span>
                     </div>
-                    <span style={{ fontFamily: "Source Serif 4,Georgia,serif", fontSize: "0.85rem", color: i === 0 ? gold : "rgba(245,240,232,0.3)" }}>{c.stations} stations</span>
+                    <span style={{ fontFamily: body, fontSize: "0.85rem", color: i === 0 ? gold : "rgba(245,240,232,0.3)" }}>{c.stations} stations</span>
                   </div>
-                  <div style={{ fontFamily: "JetBrains Mono,monospace", fontSize: "0.65rem", color: i === 0 ? red : "rgba(245,240,232,0.2)", marginTop: 4 }}>
+                  <div style={{ fontFamily: mono, fontSize: "0.65rem", color: i === 0 ? red : "rgba(245,240,232,0.2)", marginTop: 4 }}>
                     {i === 0 ? `🔴 Active now` : c.month}
                   </div>
                 </div>
-                <div style={{ fontFamily: "Playfair Display,Georgia,serif", fontSize: "0.8rem", fontWeight: 700, color: i === 0 ? warm : "rgba(245,240,232,0.15)" }}>{c.month}</div>
+                <div style={{ fontFamily: heading, fontSize: "0.8rem", fontWeight: 700, color: i === 0 ? warm : "rgba(245,240,232,0.15)" }}>{c.month}</div>
               </div>
             </Reveal>
           ))}
 
           <Reveal delay={0.7}>
-            <div style={{ fontFamily: "Source Serif 4,Georgia,serif", fontSize: "clamp(1rem,2vw,1.2rem)", color: "rgba(245,240,232,0.4)", marginTop: 40, lineHeight: 1.8 }}>
+            <div style={{ fontFamily: body, fontSize: "clamp(1rem,2vw,1.2rem)", color: "rgba(245,240,232,0.4)", marginTop: 40, lineHeight: 1.8 }}>
               By January — <span style={{ color: gold }}>every major oil brand in America.</span>
             </div>
           </Reveal>
@@ -663,31 +667,31 @@ const Index = () => {
               border: `2px solid ${gold}`, maxWidth: 520, margin: "56px auto 0",
               animation: "courage-glow 3s ease-in-out infinite",
             }}>
-              <div style={{ fontFamily: "Playfair Display,Georgia,serif", fontSize: "clamp(1.5rem,3.5vw,2.2rem)", fontWeight: 900, color: gold, lineHeight: 1.3 }}>
+              <div style={{ fontFamily: heading, fontSize: "clamp(1.5rem,3.5vw,2.2rem)", fontWeight: 900, color: gold, lineHeight: 1.3 }}>
                 Which company<br />has the courage<br />to go first?
               </div>
               <div style={{ width: 60, height: 2, background: gold, margin: "24px auto", opacity: 0.4 }} />
               <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "center", gap: 8, marginTop: 8, marginBottom: 20 }}>
                 <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                  <div style={{ fontFamily: "Playfair Display,Georgia,serif", fontSize: "2rem", marginBottom: 8 }}>?</div>
+                  <div style={{ fontFamily: heading, fontSize: "2rem", marginBottom: 8 }}>?</div>
                   <div style={{ width: 80, height: 70, background: "rgba(192,192,192,0.15)", border: "1px solid rgba(192,192,192,0.3)", borderRadius: "4px 4px 0 0", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <span style={{ fontFamily: "JetBrains Mono,monospace", fontSize: "1.2rem", fontWeight: 700, color: "#C0C0C0" }}>2nd</span>
+                    <span style={{ fontFamily: mono, fontSize: "1.2rem", fontWeight: 700, color: "#C0C0C0" }}>2nd</span>
                   </div>
                 </div>
                 <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                  <div style={{ fontFamily: "Playfair Display,Georgia,serif", fontSize: "2.5rem", marginBottom: 8, color: gold }}>?</div>
+                  <div style={{ fontFamily: heading, fontSize: "2.5rem", marginBottom: 8, color: gold }}>?</div>
                   <div style={{ width: 90, height: 100, background: "rgba(212,175,55,0.12)", border: `1px solid rgba(212,175,55,0.3)`, borderRadius: "4px 4px 0 0", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <span style={{ fontFamily: "JetBrains Mono,monospace", fontSize: "1.3rem", fontWeight: 700, color: gold }}>1st</span>
+                    <span style={{ fontFamily: mono, fontSize: "1.3rem", fontWeight: 700, color: gold }}>1st</span>
                   </div>
                 </div>
                 <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                  <div style={{ fontFamily: "Playfair Display,Georgia,serif", fontSize: "1.8rem", marginBottom: 8 }}>?</div>
+                  <div style={{ fontFamily: heading, fontSize: "1.8rem", marginBottom: 8 }}>?</div>
                   <div style={{ width: 80, height: 50, background: "rgba(205,127,50,0.12)", border: "1px solid rgba(205,127,50,0.25)", borderRadius: "4px 4px 0 0", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <span style={{ fontFamily: "JetBrains Mono,monospace", fontSize: "1.1rem", fontWeight: 700, color: "#CD7F32" }}>3rd</span>
+                    <span style={{ fontFamily: mono, fontSize: "1.1rem", fontWeight: 700, color: "#CD7F32" }}>3rd</span>
                   </div>
                 </div>
               </div>
-              <div style={{ fontFamily: "JetBrains Mono,monospace", fontSize: "0.6rem", letterSpacing: "0.25em", color: soft }}>THE 29TH AMENDMENT</div>
+              <div style={{ fontFamily: mono, fontSize: "0.6rem", letterSpacing: "0.25em", color: soft }}>THE 29TH AMENDMENT</div>
             </div>
           </Reveal>
           <Spacer h={40} />
@@ -700,7 +704,7 @@ const Index = () => {
         <Big size="clamp(2rem,5vw,3.5rem)" color={gold}>This ends when the<br />29th Amendment passes.</Big>
         <Spacer h={20} />
         <Reveal delay={0.15}>
-          <div style={{ fontFamily: "Source Serif 4,Georgia,serif", fontSize: "clamp(1rem,2vw,1.2rem)", color: "rgba(245,240,232,0.5)", lineHeight: 1.8, maxWidth: 480 }}>
+          <div style={{ fontFamily: body, fontSize: "clamp(1rem,2vw,1.2rem)", color: "rgba(245,240,232,0.5)", lineHeight: 1.8, maxWidth: 480 }}>
             A constitutional amendment requires <span style={{ color: warm, fontWeight: 600 }}>38 states</span> to ratify.<br />
             That's three-quarters of the country.<br /><br />
             Right now, <span style={{ color: gold, fontWeight: 700 }}>{ratifiedCount} states</span> have called for an amendment<br />
@@ -718,7 +722,7 @@ const Index = () => {
         <Big size="clamp(2rem,5vw,3.5rem)">the people on the front lines.</Big>
         <Spacer h={32} />
         <Reveal delay={0.1}>
-          <div style={{ fontFamily: "Source Serif 4,Georgia,serif", fontSize: "clamp(1.05rem,2.2vw,1.3rem)", color: soft, lineHeight: 1.9, maxWidth: 580 }}>
+          <div style={{ fontFamily: body, fontSize: "clamp(1.05rem,2.2vw,1.3rem)", color: soft, lineHeight: 1.9, maxWidth: 580 }}>
             Most gas stations aren't owned by these companies.<br />
             They're owned by <span style={{ color: dark, fontWeight: 600 }}>families.</span><br /><br />
             People who wake up at 5am.<br />
@@ -759,7 +763,7 @@ const Index = () => {
       <section id="signup" style={{ padding: "clamp(80px,12vw,140px) 32px", background: dark, textAlign: "center" }}>
         <div style={{ maxWidth: 700, margin: "0 auto" }}>
           <Reveal><Counter /></Reveal>
-          <Reveal delay={0.1}><div style={{ fontFamily: "Source Serif 4,Georgia,serif", fontSize: "1rem", color: soft, marginTop: 8 }}>people in the equation and growing</div></Reveal>
+          <Reveal delay={0.1}><div style={{ fontFamily: body, fontSize: "1rem", color: soft, marginTop: 8 }}>people in the equation and growing</div></Reveal>
           <Spacer h={60} />
           <Reveal><Big size="clamp(1.5rem,3vw,2.2rem)" color={gold}>Add yourself.</Big></Reveal>
           <Spacer h={24} />
@@ -775,7 +779,7 @@ const Index = () => {
         <Reveal delay={0.15}>
           <a href="https://patreon.com" target="_blank" rel="noopener noreferrer" style={{
             display: "inline-block", padding: "18px 48px", background: dark, color: warm, borderRadius: 6, textDecoration: "none",
-            fontFamily: "Playfair Display,Georgia,serif", fontSize: "1.1rem", fontWeight: 700,
+            fontFamily: heading, fontSize: "1.1rem", fontWeight: 700,
           }}>Support on Patreon</a>
         </Reveal>
         <Sub size="clamp(0.9rem,1.8vw,1rem)" color={soft}>Every dollar keeps the pressure on.<br />Every share multiplies the equation.</Sub>
@@ -793,7 +797,7 @@ const Index = () => {
             display: "inline-flex", alignItems: "center", gap: 10,
             padding: "14px 36px", background: "transparent",
             color: dark, border: `2px solid ${dark}`, borderRadius: 6,
-            fontFamily: "Playfair Display,Georgia,serif", fontSize: "1rem", fontWeight: 700,
+            fontFamily: heading, fontSize: "1rem", fontWeight: 700,
             cursor: "pointer", transition: "all 0.2s",
           }}>🔗 Share This Movement</button>
         </Reveal>
@@ -802,28 +806,28 @@ const Index = () => {
       {/* 20. FINAL */}
       <Slide bg={dark} style={{ color: warm }}>
         <Big size="clamp(2.5rem,7vw,5.5rem)" color={warm}>me + you</Big>
-        <Reveal delay={0.2}><div style={{ fontFamily: "Playfair Display,Georgia,serif", fontSize: "clamp(2rem,5vw,3.5rem)", fontStyle: "italic", color: gold, marginTop: 20 }}>= america</div></Reveal>
+        <Reveal delay={0.2}><div style={{ fontFamily: heading, fontSize: "clamp(2rem,5vw,3.5rem)", fontStyle: "italic", color: gold, marginTop: 20 }}>= america</div></Reveal>
         <Spacer h={48} />
         <Reveal delay={0.5}>
           <button onClick={() => document.getElementById("signup")?.scrollIntoView({ behavior: "smooth" })} style={{
             padding: "20px 56px", background: gold, color: dark, border: "none", borderRadius: 4,
-            fontFamily: "Playfair Display,Georgia,serif", fontSize: "clamp(1rem,2vw,1.3rem)", fontWeight: 700, cursor: "pointer", letterSpacing: "0.05em",
+            fontFamily: heading, fontSize: "clamp(1rem,2vw,1.3rem)", fontWeight: 700, cursor: "pointer", letterSpacing: "0.05em",
           }}>Join the Equation</button>
         </Reveal>
         <Spacer h={60} />
         <Reveal delay={0.7}>
-          <div style={{ fontFamily: "Source Serif 4,Georgia,serif", fontSize: "clamp(1rem,2.2vw,1.3rem)", color: "rgba(245,240,232,0.4)", lineHeight: 1.8 }}>
+          <div style={{ fontFamily: body, fontSize: "clamp(1rem,2.2vw,1.3rem)", color: "rgba(245,240,232,0.4)", lineHeight: 1.8 }}>
             They divide us.<br />
             <span style={{ color: warm, fontWeight: 600 }}>You</span> unite us.
           </div>
         </Reveal>
         <Spacer h={16} />
         <Reveal delay={0.85}>
-          <div style={{ fontFamily: "Playfair Display,Georgia,serif", fontSize: "clamp(1.3rem,3vw,2rem)", fontWeight: 700, color: gold }}>
+          <div style={{ fontFamily: heading, fontSize: "clamp(1.3rem,3vw,2rem)", fontWeight: 700, color: gold }}>
             Pass the Pump.
           </div>
         </Reveal>
-        <Reveal delay={1}><div style={{ fontFamily: "JetBrains Mono,monospace", fontSize: "0.6rem", letterSpacing: "0.25em", color: "rgba(245,240,232,0.15)", marginTop: 32 }}>THE 29TH AMENDMENT</div></Reveal>
+        <Reveal delay={1}><div style={{ fontFamily: mono, fontSize: "0.6rem", letterSpacing: "0.25em", color: "rgba(245,240,232,0.15)", marginTop: 32 }}>THE 29TH AMENDMENT</div></Reveal>
       </Slide>
     </div>
   );
