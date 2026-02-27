@@ -6,7 +6,7 @@ const dark = "#1A1814";
 const warm = "#F5F0E8";
 const soft = "#8A8478";
 
-const heading = "DM Sans,Helvetica Neue,sans-serif";
+const heading = "Cormorant Garamond,Georgia,serif";
 const body = "DM Sans,Helvetica Neue,sans-serif";
 const mono = "DM Mono,monospace";
 
@@ -35,8 +35,8 @@ function Slide({ children, bg = "transparent", style: s, id }: { children: React
   );
 }
 
-function Big({ children, size = "clamp(2.5rem,7vw,5.5rem)", color = dark, weight = 900, style: s }: { children: ReactNode; size?: string; color?: string; weight?: number; style?: CSSProperties }) {
-  return <Reveal><div style={{ fontFamily: heading, fontSize: size, fontWeight: weight, color, lineHeight: 1.1, maxWidth: 900, letterSpacing: "-0.02em", ...s }}>{children}</div></Reveal>;
+function Big({ children, size = "clamp(2.5rem,7vw,5.5rem)", color = dark, weight = 700, style: s }: { children: ReactNode; size?: string; color?: string; weight?: number; style?: CSSProperties }) {
+  return <Reveal><div style={{ fontFamily: heading, fontSize: size, fontWeight: weight, color, lineHeight: 1.08, maxWidth: 900, letterSpacing: "-0.01em", ...s }}>{children}</div></Reveal>;
 }
 
 function Sub({ children, color: c = soft, size = "clamp(1.1rem,2.5vw,1.5rem)", style: s }: { children: ReactNode; color?: string; size?: string; style?: CSSProperties }) {
