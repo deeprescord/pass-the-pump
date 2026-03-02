@@ -13,7 +13,18 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        serif: ['"Playfair Display"', 'Georgia', 'serif'],
+        body: ['"Source Serif 4"', 'Georgia', 'serif'],
+        mono: ['"JetBrains Mono"', 'monospace'],
+      },
       colors: {
+        warm: '#F5F0E8',
+        dark: '#1A1814',
+        gold: { DEFAULT: '#D4AF37', light: '#E5C644' },
+        danger: '#9B3A3A',
+        soft: '#8A8478',
+        'alt-cream': '#FAF6F0',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
