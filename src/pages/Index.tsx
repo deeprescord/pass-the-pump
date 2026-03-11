@@ -745,7 +745,7 @@ const Index = () => {
 
       {/* 14. THIS ENDS */}
       <Slide bg={dark} style={{ color: warm }}>
-        <Big size="clamp(2rem,5vw,3.5rem)" color={gold}>This ends when the<br />29th Amendment passes.</Big>
+        <Big size="clamp(2rem,5vw,3.5rem)" color={gold}>This ends when the<br />28th Amendment passes.</Big>
         <Spacer h={20} />
         <Reveal delay={0.15}>
           <div style={{ fontFamily: body, fontSize: "clamp(1rem,2vw,1.2rem)", color: "rgba(245,240,232,0.5)", lineHeight: 1.8, maxWidth: 480 }}>
