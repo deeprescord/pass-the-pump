@@ -495,28 +495,28 @@ const Index = () => {
       <Slide>
         <Big size="clamp(1.5rem,3vw,2.2rem)" weight={400} color={soft}>CITIZENS UNITED WAS DESIGNED TO DIVIDE US</Big>
         <FlashZero />
-        <Sub size="clamp(1rem,2vw,1.15rem)">I'm so angry that I hate you.<br />You're so angry that you hate me.<br /><br />We've been tricked into hating each other...<br />Even within our own families!<br />Does this sound familiar?</Sub>
+        <Sub size="clamp(1rem,2vw,1.15rem)">How did we get tricked into hating each other...<br />Even within our own families!<br /><br />Well it all started with a deception... Citizens United.  </Sub>
       </Slide>
 
       {/* 5. ANIMATED ≠ */}
       <Slide bg="#FAF6F0">
         <Reveal><AnimatedNotEqual /></Reveal>
         <Spacer h={24} />
-        <Big size="clamp(2rem,5vw,3.5rem)" color={red}>is how they win.</Big>
+        <Big size="clamp(2rem,5vw,3.5rem)" color={red}>is how corporations win.</Big>
       </Slide>
 
       {/* 6. STAGE 4 */}
       <Slide bg={dark} style={{ color: warm }}>
-        <Big size="clamp(1.6rem,3.5vw,2.5rem)" color={warm}>Our Country Has</Big>
+        <Big size="clamp(1.6rem,3.5vw,2.5rem)" color={warm}>Now Our Country Has...</Big>
         <Reveal delay={0.1}><div style={{ fontFamily: heading, fontSize: "clamp(2.5rem,7vw,5rem)", fontWeight: 900, color: red, marginTop: 8 }}>Stage 4 Cancer.</div></Reveal>
         <Spacer h={48} />
         <Reveal delay={0.2}>
           <div style={{ maxWidth: 580, textAlign: "left" }}>
             {[
-            { num: "1", icon: "❤️", title: "Healthcare", l1: "When ", b: "they", l2: " take 30% of every dollar,", l3: "and dictate the other 70%." },
-            { num: "2", icon: "🤖", title: "Technology", l1: "When ", b: "they", l2: " build machines optimized to dis-ease you,", l3: "so your eyes start to deceive you." },
-            { num: "3", icon: "🏛️", title: "Politics", l1: "When ", b: "they", l2: " buy the people who write the rules,", l3: "the rules become about ruling you." },
-            { num: "4", icon: "📺", title: "Media", l1: "If ", b: "your", l2: " feed is rage,", l3: "they trapped you in their cage." }].
+            { num: "1", icon: "❤️", title: "Healthcare", l1: "When ", b: "corporations", l2: " take 30% of every dollar,", l3: "and totally dictate the access and use of the other 70%." },
+            { num: "2", icon: "🤖", title: "Technology", l1: "When ", b: "corporations", l2: " build machines optimized to amuse and confuse us, ", l3: "our eyes no longer know who or what to believe." },
+            { num: "3", icon: "🏛️", title: "Politics", l1: "When ", b: "corporations", l2: " buy the people who write the rules, ", l3: "the rules start to only apply to us." },
+            { num: "4", icon: "📺", title: "Media", l1: "When ", b: "corporations", l2: " only fill your feed with rage, ", l3: "you become the bait that converts more citizens into hate." }].
             map((item, i) =>
             <div key={i} style={{ marginBottom: 36, paddingBottom: 36, borderBottom: i < 3 ? "1px solid rgba(245,240,232,0.06)" : "none" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 12 }}>
@@ -534,17 +534,17 @@ const Index = () => {
 
       {/* 7. CANCER DEFINED */}
       <Slide bg={dark} style={{ color: warm }}>
-        <Big size="clamp(1.5rem,3vw,2.2rem)" color={soft} weight={400}>Cancer is when</Big>
+        <Big size="clamp(1.5rem,3vw,2.2rem)" color={soft} weight={400}>What is Cancer? Cancer is when...</Big>
         <Spacer h={16} />
         <Reveal delay={0.15}>
           <div style={{ fontFamily: heading, fontSize: "clamp(2.2rem,5.5vw,4rem)", fontWeight: 900 }}>
             <span style={{ color: red }}>me </span>
-            <span style={{ color: soft, fontSize: "0.5em", margin: "0 16px" }} className="text-5xl">></span>
+            <span style={{ color: soft, fontSize: "0.5em", margin: "0 16px" }} className="text-5xl">{'>'}</span>
             <span style={{ color: gold }}> all of you</span>
           </div>
         </Reveal>
         <Spacer h={32} />
-        <Sub color="rgba(245,240,232,0.6)" size="clamp(1.1rem,2.5vw,1.4rem)">And today, <span style={{ color: warm, fontWeight: 600 }}>me</span> includes corporations too.</Sub>
+        <Sub color="rgba(245,240,232,0.6)" size="clamp(1.1rem,2.5vw,1.4rem)">And today '<span style={{ color: warm, fontWeight: 600 }}>me</span>' means corporations (and ai?) too.</Sub>
       </Slide>
 
       {/* 8. WE ARE THE EQUATION */}
@@ -557,14 +557,14 @@ const Index = () => {
 
       {/* 9. CONTROL */}
       <Slide bg="#FAF6F0">
-        <Big size="clamp(1.5rem,3vw,2.2rem)" weight={400} color={soft}>And when me and you stop fighting:</Big>
+        <Big size="clamp(1.5rem,3vw,2.2rem)" weight={400} color={soft}>So how do we ALL seize the System?<br /><br />We 'Pass the Pump!'</Big>
         <Spacer h={24} />
         <Big size="clamp(2.5rem,7vw,5rem)" color={gold}>me + you = control</Big>
       </Slide>
 
       {/* 10. HERE'S HOW */}
       <Slide>
-        <Big size="clamp(2.5rem,6vw,4.5rem)" color={gold}>Here's how.</Big>
+        <Big size="clamp(2.5rem,6vw,4.5rem)" color={gold}>Time to make their profits profit the people!</Big>
         <Spacer h={40} />
         <Big size="clamp(3rem,8vw,6rem)">Pass the Pump.</Big>
         <Sub size="clamp(1.15rem,2.5vw,1.45rem)">One gas company at a time.</Sub>
@@ -579,14 +579,14 @@ const Index = () => {
         <div style={{ maxWidth: 520, width: "100%", textAlign: "left" }}>
           <Step num={1} emoji="👀" title="See which gas station is on the list."
           desc="Check who's up this month. Right now it's Shell." />
-          <Step num={2} emoji="🚗" title="Drive past them."
+          <Step num={2} emoji="🚗" title="Drive right past them. That's all!"
           desc="Skip that station. Honk to show them support. They're in this with us." />
           <Step num={3} emoji="⛽" title="Head to the next pump."
           desc="Go to the next brand down the street. That's it. Every month we add the next largest company." />
         </div>
         <Chant color={gold}>You pass the pump.<br />They get the message.</Chant>
         <Spacer h={24} />
-        <Big size="clamp(1.6rem,3.5vw,2.5rem)" color={dark} weight={700}>Your profit from us is now for us!</Big>
+        <Big size="clamp(1.6rem,3.5vw,2.5rem)" color={dark} weight={700}>Equal or Surpass your current lobbying spend in Congress to ratify and pass the 28th Amendment in every State.</Big>
         <Spacer h={16} />
         <Reveal delay={0.15}>
           <div style={{ background: "rgba(26,24,20,0.04)", border: "1px solid rgba(26,24,20,0.08)", borderRadius: 12, padding: "28px 36px", maxWidth: 480, margin: "0 auto" }}>
@@ -600,20 +600,20 @@ const Index = () => {
           </div>
         </Reveal>
         <Spacer h={20} />
-        <Sub color={soft} size="clamp(1rem,2vw,1.15rem)">The list will grow.<br />Till we reach the CEO.</Sub>
+        <Sub color={soft} size="clamp(1rem,2vw,1.15rem)">The list will grow.<br />Till we reach every Gas CEO.</Sub>
       </Slide>
 
       {/* 12. WHAT THE CEOs MUST SAY */}
       <Slide bg={dark} style={{ color: warm }}>
         <Big size="clamp(2rem,5vw,3.5rem)" color={warm}>What the CEOs must say.</Big>
-        <Big size="clamp(1.5rem,3vw,2.2rem)" color={gold} weight={400} style={{ marginTop: 12 }}>On camera.<br />To America.</Big>
+        <Big size="clamp(1.5rem,3vw,2.2rem)" color={gold} weight={400} style={{ marginTop: 12 }}>On Camera.<br />To America.</Big>
         <Spacer h={40} />
         <Reveal delay={0.1}>
           <div style={{ maxWidth: 600, margin: "0 auto" }}>
             {[
-            { num: "1", text: "\"Our company will fully fund all campaigns to pass the 29th Amendment in all 50 states, until it is ratified.\"" },
-            { num: "2", text: "\"Corporations are not people. The Constitution belongs only to citizens, who are people.\"" },
-            { num: "3", text: "\"We are proud to support Pass the Pump to pass the 29th Amendment. We call on every other company to join us in giving complete power back to the people.\"" }].
+            { num: "1", text: "\"Our company will fully fund all campaigns to pass the 28th Amendment in all 50 states, until it is ratified.\"" },
+            { num: "2", text: "\"Corporations are not people. The Constitution belongs only to citizens, who are living people.\"" },
+            { num: "3", text: "\"We are proud to support Pass the Pump to pass the 28th Amendment. We call on every other company to join us in giving complete power back to the people.\"" }].
             map((d, i) =>
             <div key={i} style={{ display: "flex", gap: 20, alignItems: "flex-start", textAlign: "left", marginBottom: 32, paddingBottom: 32, borderBottom: i < 2 ? "1px solid rgba(245,240,232,0.06)" : "none" }}>
                 <div style={{ fontFamily: heading, fontSize: "2.5rem", fontWeight: 900, color: gold, lineHeight: 1, minWidth: 40 }}>{d.num}</div>
@@ -735,7 +735,7 @@ const Index = () => {
                   </div>
                 </div>
               </div>
-              <div style={{ fontFamily: mono, fontSize: "0.6rem", letterSpacing: "0.25em", color: soft }}>THE 29TH AMENDMENT</div>
+              <div style={{ fontFamily: mono, fontSize: "0.6rem", letterSpacing: "0.25em", color: soft }}>THE 28TH AMENDMENT</div>
             </div>
           </Reveal>
           <Spacer h={40} />
@@ -745,7 +745,7 @@ const Index = () => {
 
       {/* 14. THIS ENDS */}
       <Slide bg={dark} style={{ color: warm }}>
-        <Big size="clamp(2rem,5vw,3.5rem)" color={gold}>This ends when the<br />29th Amendment passes.</Big>
+        <Big size="clamp(2rem,5vw,3.5rem)" color={gold}>This ends when the<br />28th Amendment passes.</Big>
         <Spacer h={20} />
         <Reveal delay={0.15}>
           <div style={{ fontFamily: body, fontSize: "clamp(1rem,2vw,1.2rem)", color: "rgba(245,240,232,0.5)", lineHeight: 1.8, maxWidth: 480 }}>
@@ -795,8 +795,8 @@ const Index = () => {
 
       {/* 17. TO DIVIDE US */}
       <Slide bg={dark} style={{ color: warm }}>
-        <Big size="clamp(2.5rem,7vw,5.5rem)" color={gold}>To Divide Us</Big>
-        <Big size="clamp(2.5rem,7vw,5.5rem)" color={gold} style={{ marginTop: 8 }}>Multiplies Us!</Big>
+        <Big size="clamp(2.5rem,7vw,5.5rem)" color={gold}>Trying To Divide Us</Big>
+        <Big size="clamp(2.5rem,7vw,5.5rem)" color={gold} style={{ marginTop: 8 }}>Only Multiplies Us!</Big>
         <Spacer h={12} />
         <Big size="clamp(2rem,5vw,3.5rem)" color={warm}>Pass the Pump.</Big>
         <Spacer h={48} />
@@ -831,7 +831,7 @@ const Index = () => {
         <Reveal delay={0.25}>
           <button onClick={() => {
             if (navigator.share) {
-              navigator.share({ title: "Pass the Pump — The 29th Amendment", text: "me + you = democracy. Pass the Pump.", url: window.location.href });
+              navigator.share({ title: "Pass the Pump — The 28th Amendment", text: "me + you = democracy. Pass the Pump.", url: window.location.href });
             } else {
               navigator.clipboard.writeText(window.location.href);
               const btn = document.getElementById("share-btn");
@@ -871,7 +871,7 @@ const Index = () => {
             Pass the Pump.
           </div>
         </Reveal>
-        <Reveal delay={1}><div style={{ fontFamily: mono, fontSize: "0.6rem", letterSpacing: "0.25em", color: "rgba(245,240,232,0.15)", marginTop: 32 }}>THE 29TH AMENDMENT</div></Reveal>
+        <Reveal delay={1}><div style={{ fontFamily: mono, fontSize: "0.6rem", letterSpacing: "0.25em", color: "rgba(245,240,232,0.15)", marginTop: 32 }}>THE 28TH AMENDMENT</div></Reveal>
       </Slide>
     </div>);
 
