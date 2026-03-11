@@ -426,22 +426,58 @@ function Step({ num, emoji, title, desc }: { num: number; emoji: string; title: 
 const B = ({ children }: { children: ReactNode }) => <strong style={{ color: warm, fontWeight: 700 }}>{children}</strong>;
 
 const Index = () => {
+  const [headerEmail, setHeaderEmail] = useState("");
+  const [headerSubmitted, setHeaderSubmitted] = useState(false);
+
   return (
     <div style={{ background: warm, color: dark, overflowX: "hidden" }}>
       {/* STICKY HEADER */}
       <header style={{
         position: "fixed", top: 0, left: 0, right: 0, zIndex: 999,
         background: dark, color: warm,
-        fontFamily: mono, fontSize: "clamp(0.6rem, 1.2vw, 0.8rem)",
-        fontWeight: 700, letterSpacing: "0.25em", textTransform: "uppercase",
-        textAlign: "center", padding: "10px 20px",
+        display: "flex", alignItems: "center", justifyContent: "center",
+        gap: 16, flexWrap: "wrap",
+        padding: "8px 20px",
         borderBottom: `2px solid ${gold}`,
       }}>
-        <span style={{ color: gold }}>Seize the System</span>
-        <span style={{ margin: "0 12px", opacity: 0.3 }}>—</span>
-        <span>Pass the Pump!</span>
+        <div style={{ fontFamily: mono, fontSize: "clamp(0.55rem, 1.1vw, 0.75rem)", fontWeight: 700, letterSpacing: "0.25em", textTransform: "uppercase", display: "flex", alignItems: "center", gap: 8 }}>
+          <span style={{ color: gold }}>Seize the System</span>
+          <span style={{ opacity: 0.3 }}>—</span>
+          <span>Pass the Pump!</span>
+        </div>
+        <div style={{ height: 16, width: 1, background: "rgba(245,240,232,0.15)" }} />
+        {headerSubmitted ? (
+          <span style={{ fontFamily: heading, fontSize: "0.85rem", color: gold, fontWeight: 700 }}>You're in. 🇺🇸</span>
+        ) : (
+          <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+            <span style={{ fontFamily: body, fontSize: "clamp(0.65rem, 1vw, 0.8rem)", color: soft, whiteSpace: "nowrap" }}>Join Your Fellow Americans</span>
+            <input
+              value={headerEmail}
+              onChange={e => setHeaderEmail(e.target.value)}
+              placeholder="your@email.com"
+              type="email"
+              style={{
+                padding: "5px 12px", background: "rgba(245,240,232,0.06)",
+                border: "1px solid rgba(245,240,232,0.15)", borderRadius: 4,
+                color: warm, fontFamily: body, fontSize: "0.75rem",
+                outline: "none", width: 160,
+              }}
+            />
+            <button
+              onClick={() => { if (headerEmail.includes("@")) setHeaderSubmitted(true); }}
+              style={{
+                padding: "5px 16px", background: gold, color: dark,
+                fontFamily: heading, fontWeight: 700, fontSize: "0.7rem",
+                letterSpacing: "0.05em", border: "none", borderRadius: 4,
+                cursor: "pointer", whiteSpace: "nowrap",
+              }}
+            >
+              Join
+            </button>
+          </div>
+        )}
       </header>
-      <div style={{ height: 42 }} /> {/* header spacer */}
+      <div style={{ height: 46 }} /> {/* header spacer */}
       {/* 1. HERO */}
       <Slide>
         <Big size="clamp(3.5rem,10vw,8rem)">me + you</Big>
