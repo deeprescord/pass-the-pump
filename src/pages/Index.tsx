@@ -557,7 +557,7 @@ const Index = () => {
 
       {/* 9. CONTROL */}
       <Slide bg="#FAF6F0">
-        <Big size="clamp(1.5rem,3vw,2.2rem)" weight={400} color={soft}>And when me and you stop fighting:</Big>
+        <Big size="clamp(1.5rem,3vw,2.2rem)" weight={400} color={soft}>So how do we ALL seize the System?<br /><br />We 'Pass the Pump!'</Big>
         <Spacer h={24} />
         <Big size="clamp(2.5rem,7vw,5rem)" color={gold}>me + you = control</Big>
       </Slide>
