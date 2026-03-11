@@ -735,7 +735,7 @@ const Index = () => {
                   </div>
                 </div>
               </div>
-              <div style={{ fontFamily: mono, fontSize: "0.6rem", letterSpacing: "0.25em", color: soft }}>THE 29TH AMENDMENT</div>
+              <div style={{ fontFamily: mono, fontSize: "0.6rem", letterSpacing: "0.25em", color: soft }}>THE 28TH AMENDMENT</div>
             </div>
           </Reveal>
           <Spacer h={40} />
