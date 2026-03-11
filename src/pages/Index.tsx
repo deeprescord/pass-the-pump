@@ -579,7 +579,7 @@ const Index = () => {
         <div style={{ maxWidth: 520, width: "100%", textAlign: "left" }}>
           <Step num={1} emoji="👀" title="See which gas station is on the list."
           desc="Check who's up this month. Right now it's Shell." />
-          <Step num={2} emoji="🚗" title="Drive past them."
+          <Step num={2} emoji="🚗" title="Drive right past them. That's all!"
           desc="Skip that station. Honk to show them support. They're in this with us." />
           <Step num={3} emoji="⛽" title="Head to the next pump."
           desc="Go to the next brand down the street. That's it. Every month we add the next largest company." />
