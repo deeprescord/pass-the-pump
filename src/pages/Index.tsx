@@ -490,10 +490,6 @@ const Index = () => {
         <Sub>{"\n"}</Sub>
       </Slide>
 
-      {/* 3. AI */}
-      <Slide bg="#FAF6F0">
-        <Big size="clamp(2.5rem,7vw,5rem)" color={gold}>And what about Ai?</Big>
-      </Slide>
 
       {/* 4. DIVISION */}
       <Slide>
