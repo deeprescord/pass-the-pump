@@ -831,7 +831,7 @@ const Index = () => {
         <Reveal delay={0.25}>
           <button onClick={() => {
             if (navigator.share) {
-              navigator.share({ title: "Pass the Pump — The 29th Amendment", text: "me + you = democracy. Pass the Pump.", url: window.location.href });
+              navigator.share({ title: "Pass the Pump — The 28th Amendment", text: "me + you = democracy. Pass the Pump.", url: window.location.href });
             } else {
               navigator.clipboard.writeText(window.location.href);
               const btn = document.getElementById("share-btn");
