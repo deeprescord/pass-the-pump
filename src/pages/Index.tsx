@@ -871,7 +871,7 @@ const Index = () => {
             Pass the Pump.
           </div>
         </Reveal>
-        <Reveal delay={1}><div style={{ fontFamily: mono, fontSize: "0.6rem", letterSpacing: "0.25em", color: "rgba(245,240,232,0.15)", marginTop: 32 }}>THE 29TH AMENDMENT</div></Reveal>
+        <Reveal delay={1}><div style={{ fontFamily: mono, fontSize: "0.6rem", letterSpacing: "0.25em", color: "rgba(245,240,232,0.15)", marginTop: 32 }}>THE 28TH AMENDMENT</div></Reveal>
       </Slide>
     </div>);
 
