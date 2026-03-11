@@ -564,7 +564,7 @@ const Index = () => {
 
       {/* 10. HERE'S HOW */}
       <Slide>
-        <Big size="clamp(2.5rem,6vw,4.5rem)" color={gold}>Here's how.</Big>
+        <Big size="clamp(2.5rem,6vw,4.5rem)" color={gold}>Time to make their profits profit the people!</Big>
         <Spacer h={40} />
         <Big size="clamp(3rem,8vw,6rem)">Pass the Pump.</Big>
         <Sub size="clamp(1.15rem,2.5vw,1.45rem)">One gas company at a time.</Sub>
