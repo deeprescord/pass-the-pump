@@ -497,9 +497,9 @@ const Index = () => {
 
       {/* 4. DIVISION */}
       <Slide>
-        <Big size="clamp(1.5rem,3vw,2.2rem)" weight={400} color={soft}>But when they get between us:</Big>
+        <Big size="clamp(1.5rem,3vw,2.2rem)" weight={400} color={soft}>CITIZENS UNITED WAS DESIGNED TO GET BETWEEN US</Big>
         <FlashZero />
-        <Sub size="clamp(1rem,2vw,1.15rem)">They keep me so angry that I hate you.<br />They keep you so angry that you hate me.<br />Back and forth. Over and over.</Sub>
+        <Sub size="clamp(1rem,2vw,1.15rem)">I'm so angry that I hate you.<br />You're so angry that you hate me.<br /><br />We've been tricked into hating each other...<br />Even within our own families!<br />Does this sound familiar?</Sub>
       </Slide>
 
       {/* 5. ANIMATED ≠ */}
