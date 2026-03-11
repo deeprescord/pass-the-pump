@@ -539,7 +539,7 @@ const Index = () => {
         <Reveal delay={0.15}>
           <div style={{ fontFamily: heading, fontSize: "clamp(2.2rem,5.5vw,4rem)", fontWeight: 900 }}>
             <span style={{ color: red }}>me </span>
-            <span style={{ color: soft, fontSize: "0.5em", margin: "0 16px" }} className="text-5xl">></span>
+            <span style={{ color: soft, fontSize: "0.5em", margin: "0 16px" }} className="text-5xl">{'>'}</span>
             <span style={{ color: gold }}> all of you</span>
           </div>
         </Reveal>
