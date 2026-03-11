@@ -428,6 +428,20 @@ const B = ({ children }: { children: ReactNode }) => <strong style={{ color: war
 const Index = () => {
   return (
     <div style={{ background: warm, color: dark, overflowX: "hidden" }}>
+      {/* STICKY HEADER */}
+      <header style={{
+        position: "fixed", top: 0, left: 0, right: 0, zIndex: 999,
+        background: dark, color: warm,
+        fontFamily: mono, fontSize: "clamp(0.6rem, 1.2vw, 0.8rem)",
+        fontWeight: 700, letterSpacing: "0.25em", textTransform: "uppercase",
+        textAlign: "center", padding: "10px 20px",
+        borderBottom: `2px solid ${gold}`,
+      }}>
+        <span style={{ color: gold }}>Seize the System</span>
+        <span style={{ margin: "0 12px", opacity: 0.3 }}>—</span>
+        <span>Pass the Pump!</span>
+      </header>
+      <div style={{ height: 42 }} /> {/* header spacer */}
       {/* 1. HERO */}
       <Slide>
         <Big size="clamp(3.5rem,10vw,8rem)">me + you</Big>
