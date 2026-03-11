@@ -486,8 +486,8 @@ const Index = () => {
 
       {/* 2. CORPORATIONS */}
       <Slide>
-        <Big size="clamp(1.8rem,4vw,3rem)" weight={400}>But look what's already happened</Big>
-        <Sub>since Corporations could weigh in.</Sub>
+        <Big size="clamp(1.8rem,4vw,3rem)" weight={400}>NOT CORPORATIONS - NOT FOREIGN NATIONS - NOT AI</Big>
+        <Sub>{"\n"}</Sub>
       </Slide>
 
       {/* 3. AI */}
