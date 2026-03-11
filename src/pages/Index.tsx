@@ -480,21 +480,19 @@ const Index = () => {
       <div style={{ height: 46 }} /> {/* header spacer */}
       {/* 1. HERO */}
       <Slide>
-        <Big size="clamp(3.5rem,10vw,8rem)">me + you</Big>
-        <Reveal delay={0.3}><div style={{ fontFamily: heading, fontSize: "clamp(2rem,5vw,3.5rem)", fontStyle: "italic", color: gold, marginTop: 24 }}>= democracy</div></Reveal>
+        <Big size="clamp(3.5rem,10vw,8rem)">My Voice + Your Voice</Big>
+        <Reveal delay={0.3}><div style={{ fontFamily: heading, fontSize: "clamp(2rem,5vw,3.5rem)", fontStyle: "italic", color: gold, marginTop: 24 }}>= Our Country</div></Reveal>
       </Slide>
 
-      {/* 2. SIMPLE */}
+      {/* 2. CORPORATIONS */}
       <Slide>
-        <Big size="clamp(1.8rem,4vw,3rem)" weight={400}>That's it. That's the whole thing.</Big>
-        <Sub>Me — my voice matters.<br />You — your voice matters.<br />Add us together and you get democracy.</Sub>
-        <Sub color={dark} size="clamp(1.05rem,2.2vw,1.25rem)">Our belief in this<br />is the entire sum of America.</Sub>
+        <Big size="clamp(1.8rem,4vw,3rem)" weight={400}>But look what's already happened</Big>
+        <Sub>since Corporations could weigh in.</Sub>
       </Slide>
 
-      {/* 3. OPPORTUNITY */}
+      {/* 3. AI */}
       <Slide bg="#FAF6F0">
-        <Big size="clamp(2.5rem,7vw,5rem)" color={gold}>me + you = opportunity</Big>
-        <Sub>When we actually listen to each other,<br />we can do anything.<br />330 million people. The largest economy on earth.<br />That's not a problem. That's a superpower.</Sub>
+        <Big size="clamp(2.5rem,7vw,5rem)" color={gold}>And what about Ai?</Big>
       </Slide>
 
       {/* 4. DIVISION */}
