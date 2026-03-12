@@ -622,7 +622,7 @@ But the impact for us is priceless!
             )}
           </div>
         </Reveal>
-        <Chant color={gold}>Three sentences.<br />On camera.<br />To the country.</Chant>
+        <Chant color={gold}>Three Sentences.<br />Pledged On Camera.<br />To The Country.</Chant>
         <Spacer h={40} />
         <Reveal delay={0.3}>
           <div style={{ maxWidth: 440, margin: "0 auto", display: "flex", flexDirection: "column", gap: 16 }}>
