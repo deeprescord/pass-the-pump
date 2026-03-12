@@ -495,7 +495,7 @@ const Index = () => {
       <Slide>
         <Big size="clamp(1.5rem,3vw,2.2rem)" weight={400} color={soft}>CITIZENS UNITED WAS DESIGNED <br />TO DIVIDE US</Big>
         <FlashZero />
-        <Sub size="clamp(1rem,2vw,1.15rem)">How did we get tricked into hating each other...<br />Even within our own families!<br /><br />Well it all accelerated using a really deceptive name... <br />Citizens United.</Sub>
+        <Sub size="clamp(1rem,2vw,1.15rem)">How did we get so tricked into hating each other...<br />Even within our own families!<br /><br />It was all done under disguise using a really deceptive name... <br /><br />Citizens United.</Sub>
       </Slide>
 
       {/* 5. ANIMATED ≠ */}
