@@ -608,7 +608,7 @@ But the impact is priceless!
       {/* 12. WHAT THE CEOs MUST SAY */}
       <Slide bg={dark} style={{ color: warm }}>
         <Big size="clamp(2rem,5vw,3.5rem)" color={warm}>What the CEOs must say.</Big>
-        <Big size="clamp(1.5rem,3vw,2.2rem)" color={gold} weight={400} style={{ marginTop: 12 }}>On Camera.<br />To America.</Big>
+        <Big size="clamp(1.5rem,3vw,2.2rem)" color={gold} weight={400} style={{ marginTop: 12 }}>On Camera. To America.</Big>
         <Spacer h={40} />
         <Reveal delay={0.1}>
           <div style={{ maxWidth: 600, margin: "0 auto" }}>
