@@ -584,7 +584,7 @@ const Index = () => {
           <Step num={3} emoji="⛽" title="Head to the next pump."
           desc="Go to the next brand down the street. That's it. Every 2 weeks we add the next largest company till they all comply. " />
         </div>
-        <Chant color={gold}>You pass the pump.<br />They get the message.</Chant>
+        <Chant color={gold}>When you pass the pump<br />they get the message.</Chant>
         <Spacer h={24} />
         <Big size="clamp(1.6rem,3.5vw,2.5rem)" color={dark} weight={700}>Equal or Surpass your current lobbying spend in Congress to ratify and pass the 28th Amendment in every State.</Big>
         <Spacer h={16} />
