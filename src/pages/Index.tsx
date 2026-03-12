@@ -653,7 +653,7 @@ But the impact for us is priceless!
               <div style={{ textAlign: "left" }}>
                 {[
                 { emoji: "🔄", text: "It's easy. You just vote with your steering wheel and go to the next one." },
-                { emoji: "📍", text: "They're ubiquitous. 150,000 stations across America. Almost everyone can join in." },
+                { emoji: "📍", text: "They're ubiquitous. 150,000 stations across America. Almost everyone can join in regardless of party." },
                 { emoji: "🌍", text: "They're owned by the biggest corporations from all over the world — so most of the damage won't be felt here." }].
                 map((b, i) =>
                 <div key={i} style={{ display: "flex", gap: 14, alignItems: "flex-start", marginBottom: 16 }}>
