@@ -586,7 +586,7 @@ const Index = () => {
         </div>
         <Chant color={gold}>When you pass the pump<br />they get the message.</Chant>
         <Spacer h={24} />
-        <Big size="clamp(1.6rem,3.5vw,2.5rem)" color={dark} weight={700}>Equal or Surpass your current lobbying spend in Congress to ratify and pass the 28th Amendment in every State.</Big>
+        <Big size="clamp(1.6rem,3.5vw,2.5rem)" color={dark} weight={700}>Equal or Surpass your current lobbying spend in Congress to ratify and pass the 28th Amendment in every State (only 17 more to go).<br /><br />This amendment removes money from politics!</Big>
         <Spacer h={16} />
         <Reveal delay={0.15}>
           <div style={{ background: "rgba(26,24,20,0.04)", border: "1px solid rgba(26,24,20,0.08)", borderRadius: 12, padding: "28px 36px", maxWidth: 480, margin: "0 auto" }}>
