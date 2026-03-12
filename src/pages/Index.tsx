@@ -602,7 +602,7 @@ But the impact is priceless!
           </div>
         </Reveal>
         <Spacer h={20} />
-        <Sub color={soft} size="clamp(1rem,2vw,1.15rem)">The list will grow.<br />Till we reach every Gas CEO.</Sub>
+        <Sub color={soft} size="clamp(1rem,2vw,1.15rem)">And the list will grow.<br />Till we reach every Petrol CEO.</Sub>
       </Slide>
 
       {/* 12. WHAT THE CEOs MUST SAY */}
