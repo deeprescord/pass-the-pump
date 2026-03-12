@@ -32,7 +32,6 @@ function Slide({ children, bg = "transparent", style: s, id }: {children: ReactN
       alignItems: "center", justifyContent: "center",
       padding: "80px 32px", background: bg, textAlign: "center", ...s
     }}>{children}</section>);
-
 }
 
 function Big({ children, size = "clamp(2.5rem,7vw,5.5rem)", color = dark, weight = 900, style: s }: {children: ReactNode;size?: string;color?: string;weight?: number;style?: CSSProperties;}) {
@@ -72,7 +71,6 @@ function FlashZero() {
       <span style={{ color: "#444", fontSize: "0.6em", margin: "0 12px" }}>=</span>
       <span style={{ color: red }}>we lose everything</span>
     </div>);
-
 }
 
 function AnimatedNotEqual() {
@@ -89,11 +87,10 @@ function AnimatedNotEqual() {
   }, []);
   return (
     <div ref={ref} className="neq-wrap">
-      <span style={{ fontFamily: heading, fontSize: "clamp(2.5rem,6vw,4.5rem)", fontWeight: 900, color: dark }}>me + you </span>
+      <span style={{ fontFamily: heading, fontSize: "clamp(2.5rem,6vw,4.5rem)", fontWeight: 900, color: dark }}>me + you </span>
       <span className="neq-symbol" style={{ fontFamily: heading, fontSize: "clamp(2.5rem,6vw,4.5rem)", fontWeight: 900, display: "inline-block" }}>≠</span>
-      <span style={{ fontFamily: heading, fontSize: "clamp(2.5rem,6vw,4.5rem)", fontWeight: 900, color: dark }}> corporations</span>
+      <span style={{ fontFamily: heading, fontSize: "clamp(2.5rem,6vw,4.5rem)", fontWeight: 900, color: dark }}> corporations</span>
     </div>);
-
 }
 
 const flipWords = ["customers", "employees", "investors", "reviewers", "influencers", "public", "profit"];
@@ -126,22 +123,21 @@ const SplitFlap = memo(function SplitFlap() {
         }}>{flipWords[idx]}</div>
       </div>
     </div>);
-
 });
 
 const companies = [
-{ name: "Shell", stations: "12,283", month: "March", bg: "#FFD500", text: "#DD0000", accent: "#FFD500" },
-{ name: "ExxonMobil", stations: "11,532", month: "April", bg: "#FFFFFF", text: "#222", accent: "#FF0000" },
-{ name: "BP", stations: "7,111", month: "May", bg: "#007B33", text: "#FFF", accent: "#FFCC00" },
-{ name: "Chevron", stations: "7,082", month: "June", bg: "#0051A5", text: "#FFF", accent: "#D4122A" },
-{ name: "Valero", stations: "4,907", month: "July", bg: "#002868", text: "#FFF", accent: "#BF0A30" },
-{ name: "Citgo", stations: "4,408", month: "August", bg: "#C8102E", text: "#FFF", accent: "#003DA5" },
-{ name: "Phillips 66", stations: "2,527", month: "September", bg: "#1C1C1C", text: "#D42626", accent: "#D42626" },
-{ name: "76", stations: "1,728", month: "October", bg: "#FF6200", text: "#FFF", accent: "#003B71" },
-{ name: "Sinclair", stations: "1,715", month: "November", bg: "#006B3F", text: "#FFF", accent: "#006B3F" },
-{ name: "Conoco", stations: "1,682", month: "December", bg: "#D42626", text: "#FFF", accent: "#D42626" },
-{ name: "Marathon", stations: "982", month: "January '27", bg: "#003082", text: "#FFF", accent: "#ED1C24" }];
-
+  { name: "Shell", stations: "12,283", month: "March", bg: "#FFD500", text: "#DD0000", accent: "#FFD500" },
+  { name: "ExxonMobil", stations: "11,532", month: "April", bg: "#FFFFFF", text: "#222", accent: "#FF0000" },
+  { name: "BP", stations: "7,111", month: "May", bg: "#007B33", text: "#FFF", accent: "#FFCC00" },
+  { name: "Chevron", stations: "7,082", month: "June", bg: "#0051A5", text: "#FFF", accent: "#D4122A" },
+  { name: "Valero", stations: "4,907", month: "July", bg: "#002868", text: "#FFF", accent: "#BF0A30" },
+  { name: "Citgo", stations: "4,408", month: "August", bg: "#C8102E", text: "#FFF", accent: "#003DA5" },
+  { name: "Phillips 66", stations: "2,527", month: "September", bg: "#1C1C1C", text: "#D42626", accent: "#D42626" },
+  { name: "76", stations: "1,728", month: "October", bg: "#FF6200", text: "#FFF", accent: "#003B71" },
+  { name: "Sinclair", stations: "1,715", month: "November", bg: "#006B3F", text: "#FFF", accent: "#006B3F" },
+  { name: "Conoco", stations: "1,682", month: "December", bg: "#D42626", text: "#FFF", accent: "#D42626" },
+  { name: "Marathon", stations: "982", month: "January '27", bg: "#003082", text: "#FFF", accent: "#ED1C24" }
+];
 
 function BrandLogo({ name, bg: bgc, text: tc, accent, targeted, float: fl }: {name: string;bg: string;text: string;accent: string;targeted?: boolean;float?: boolean;}) {
   return (
@@ -159,22 +155,20 @@ function BrandLogo({ name, bg: bgc, text: tc, accent, targeted, float: fl }: {na
         fontSize: "1.8rem", filter: "drop-shadow(0 3px 8px rgba(0,0,0,0.6))"
       }}>🎯</div>}
       {name === "76" ?
-      <div style={{ width: 32, height: 32, borderRadius: "50%", background: "#003B71", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <div style={{ width: 32, height: 32, borderRadius: "50%", background: "#003B71", display: "flex", alignItems: "center", justifyContent: "center" }}>
           <span style={{ fontFamily: heading, fontSize: "1rem", fontWeight: 900, color: "#FF6200" }}>76</span>
         </div> :
-
-      <span style={{
-        fontFamily: mono, fontSize: name.length > 8 ? "0.7rem" : "0.85rem",
-        fontWeight: 900, color: tc, letterSpacing: name.length > 8 ? "-0.01em" : "0.1em",
-        textTransform: "uppercase" as const, whiteSpace: "nowrap" as const
-      }}>{name}</span>
+        <span style={{
+          fontFamily: mono, fontSize: name.length > 8 ? "0.7rem" : "0.85rem",
+          fontWeight: 900, color: tc, letterSpacing: name.length > 8 ? "-0.01em" : "0.1em",
+          textTransform: "uppercase" as const, whiteSpace: "nowrap" as const
+        }}>{name}</span>
       }
       {accent && name !== "76" && <div style={{
         position: "absolute", bottom: 0, left: 0, right: 0, height: 3,
         background: accent, borderRadius: "0 0 7px 7px"
       }} />}
     </div>);
-
 }
 
 function LogoScroll({ bgColor = "#FAF6F0" }: {bgColor?: string;}) {
@@ -184,11 +178,10 @@ function LogoScroll({ bgColor = "#FAF6F0" }: {bgColor?: string;}) {
       <div style={{ position: "absolute", right: 0, top: 0, bottom: 0, width: 60, zIndex: 2, background: `linear-gradient(-90deg, ${bgColor}, transparent)` }} />
       <div className="logo-scroll-track" style={{ display: "flex", gap: 16, width: "max-content" }}>
         {[...companies, ...companies].map((c, i) =>
-        <BrandLogo key={`${c.name}-${i}`} name={c.name} bg={c.bg} text={c.text} accent={c.accent} targeted={i === 0 || i === companies.length} />
+          <BrandLogo key={`${c.name}-${i}`} name={c.name} bg={c.bg} text={c.text} accent={c.accent} targeted={i === 0 || i === companies.length} />
         )}
       </div>
     </div>);
-
 }
 
 function LogoScrollDark() {
@@ -198,188 +191,11 @@ function LogoScrollDark() {
       <div style={{ position: "absolute", right: 0, top: 0, bottom: 0, width: 60, zIndex: 2, background: `linear-gradient(-90deg, ${dark}, transparent)` }} />
       <div className="logo-scroll-track-dark" style={{ display: "flex", gap: 16, width: "max-content" }}>
         {[...companies, ...companies].map((c, i) =>
-        <BrandLogo key={`${c.name}-${i}`} name={c.name} bg={c.bg} text={c.text} accent={c.accent} targeted={i === 0 || i === companies.length} float />
+          <BrandLogo key={`${c.name}-${i}`} name={c.name} bg={c.bg} text={c.text} accent={c.accent} targeted={i === 0 || i === companies.length} float />
         )}
       </div>
     </div>);
-
 }
-
-const stateInfo: Record<string, {name: string;pop: string;ev: number;ratified: boolean;leg: string;}> = {
-  AL: { name: "Alabama", pop: "5.1M", ev: 9, ratified: false, leg: "R supermajority" },
-  AK: { name: "Alaska", pop: "733K", ev: 3, ratified: false, leg: "R majority" },
-  AZ: { name: "Arizona", pop: "7.4M", ev: 11, ratified: false, leg: "R majority" },
-  AR: { name: "Arkansas", pop: "3.0M", ev: 6, ratified: false, leg: "R supermajority" },
-  CA: { name: "California", pop: "39.0M", ev: 54, ratified: true, leg: "D supermajority" },
-  CO: { name: "Colorado", pop: "5.9M", ev: 10, ratified: true, leg: "D trifecta" },
-  CT: { name: "Connecticut", pop: "3.6M", ev: 7, ratified: true, leg: "D trifecta" },
-  DE: { name: "Delaware", pop: "1.0M", ev: 3, ratified: true, leg: "D trifecta" },
-  DC: { name: "Washington DC", pop: "689K", ev: 3, ratified: true, leg: "D council" },
-  FL: { name: "Florida", pop: "22.6M", ev: 30, ratified: false, leg: "R supermajority" },
-  GA: { name: "Georgia", pop: "11.0M", ev: 16, ratified: false, leg: "R trifecta" },
-  HI: { name: "Hawaii", pop: "1.4M", ev: 4, ratified: true, leg: "D supermajority" },
-  ID: { name: "Idaho", pop: "2.0M", ev: 4, ratified: false, leg: "R supermajority" },
-  IL: { name: "Illinois", pop: "12.5M", ev: 19, ratified: true, leg: "D trifecta" },
-  IN: { name: "Indiana", pop: "6.9M", ev: 11, ratified: false, leg: "R supermajority" },
-  IA: { name: "Iowa", pop: "3.2M", ev: 6, ratified: false, leg: "R trifecta" },
-  KS: { name: "Kansas", pop: "2.9M", ev: 6, ratified: false, leg: "R supermajority" },
-  KY: { name: "Kentucky", pop: "4.5M", ev: 8, ratified: false, leg: "R supermajority" },
-  LA: { name: "Louisiana", pop: "4.6M", ev: 8, ratified: false, leg: "R supermajority" },
-  ME: { name: "Maine", pop: "1.4M", ev: 4, ratified: true, leg: "D trifecta" },
-  MD: { name: "Maryland", pop: "6.2M", ev: 10, ratified: true, leg: "D supermajority" },
-  MA: { name: "Massachusetts", pop: "7.0M", ev: 11, ratified: true, leg: "D supermajority" },
-  MI: { name: "Michigan", pop: "10.0M", ev: 15, ratified: false, leg: "Split" },
-  MN: { name: "Minnesota", pop: "5.7M", ev: 10, ratified: true, leg: "D trifecta" },
-  MS: { name: "Mississippi", pop: "2.9M", ev: 6, ratified: false, leg: "R supermajority" },
-  MO: { name: "Missouri", pop: "6.2M", ev: 10, ratified: false, leg: "R supermajority" },
-  MT: { name: "Montana", pop: "1.1M", ev: 4, ratified: false, leg: "R trifecta" },
-  NE: { name: "Nebraska", pop: "2.0M", ev: 5, ratified: false, leg: "R (unicameral)" },
-  NV: { name: "Nevada", pop: "3.2M", ev: 6, ratified: false, leg: "D trifecta" },
-  NH: { name: "New Hampshire", pop: "1.4M", ev: 4, ratified: true, leg: "R trifecta" },
-  NJ: { name: "New Jersey", pop: "9.3M", ev: 14, ratified: true, leg: "D trifecta" },
-  NM: { name: "New Mexico", pop: "2.1M", ev: 5, ratified: true, leg: "D trifecta" },
-  NY: { name: "New York", pop: "19.5M", ev: 28, ratified: true, leg: "D supermajority" },
-  NC: { name: "North Carolina", pop: "10.7M", ev: 16, ratified: false, leg: "R supermajority" },
-  ND: { name: "North Dakota", pop: "780K", ev: 3, ratified: false, leg: "R supermajority" },
-  OH: { name: "Ohio", pop: "11.8M", ev: 17, ratified: false, leg: "R supermajority" },
-  OK: { name: "Oklahoma", pop: "4.0M", ev: 7, ratified: false, leg: "R supermajority" },
-  OR: { name: "Oregon", pop: "4.2M", ev: 8, ratified: true, leg: "D trifecta" },
-  PA: { name: "Pennsylvania", pop: "13.0M", ev: 19, ratified: true, leg: "Split" },
-  RI: { name: "Rhode Island", pop: "1.1M", ev: 4, ratified: true, leg: "D supermajority" },
-  SC: { name: "South Carolina", pop: "5.3M", ev: 9, ratified: false, leg: "R supermajority" },
-  SD: { name: "South Dakota", pop: "910K", ev: 3, ratified: false, leg: "R supermajority" },
-  TN: { name: "Tennessee", pop: "7.1M", ev: 11, ratified: false, leg: "R supermajority" },
-  TX: { name: "Texas", pop: "30.5M", ev: 40, ratified: false, leg: "R trifecta" },
-  UT: { name: "Utah", pop: "3.4M", ev: 6, ratified: false, leg: "R supermajority" },
-  VT: { name: "Vermont", pop: "647K", ev: 3, ratified: true, leg: "D supermajority" },
-  VA: { name: "Virginia", pop: "8.6M", ev: 13, ratified: false, leg: "Split" },
-  WA: { name: "Washington", pop: "7.8M", ev: 12, ratified: true, leg: "D trifecta" },
-  WV: { name: "West Virginia", pop: "1.8M", ev: 4, ratified: true, leg: "R supermajority" },
-  WI: { name: "Wisconsin", pop: "5.9M", ev: 10, ratified: false, leg: "Split" },
-  WY: { name: "Wyoming", pop: "577K", ev: 3, ratified: false, leg: "R supermajority" }
-};
-const ratifiedCount = Object.values(stateInfo).filter((s) => s.ratified).length;
-const neededCount = 38 - ratifiedCount;
-
-const stateGrid: (string | null)[][] = [
-[null, null, null, null, null, null, null, null, null, null, null, "ME"],
-["AK", null, null, null, null, null, "WI", null, null, null, "VT", "NH"],
-[null, "WA", "MT", "ND", "MN", null, "MI", null, null, "NY", "MA", "CT"],
-[null, "OR", "ID", "SD", null, "IA", null, "OH", "PA", "NJ", "RI", null],
-[null, "CA", "NV", "WY", "NE", "IL", "IN", null, "WV", "DE", "MD", "DC"],
-[null, null, "UT", "CO", "KS", "MO", "KY", "VA", null, null, null, null],
-[null, null, "AZ", "NM", "OK", "AR", "TN", "NC", "SC", null, null, null],
-["HI", null, null, null, "TX", "LA", "MS", "AL", "GA", "FL", null, null]];
-
-
-const InteractiveMap = memo(function InteractiveMap() {
-  const [hovered, setHovered] = useState<string | null>(null);
-  const [pos, setPos] = useState({ x: 0, y: 0 });
-  const mapRef = useRef<HTMLDivElement>(null);
-  const handleMove = useCallback((e: React.MouseEvent, st: string) => {
-    if (!mapRef.current) return;
-    const rect = mapRef.current.getBoundingClientRect();
-    setPos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
-    setHovered(st);
-  }, []);
-  const info = hovered ? stateInfo[hovered] : null;
-  return (
-    <div ref={mapRef} style={{ maxWidth: 800, width: "100%", margin: "0 auto", position: "relative", padding: "20px 0" }}>
-      <div style={{
-        position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-50%)",
-        width: "80%", height: "70%", borderRadius: "50%",
-        background: `radial-gradient(ellipse, rgba(212,175,55,0.06) 0%, transparent 70%)`,
-        pointerEvents: "none", zIndex: 0
-      }} />
-      {stateGrid.map((row, ri) =>
-      <div key={ri} style={{ display: "grid", gridTemplateColumns: "repeat(12,1fr)", gap: 4, position: "relative", zIndex: 1 }}>
-          {row.map((st, ci) => {
-          const si = st ? stateInfo[st] : null;
-          const rat = si?.ratified;
-          const isHovered = hovered === st;
-          return (
-            <div key={ci}
-            onMouseEnter={(e) => st && handleMove(e, st)}
-            onMouseMove={(e) => st && handleMove(e, st)}
-            onMouseLeave={() => setHovered(null)}
-            style={{
-              aspectRatio: "1", borderRadius: 5, display: "flex", alignItems: "center", justifyContent: "center",
-              fontSize: "clamp(0.5rem,1.2vw,0.7rem)", fontFamily: mono, fontWeight: 700,
-              background: !st ? "transparent" : rat ?
-              isHovered ? "linear-gradient(135deg, #E5C644, #D4AF37)" : gold :
-              isHovered ? "rgba(245,240,232,0.15)" : "rgba(245,240,232,0.06)",
-              color: !st ? "transparent" : rat ? dark : isHovered ? warm : "rgba(245,240,232,0.35)",
-              cursor: st ? "pointer" : "default",
-              transition: "all 0.2s cubic-bezier(0.4,0,0.2,1)",
-              transform: isHovered ? "scale(1.2) translateY(-2px)" : "scale(1)",
-              boxShadow: isHovered ?
-              rat ?
-              "0 4px 16px rgba(212,175,55,0.5), 0 0 24px rgba(212,175,55,0.3)" :
-              "0 4px 16px rgba(245,240,232,0.2), 0 0 20px rgba(155,58,58,0.2)" :
-              rat ?
-              "0 1px 4px rgba(212,175,55,0.15)" :
-              "none",
-              zIndex: isHovered ? 10 : 1, position: "relative",
-              border: isHovered ? `2px solid ${rat ? "#E5C644" : "rgba(245,240,232,0.4)"}` : "2px solid transparent"
-            }}>{st || ""}</div>);
-
-        })}
-        </div>
-      )}
-      {info &&
-      <div style={{
-        position: "absolute",
-        left: Math.min(Math.max(pos.x + 16, 10), 580),
-        top: Math.max(pos.y - 140, 10),
-        background: "linear-gradient(135deg, #151513, #1A1814)", border: `1px solid ${info.ratified ? gold : "#555"}`,
-        borderRadius: 10, padding: "18px 22px", minWidth: 220,
-        boxShadow: `0 12px 40px rgba(0,0,0,0.6), 0 0 20px ${info.ratified ? "rgba(212,175,55,0.15)" : "rgba(155,58,58,0.1)"}`,
-        zIndex: 100, pointerEvents: "none", textAlign: "left" as const,
-        backdropFilter: "blur(8px)"
-      }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
-            <div style={{
-            width: 12, height: 12, borderRadius: "50%",
-            background: info.ratified ? gold : red,
-            boxShadow: info.ratified ? "0 0 8px rgba(212,175,55,0.6)" : "0 0 8px rgba(155,58,58,0.6)"
-          }} />
-            <span style={{ fontFamily: heading, fontSize: "1.15rem", fontWeight: 700, color: warm }}>{info.name}</span>
-          </div>
-          <div style={{ fontFamily: mono, fontSize: "0.65rem", color: "rgba(245,240,232,0.45)", lineHeight: 2.2 }}>
-            <div style={{ display: "flex", justifyContent: "space-between", gap: 20 }}><span>STATUS</span><span style={{ color: info.ratified ? gold : red, fontWeight: 700 }}>{info.ratified ? "✓ RATIFIED" : "✗ NEEDED"}</span></div>
-            <div style={{ display: "flex", justifyContent: "space-between", gap: 20 }}><span>POPULATION</span><span style={{ color: warm }}>{info.pop}</span></div>
-            <div style={{ display: "flex", justifyContent: "space-between", gap: 20 }}><span>ELECTORAL VOTES</span><span style={{ color: warm }}>{info.ev}</span></div>
-            <div style={{ display: "flex", justifyContent: "space-between", gap: 20 }}><span>LEGISLATURE</span><span style={{ color: info.leg.startsWith("D") ? "#6699CC" : info.leg.startsWith("R") ? "#CC6666" : "#999" }}>{info.leg}</span></div>
-          </div>
-        </div>
-      }
-      <div style={{ maxWidth: 500, margin: "32px auto 0" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", fontFamily: mono, fontSize: "0.6rem", color: soft, marginBottom: 8 }}>
-          <span>{ratifiedCount} ratified</span>
-          <span>38 needed</span>
-        </div>
-        <div style={{ height: 8, borderRadius: 4, background: "rgba(245,240,232,0.06)", overflow: "hidden", position: "relative" }}>
-          <div style={{
-            height: "100%", borderRadius: 4, width: `${ratifiedCount / 38 * 100}%`,
-            background: `linear-gradient(90deg, ${gold}, #E5C644)`,
-            boxShadow: "0 0 12px rgba(212,175,55,0.4)",
-            transition: "width 1s ease"
-          }} />
-        </div>
-      </div>
-      <div style={{ display: "flex", justifyContent: "center", gap: 24, marginTop: 20, flexWrap: "wrap" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 6, fontFamily: mono, fontSize: "0.6rem", color: soft }}>
-          <div style={{ width: 12, height: 12, borderRadius: 3, background: gold, boxShadow: "0 0 4px rgba(212,175,55,0.3)" }} /> Ratified ({ratifiedCount})
-        </div>
-        <div style={{ display: "flex", alignItems: "center", gap: 6, fontFamily: mono, fontSize: "0.6rem", color: soft }}>
-          <div style={{ width: 12, height: 12, borderRadius: 3, background: "rgba(245,240,232,0.06)", border: "1px solid rgba(245,240,232,0.15)" }} /> Need {neededCount} more
-        </div>
-      </div>
-      <div style={{ fontFamily: heading, fontSize: "clamp(1.3rem,3vw,1.8rem)", color: gold, marginTop: 20, fontWeight: 700 }}>{ratifiedCount} down. {neededCount} to go.</div>
-      <div style={{ fontFamily: body, fontSize: "0.8rem", color: "rgba(245,240,232,0.3)", marginTop: 8 }}>Hover over any state for details</div>
-    </div>);
-
-});
 
 const Counter = memo(function Counter() {
   const [n, setN] = useState(14847);
@@ -389,7 +205,6 @@ const Counter = memo(function Counter() {
 
 const EmailSignup = memo(function EmailSignup() {
   const [email, setEmail] = useState("");
-  const [st, setSt] = useState("");
   const [done, setDone] = useState(false);
   if (done) return (
     <div style={{ textAlign: "center", padding: 40 }}>
@@ -399,14 +214,9 @@ const EmailSignup = memo(function EmailSignup() {
 
   return (
     <div style={{ maxWidth: 420, margin: "0 auto", textAlign: "left" }}>
-      <input value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Your email" style={{ width: "100%", padding: "16px 20px", background: "rgba(245,240,232,0.06)", border: "1px solid rgba(245,240,232,0.12)", borderRadius: 6, color: warm, fontFamily: body, fontSize: "1rem", marginBottom: 12, outline: "none" }} />
-      <select value={st} onChange={(e) => setSt(e.target.value)} style={{ width: "100%", padding: "16px 20px", background: "rgba(245,240,232,0.06)", border: "1px solid rgba(245,240,232,0.12)", borderRadius: 6, color: st ? warm : soft, fontFamily: body, fontSize: "1rem", marginBottom: 16, outline: "none" }}>
-        <option value="" style={{ background: dark }}>Your state</option>
-        {Object.keys(stateInfo).sort().map((s) => <option key={s} value={s} style={{ background: dark }}>{s}</option>)}
-      </select>
-      <button onClick={() => {if (email && st) setDone(true);}} style={{ width: "100%", padding: "16px 20px", background: gold, color: dark, border: "none", borderRadius: 6, fontFamily: heading, fontSize: "1.05rem", fontWeight: 700, cursor: "pointer" }}>Join the Equation</button>
+      <input value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Your email" style={{ width: "100%", padding: "16px 20px", background: "rgba(245,240,232,0.06)", border: "1px solid rgba(245,240,232,0.12)", borderRadius: 6, color: warm, fontFamily: body, fontSize: "1rem", marginBottom: 16, outline: "none" }} />
+      <button onClick={() => {if (email.includes("@")) setDone(true);}} style={{ width: "100%", padding: "16px 20px", background: gold, color: dark, border: "none", borderRadius: 6, fontFamily: heading, fontSize: "1.05rem", fontWeight: 700, cursor: "pointer" }}>Join the Equation</button>
     </div>);
-
 });
 
 function Step({ num, emoji, title, desc }: {num: number;emoji: string;title: string;desc: string;}) {
@@ -420,10 +230,41 @@ function Step({ num, emoji, title, desc }: {num: number;emoji: string;title: str
         </div>
       </div>
     </Reveal>);
-
 }
 
 const B = ({ children }: {children: ReactNode;}) => <strong style={{ color: warm, fontWeight: 700 }}>{children}</strong>;
+
+/* Dual Scoreboard Component */
+function ZeroScoreboard() {
+  const corpsAtZero = 0;
+  const candidatesAtZero = 0;
+  return (
+    <Reveal delay={0.15}>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, maxWidth: 700, margin: "0 auto", width: "100%" }}>
+        <div style={{
+          padding: "40px 24px", borderRadius: 16,
+          background: "linear-gradient(135deg, rgba(212,175,55,0.1), rgba(212,175,55,0.02))",
+          border: `2px solid ${gold}`, textAlign: "center"
+        }}>
+          <div style={{ fontFamily: mono, fontSize: "0.6rem", letterSpacing: "0.3em", color: soft, marginBottom: 16 }}>CORPORATIONS</div>
+          <div style={{ fontFamily: heading, fontSize: "clamp(3rem,8vw,5rem)", fontWeight: 900, color: gold }}>{corpsAtZero}</div>
+          <div style={{ fontFamily: heading, fontSize: "clamp(1rem,2vw,1.3rem)", fontWeight: 700, color: warm, marginTop: 8 }}>at $0.00</div>
+          <div style={{ fontFamily: body, fontSize: "0.85rem", color: soft, marginTop: 12 }}>Have pledged zero political spending</div>
+        </div>
+        <div style={{
+          padding: "40px 24px", borderRadius: 16,
+          background: "linear-gradient(135deg, rgba(245,240,232,0.08), rgba(245,240,232,0.02))",
+          border: "2px solid rgba(245,240,232,0.2)", textAlign: "center"
+        }}>
+          <div style={{ fontFamily: mono, fontSize: "0.6rem", letterSpacing: "0.3em", color: soft, marginBottom: 16 }}>2026 CANDIDATES</div>
+          <div style={{ fontFamily: heading, fontSize: "clamp(3rem,8vw,5rem)", fontWeight: 900, color: warm }}>{candidatesAtZero}</div>
+          <div style={{ fontFamily: heading, fontSize: "clamp(1rem,2vw,1.3rem)", fontWeight: 700, color: warm, marginTop: 8 }}>at $0.00</div>
+          <div style={{ fontFamily: body, fontSize: "0.85rem", color: soft, marginTop: 12 }}>Have pledged to take zero corporate money</div>
+        </div>
+      </div>
+    </Reveal>
+  );
+}
 
 const Index = () => {
   const [headerEmail, setHeaderEmail] = useState("");
@@ -447,62 +288,73 @@ const Index = () => {
         </div>
         <div style={{ height: 16, width: 1, background: "rgba(245,240,232,0.15)" }} />
         {headerSubmitted ?
-        <span style={{ fontFamily: heading, fontSize: "0.85rem", color: gold, fontWeight: 700 }}>You're in. 🇺🇸</span> :
-
-        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+          <span style={{ fontFamily: heading, fontSize: "0.85rem", color: gold, fontWeight: 700 }}>You're in. 🇺🇸</span> :
+          <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
             <span style={{ fontFamily: body, fontSize: "clamp(0.65rem, 1vw, 0.8rem)", color: soft, whiteSpace: "nowrap" }}>Join Your Fellow Americans</span>
             <input
-            value={headerEmail}
-            onChange={(e) => setHeaderEmail(e.target.value)}
-            placeholder="your@email.com"
-            type="email"
-            style={{
-              padding: "5px 12px", background: "rgba(245,240,232,0.06)",
-              border: "1px solid rgba(245,240,232,0.15)", borderRadius: 4,
-              color: warm, fontFamily: body, fontSize: "0.75rem",
-              outline: "none", width: 160
-            }} />
-          
+              value={headerEmail}
+              onChange={(e) => setHeaderEmail(e.target.value)}
+              placeholder="your@email.com"
+              type="email"
+              style={{
+                padding: "5px 12px", background: "rgba(245,240,232,0.06)",
+                border: "1px solid rgba(245,240,232,0.15)", borderRadius: 4,
+                color: warm, fontFamily: body, fontSize: "0.75rem",
+                outline: "none", width: 160
+              }} />
             <button
-            onClick={() => {if (headerEmail.includes("@")) setHeaderSubmitted(true);}}
-            style={{
-              padding: "5px 16px", background: gold, color: dark,
-              fontFamily: heading, fontWeight: 700, fontSize: "0.7rem",
-              letterSpacing: "0.05em", border: "none", borderRadius: 4,
-              cursor: "pointer", whiteSpace: "nowrap"
-            }}>
-            
+              onClick={() => {if (headerEmail.includes("@")) setHeaderSubmitted(true);}}
+              style={{
+                padding: "5px 16px", background: gold, color: dark,
+                fontFamily: heading, fontWeight: 700, fontSize: "0.7rem",
+                letterSpacing: "0.05em", border: "none", borderRadius: 4,
+                cursor: "pointer", whiteSpace: "nowrap"
+              }}>
               Join
             </button>
           </div>
         }
       </header>
-      <div style={{ height: 46 }} /> {/* header spacer */}
+      <div style={{ height: 46 }} />
+
       {/* 1. HERO */}
       <Slide>
         <Big size="clamp(3.5rem,10vw,8rem)">My Voice + Your Voice</Big>
         <Reveal delay={0.3}><div style={{ fontFamily: heading, fontSize: "clamp(2rem,5vw,3.5rem)", fontStyle: "italic", color: gold, marginTop: 24 }}>= Our Country</div></Reveal>
       </Slide>
 
-      {/* 2. CORPORATIONS */}
+      {/* 2. NOT CORPORATIONS */}
       <Slide>
-        <Big size="clamp(1.8rem,4vw,3rem)" weight={400}>NOT CORPORATIONS<br /><br />NOT FOREIGN NATIONS...<br /><br />NOT AI!</Big>
-        <Sub>{"\n"}</Sub>
+        <Big size="clamp(1.8rem,4vw,3rem)" weight={400}>NOT CORPORATIONS.<br /><br />NOT FOREIGN NATIONS.<br /><br />NOT ALGORITHMS.</Big>
       </Slide>
 
-
-      {/* 4. DIVISION */}
+      {/* 3. CITIZENS UNITED */}
       <Slide>
         <Big size="clamp(1.5rem,3vw,2.2rem)" weight={400} color={soft}>CITIZENS UNITED WAS DESIGNED <br />TO DIVIDE US</Big>
         <FlashZero />
-        <Sub size="clamp(1rem,2vw,1.15rem)">How did we get so tricked into hating each other...<br />Even within our own families!<br /><br />It was all done under disguise of a really deceptive name. <br /><br />CITIZENS UNITED</Sub>
+        <Sub size="clamp(1rem,2vw,1.15rem)">How did we get so tricked into hating each other...<br />Even within our own families?<br /><br />It was all done under the disguise of a deceptive name:<br /><br />CITIZENS UNITED</Sub>
       </Slide>
 
-      {/* 5. ANIMATED ≠ */}
+      {/* 4. ANIMATED ≠ */}
       <Slide bg="#FAF6F0">
         <Reveal><AnimatedNotEqual /></Reveal>
         <Spacer h={24} />
-        <Big size="clamp(2rem,5vw,3.5rem)" color={red}>and they've taken over everything</Big>
+        <Big size="clamp(2rem,5vw,3.5rem)" color={red}>And they've taken over everything.</Big>
+      </Slide>
+
+      {/* 5. CANCER / $5 BILLION TUMOR */}
+      <Slide bg={dark} style={{ color: warm }}>
+        <Big size="clamp(1.5rem,3vw,2.2rem)" color={soft} weight={400}>What is Cancer? Cancer is when a system only feeds itself.</Big>
+        <Spacer h={16} />
+        <Reveal delay={0.15}>
+          <div style={{ fontFamily: heading, fontSize: "clamp(2.2rem,5.5vw,4rem)", fontWeight: 900 }}>
+            <span style={{ color: red }}>me </span>
+            <span style={{ color: soft, fontSize: "0.5em", margin: "0 16px" }}>{'>'}</span>
+            <span style={{ color: gold }}> all of you</span>
+          </div>
+        </Reveal>
+        <Spacer h={32} />
+        <Sub color="rgba(245,240,232,0.6)" size="clamp(1.1rem,2.5vw,1.4rem)">And today, corporate political spending is a<br /><span style={{ color: red, fontWeight: 700, fontSize: "1.3em" }}>$5 billion-a-year tumor</span><br />on our democracy.</Sub>
       </Slide>
 
       {/* 6. STAGE 4 */}
@@ -513,12 +365,12 @@ const Index = () => {
         <Reveal delay={0.2}>
           <div style={{ maxWidth: 580, textAlign: "left" }}>
             {[
-            { num: "1", icon: "❤️", title: "Healthcare", l1: "When ", b: "corporations", l2: " take 30% of every dollar,", l3: "to dictate the access and use of the other 70%." },
-            { num: "2", icon: "🤖", title: "Technology", l1: "When ", b: "corporations", l2: " build machines optimized to amuse and confuse us, ", l3: "till we no longer know who or what to believe." },
-            { num: "3", icon: "🏛️", title: "Politics", l1: "When ", b: "corporations", l2: " own the lawmakers who write the rules, ", l3: "the rules will only apply to you." },
-            { num: "4", icon: "📺", title: "Media", l1: "When ", b: "corporations", l2: " fill your feed with rage, ", l3: "you're the bait that lures more citizens into hate." }].
-            map((item, i) =>
-            <div key={i} style={{ marginBottom: 36, paddingBottom: 36, borderBottom: i < 3 ? "1px solid rgba(245,240,232,0.06)" : "none" }}>
+              { num: "1", icon: "❤️", title: "Healthcare", l1: "When ", b: "corporations", l2: " take 30% of every dollar,", l3: "to dictate the access and use of the other 70%." },
+              { num: "2", icon: "🤖", title: "Technology", l1: "When ", b: "corporations", l2: " build machines optimized to amuse and confuse us, ", l3: "till we no longer know who or what to believe." },
+              { num: "3", icon: "🏛️", title: "Politics", l1: "When ", b: "corporations", l2: " own the lawmakers who write the rules, ", l3: "the rules will only apply to you." },
+              { num: "4", icon: "📺", title: "Media", l1: "When ", b: "corporations", l2: " fill your feed with rage, ", l3: "you're the bait that lures more citizens into hate." }
+            ].map((item, i) =>
+              <div key={i} style={{ marginBottom: 36, paddingBottom: 36, borderBottom: i < 3 ? "1px solid rgba(245,240,232,0.06)" : "none" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 12 }}>
                   <span style={{ fontSize: "1.4em" }}>{item.icon}</span>
                   <span style={{ fontFamily: heading, fontSize: "clamp(1.3rem,3vw,1.8rem)", fontWeight: 900, color: gold }}>{item.num}. {item.title}</span>
@@ -532,39 +384,24 @@ const Index = () => {
         </Reveal>
       </Slide>
 
-      {/* 7. CANCER DEFINED */}
-      <Slide bg={dark} style={{ color: warm }}>
-        <Big size="clamp(1.5rem,3vw,2.2rem)" color={soft} weight={400}>What is Cancer? Cancer is when...</Big>
-        <Spacer h={16} />
-        <Reveal delay={0.15}>
-          <div style={{ fontFamily: heading, fontSize: "clamp(2.2rem,5.5vw,4rem)", fontWeight: 900 }}>
-            <span style={{ color: red }}>me </span>
-            <span style={{ color: soft, fontSize: "0.5em", margin: "0 16px" }} className="text-5xl">{'>'}</span>
-            <span style={{ color: gold }}> all of you</span>
-          </div>
-        </Reveal>
-        <Spacer h={32} />
-        <Sub color="rgba(245,240,232,0.6)" size="clamp(1.1rem,2.5vw,1.4rem)">And today '<span style={{ color: warm, fontWeight: 600 }}>me</span>' means corporations (and ai?) too.</Sub>
-      </Slide>
-
-      {/* 8. WE ARE THE EQUATION */}
+      {/* 7. WE ARE THE EQUATION */}
       <Slide>
         <Big size="clamp(1.5rem,3vw,2.2rem)" weight={400} color={soft}>But here's what they forgot...</Big>
         <Spacer h={20} />
-        <Big size="clamp(2.2rem,6vw,4.5rem)">The math is made up<br />of real people!</Big>
+        <Big size="clamp(2.2rem,6vw,4.5rem)">We the people are their<br />customers!</Big>
         <Reveal delay={0.2}><SplitFlap /></Reveal>
       </Slide>
 
-      {/* 9. CONTROL */}
+      {/* 8. CONTROL */}
       <Slide bg="#FAF6F0">
-        <Big size="clamp(1.5rem,3vw,2.2rem)" weight={400} color={soft}>So How Can We The People Re-Seize The System?<br /><br />We 'Pass The Pump!'<br /><br />Because...{"\n"}</Big>
+        <Big size="clamp(1.5rem,3vw,2.2rem)" weight={400} color={soft}>So How Can We The People Re-Seize The System?<br /><br />We 'Pass The Pump!'<br /><br />Because...</Big>
         <Spacer h={24} />
         <Big size="clamp(2.5rem,7vw,5rem)" color={gold}>you + me = control</Big>
       </Slide>
 
-      {/* 10. HERE'S HOW */}
+      {/* 9. UNTIL ZERO */}
       <Slide>
-        <Big size="clamp(2.5rem,6vw,4.5rem)" color={gold}>Until We All Pass the 28th Amendment...</Big>
+        <Big size="clamp(2.5rem,6vw,4.5rem)" color={gold}>Until The Spending Hits Zero...</Big>
         <Spacer h={40} />
         <Big size="clamp(3rem,8vw,6rem)">We Will All <br />Pass the Pump.</Big>
         <Sub size="clamp(1.15rem,2.5vw,1.45rem)">Using our dollars to direct their influence.</Sub>
@@ -572,22 +409,20 @@ const Index = () => {
         <Reveal delay={0.2}><LogoScroll /></Reveal>
       </Slide>
 
-      {/* 11. WHAT DO YOU DO */}
+      {/* 10. WHAT DO WE DO */}
       <Slide bg="#FAF6F0">
         <Big size="clamp(2rem,5vw,3.5rem)">What do we need to do?</Big>
         <Spacer h={32} />
         <div style={{ maxWidth: 520, width: "100%", textAlign: "left" }}>
-          <Step num={1} emoji="👀" title="See which gas station is on the list."
-          desc="Check who's up this month. Right now it's Shell only because they are the largest." />
+          <Step num={1} emoji="👀" title="See which gas station is on the active target list."
+            desc="Check who's up this month. Right now it's Shell only because they are the largest." />
           <Step num={2} emoji="🚗" title="Drive right past them. That's all!"
-          desc="Skip that station. Honk to show them support. They're in this with us." />
+            desc="Skip that station. Honk to show them support. They're in this with us." />
           <Step num={3} emoji="⛽" title="Head to the next pump."
-          desc="Go to the next brand down the street. That's it. Every 2 weeks we add the next largest company. And when any company takes the pledge we take them off the list." />
+            desc="Go to the next brand down the street. That's it. Every 2 weeks we add the next largest company. When any company takes the pledge, we celebrate them and take them off the list." />
         </div>
         <Chant color={gold}>We pass the pump<br />They get the message.</Chant>
         <Spacer h={24} />
-        <Big size="clamp(1.6rem,3.5vw,2.5rem)" color={dark} weight={700}>To equal or surpass their current lobbying spend in Congress to ratify and pass the 28th Amendment in every State (only 17 more to go).<br /><br />This amendment removes money from politics!</Big>
-        <Spacer h={16} />
         <Reveal delay={0.15}>
           <div style={{ background: "rgba(26,24,20,0.04)", border: "1px solid rgba(26,24,20,0.08)", borderRadius: 12, padding: "28px 36px", maxWidth: 480, margin: "0 auto" }}>
             <div style={{ fontFamily: heading, fontSize: "clamp(1.3rem,3vw,2rem)", fontWeight: 900, color: dark }}>One month of diverted sales from Shell...</div>
@@ -596,53 +431,100 @@ const Index = () => {
               12,283 stations × $4,200 avg. monthly corporate margin
             </div>
             <div style={{ width: 40, height: 2, background: gold, margin: "16px auto 0", opacity: 0.4 }} />
-            <div style={{ fontFamily: heading, fontSize: "clamp(1.1rem,2.5vw,1.4rem)", fontStyle: "italic", color: dark, marginTop: 16 }}>May seem small to them... 
-But the impact for us is priceless!
-</div>
+            <div style={{ fontFamily: heading, fontSize: "clamp(1.1rem,2.5vw,1.4rem)", fontStyle: "italic", color: dark, marginTop: 16 }}>May seem small to them...{" "}
+              But the impact for us is priceless!
+            </div>
           </div>
         </Reveal>
         <Spacer h={20} />
         <Sub color={soft} size="clamp(1rem,2vw,1.15rem)">And the list will grow.<br />Till we reach every Petrol CEO.</Sub>
       </Slide>
 
-      {/* 12. WHAT THE CEOs MUST SAY */}
+      {/* 11. THE DEMAND IS SIMPLE — POWER OF ZERO */}
       <Slide bg={dark} style={{ color: warm }}>
-        <Big size="clamp(2rem,5vw,3.5rem)" color={warm}>What the CEOs must say.</Big>
+        <Reveal><div style={{ fontFamily: mono, fontSize: "0.65rem", letterSpacing: "0.3em", color: soft, marginBottom: 16 }}>THE POWER OF ZERO</div></Reveal>
+        <Big size="clamp(2rem,5vw,3.5rem)" color={warm}>The Demand is Simple.</Big>
+        <Spacer h={24} />
+        <Reveal delay={0.15}>
+          <div style={{ fontFamily: heading, fontSize: "clamp(2.5rem,6vw,4.5rem)", fontWeight: 900, color: gold, lineHeight: 1.2 }}>
+            $0.00
+          </div>
+        </Reveal>
+        <Spacer h={24} />
+        <Reveal delay={0.2}>
+          <div style={{ fontFamily: body, fontSize: "clamp(1.1rem,2.5vw,1.4rem)", color: "rgba(245,240,232,0.7)", lineHeight: 1.8, maxWidth: 520 }}>
+            We want <span style={{ color: warm, fontWeight: 700 }}>nothing.</span><br />
+            We want them to <span style={{ color: warm, fontWeight: 700 }}>give nothing.</span><br />
+            We want our politicians to <span style={{ color: warm, fontWeight: 700 }}>take nothing.</span><br /><br />
+            <span style={{ color: gold, fontWeight: 700, fontStyle: "italic", fontSize: "1.15em" }}>Mutual disarmament.</span>
+          </div>
+        </Reveal>
+      </Slide>
+
+      {/* 12. CEO ZERO PLEDGE */}
+      <Slide bg={dark} style={{ color: warm }}>
+        <Big size="clamp(2rem,5vw,3.5rem)" color={warm}>What the CEOs must pledge.</Big>
         <Big size="clamp(1.5rem,3vw,2.2rem)" color={gold} weight={400} style={{ marginTop: 12 }}>On Camera. To America.</Big>
         <Spacer h={40} />
         <Reveal delay={0.1}>
-          <div style={{ maxWidth: 600, margin: "0 auto" }}>
-            {[{ num: "1", text: "\"Our company will fully fund all campaigns to pass the 28th Amendment in all 50 states, until it is ratified.\"" }, { num: "2", text: "\"Corporations are not people. The Constitution belongs only to citizens, who are living people.\"" },
-            { num: "3", text: "\"We are proud to support Pass the Pump and pass the 28th Amendment. We call on every other company to join us in giving complete democratic power back to the people.\"" }].
-            map((d, i) =>
-            <div key={i} style={{ display: "flex", gap: 20, alignItems: "flex-start", textAlign: "left", marginBottom: 32, paddingBottom: 32, borderBottom: i < 2 ? "1px solid rgba(245,240,232,0.06)" : "none" }}>
-                <div style={{ fontFamily: heading, fontSize: "2.5rem", fontWeight: 900, color: gold, lineHeight: 1, minWidth: 40 }}>{d.num}</div>
-                <div style={{ fontFamily: heading, fontSize: "clamp(1.1rem,2.5vw,1.4rem)", fontStyle: "italic", color: warm, lineHeight: 1.5 }}>{d.text}</div>
-              </div>
-            )}
-          </div>
-        </Reveal>
-        <Chant color={gold}>Three Sentences.<br />Pledged On Camera.<br />To The Country.</Chant>
-        <Spacer h={40} />
-        <Reveal delay={0.3}>
-          <div style={{ maxWidth: 440, margin: "0 auto", display: "flex", flexDirection: "column", gap: 16 }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 16, padding: "16px 24px", borderRadius: 8, background: "rgba(212,175,55,0.08)", border: "1px solid rgba(212,175,55,0.2)" }}>
-              <span style={{ fontSize: "1.4rem" }}>✅</span>
-              <div>
-                <div style={{ fontFamily: heading, fontSize: "1.1rem", fontWeight: 700, color: gold }}>Pledge = Celebrated and off the list.</div>
-              </div>
-            </div>
-            <div style={{ display: "flex", alignItems: "center", gap: 16, padding: "16px 24px", borderRadius: 8, background: "rgba(155,58,58,0.08)", border: "1px solid rgba(155,58,58,0.2)" }}>
-              <span style={{ fontSize: "1.4rem" }}>🔴</span>
-              <div>
-                <div style={{ fontFamily: heading, fontSize: "1.1rem", fontWeight: 700, color: red }}>Failure = Back on the list to be skipped.</div>
-              </div>
+          <div style={{
+            maxWidth: 640, margin: "0 auto", padding: "40px 48px",
+            background: "linear-gradient(135deg, rgba(212,175,55,0.08), rgba(212,175,55,0.02))",
+            border: `2px solid ${gold}`, borderRadius: 16
+          }}>
+            <div style={{ fontFamily: mono, fontSize: "0.6rem", letterSpacing: "0.3em", color: soft, marginBottom: 20 }}>THE CEO ZERO PLEDGE</div>
+            <div style={{ fontFamily: heading, fontSize: "clamp(1.1rem,2.5vw,1.4rem)", fontStyle: "italic", color: warm, lineHeight: 1.7 }}>
+              "Our company will immediately and permanently reduce our political PAC contributions, dark money donations, and lobbying expenditures to <span style={{ color: gold, fontWeight: 700, fontSize: "1.2em" }}>$0.00</span>.<br /><br />
+              We are getting our money out of your government."
             </div>
           </div>
         </Reveal>
       </Slide>
 
-      {/* 13. THE LIST */}
+      {/* 13. 2026 CANDIDATE ZERO PLEDGE */}
+      <Slide bg={dark} style={{ color: warm }}>
+        <Big size="clamp(2rem,5vw,3.5rem)" color={warm}>The 2026 Candidate Pledge.</Big>
+        <Big size="clamp(1.5rem,3vw,2.2rem)" color={gold} weight={400} style={{ marginTop: 12 }}>Every race. Every state.</Big>
+        <Spacer h={40} />
+        <Reveal delay={0.1}>
+          <div style={{
+            maxWidth: 640, margin: "0 auto", padding: "40px 48px",
+            background: "linear-gradient(135deg, rgba(245,240,232,0.06), rgba(245,240,232,0.02))",
+            border: "2px solid rgba(245,240,232,0.2)", borderRadius: 16
+          }}>
+            <div style={{ fontFamily: mono, fontSize: "0.6rem", letterSpacing: "0.3em", color: soft, marginBottom: 20 }}>THE 2026 CANDIDATE ZERO PLEDGE</div>
+            <div style={{ fontFamily: heading, fontSize: "clamp(1.1rem,2.5vw,1.4rem)", fontStyle: "italic", color: warm, lineHeight: 1.7 }}>
+              "I pledge to accept <span style={{ color: gold, fontWeight: 700, fontSize: "1.2em" }}>$0.00</span> from Corporate PACs and dark money groups.<br /><br />
+              I work for the voters, not the donors."
+            </div>
+          </div>
+        </Reveal>
+        <Spacer h={40} />
+        <Reveal delay={0.3}>
+          <div style={{ maxWidth: 440, margin: "0 auto", display: "flex", flexDirection: "column", gap: 16 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 16, padding: "16px 24px", borderRadius: 8, background: "rgba(212,175,55,0.08)", border: "1px solid rgba(212,175,55,0.2)" }}>
+              <span style={{ fontSize: "1.4rem" }}>✅</span>
+              <div style={{ fontFamily: heading, fontSize: "1.1rem", fontWeight: 700, color: gold }}>Pledge = Celebrated and off the list.</div>
+            </div>
+            <div style={{ display: "flex", alignItems: "center", gap: 16, padding: "16px 24px", borderRadius: 8, background: "rgba(155,58,58,0.08)", border: "1px solid rgba(155,58,58,0.2)" }}>
+              <span style={{ fontSize: "1.4rem" }}>🔴</span>
+              <div style={{ fontFamily: heading, fontSize: "1.1rem", fontWeight: 700, color: red }}>Failure = Back on the list to be skipped.</div>
+            </div>
+          </div>
+        </Reveal>
+      </Slide>
+
+      {/* 14. ZERO SCOREBOARD */}
+      <Slide bg={dark} style={{ color: warm }}>
+        <Reveal><div style={{ fontFamily: mono, fontSize: "0.65rem", letterSpacing: "0.3em", color: soft, marginBottom: 16 }}>THE SCOREBOARD</div></Reveal>
+        <Big size="clamp(2rem,5vw,3.5rem)" color={gold}>The Goal is Zero.</Big>
+        <Spacer h={40} />
+        <ZeroScoreboard />
+        <Spacer h={32} />
+        <Sub color="rgba(245,240,232,0.5)" size="clamp(1rem,2vw,1.15rem)">When they pledge zero, they get celebrated.<br />Until then, we pass the pump.</Sub>
+      </Slide>
+
+      {/* 15. THE GAS STATION LIST */}
       <section style={{ padding: "clamp(80px,12vw,140px) 32px", background: dark, textAlign: "center" }}>
         <div style={{ maxWidth: 700, margin: "0 auto" }}>
           <Reveal><div style={{ fontFamily: mono, fontSize: "0.65rem", letterSpacing: "0.3em", color: soft, marginBottom: 12 }}>WHY THIS LIST?</div></Reveal>
@@ -652,11 +534,11 @@ But the impact for us is priceless!
               <div style={{ fontFamily: heading, fontSize: "clamp(1.5rem,3vw,2.2rem)", fontWeight: 700, color: gold, marginBottom: 24 }}>Why gas stations?</div>
               <div style={{ textAlign: "left" }}>
                 {[
-                { emoji: "🔄", text: "It's easy. You just vote with your steering wheel and go to the next one." },
-                { emoji: "📍", text: "They're ubiquitous. 150,000 stations across America. Almost everyone can join in regardless of party." },
-                { emoji: "🌍", text: "They're owned by the biggest corporations from all over the world — so most of the damage won't be felt here." }].
-                map((b, i) =>
-                <div key={i} style={{ display: "flex", gap: 14, alignItems: "flex-start", marginBottom: 16 }}>
+                  { emoji: "🔄", text: "It's easy. You just vote with your steering wheel and go to the next one." },
+                  { emoji: "📍", text: "They're ubiquitous. 150,000 stations across America. Almost everyone can join in regardless of party." },
+                  { emoji: "🌍", text: "They're owned by the biggest corporations from all over the world — so most of the damage won't be felt here." }
+                ].map((b, i) =>
+                  <div key={i} style={{ display: "flex", gap: 14, alignItems: "flex-start", marginBottom: 16 }}>
                     <span style={{ fontSize: "1.2rem", flexShrink: 0, marginTop: 2 }}>{b.emoji}</span>
                     <span style={{ fontFamily: body, fontSize: "clamp(0.95rem,2vw,1.1rem)", color: "rgba(245,240,232,0.6)", lineHeight: 1.6 }}>{b.text}</span>
                   </div>
@@ -668,20 +550,20 @@ But the impact for us is priceless!
           <Reveal><div style={{ fontFamily: heading, fontSize: "clamp(1.8rem,4vw,2.8rem)", fontWeight: 700, color: warm, marginBottom: 40 }}>Largest to smallest.</div></Reveal>
 
           {companies.map((c, i) =>
-          <Reveal key={c.name} delay={i * 0.06}>
+            <Reveal key={c.name} delay={i * 0.06}>
               <div style={{
-              display: "grid", gridTemplateColumns: "52px 1fr auto",
-              alignItems: "center", gap: 16, padding: "14px 0",
-              borderBottom: "1px solid rgba(245,240,232,0.06)",
-              maxWidth: 560, margin: "0 auto"
-            }}>
+                display: "grid", gridTemplateColumns: "52px 1fr auto",
+                alignItems: "center", gap: 16, padding: "14px 0",
+                borderBottom: "1px solid rgba(245,240,232,0.06)",
+                maxWidth: 560, margin: "0 auto"
+              }}>
                 <div className={i === 0 ? "target-pulse" : ""} style={{
-                width: 44, height: 44, borderRadius: "50%",
-                background: i === 0 ? red : "rgba(245,240,232,0.06)",
-                display: "flex", alignItems: "center", justifyContent: "center",
-                fontFamily: mono, fontSize: i === 0 ? "1.1rem" : "0.75rem",
-                color: i === 0 ? "white" : soft, fontWeight: 700
-              }}>{i === 0 ? "🎯" : i + 1}</div>
+                  width: 44, height: 44, borderRadius: "50%",
+                  background: i === 0 ? red : "rgba(245,240,232,0.06)",
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                  fontFamily: mono, fontSize: i === 0 ? "1.1rem" : "0.75rem",
+                  color: i === 0 ? "white" : soft, fontWeight: 700
+                }}>{i === 0 ? "🎯" : i + 1}</div>
                 <div style={{ textAlign: "left" }}>
                   <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                     <div style={{ padding: "5px 14px", borderRadius: 5, background: c.bg, minWidth: 60, textAlign: "center", boxShadow: "0 2px 6px rgba(0,0,0,0.15)", borderBottom: `2px solid ${c.accent}` }}>
@@ -700,7 +582,7 @@ But the impact for us is priceless!
 
           <Reveal delay={0.7}>
             <div style={{ fontFamily: body, fontSize: "clamp(1rem,2vw,1.2rem)", color: "rgba(245,240,232,0.4)", marginTop: 40, lineHeight: 1.8 }}>
-              By January — <span style={{ color: gold }}>every major oil brand in America except the hero's that pledge.</span>
+              By January — <span style={{ color: gold }}>every major oil brand in America except the heroes that pledge.</span>
             </div>
           </Reveal>
 
@@ -735,7 +617,7 @@ But the impact for us is priceless!
                   </div>
                 </div>
               </div>
-              <div style={{ fontFamily: mono, fontSize: "0.6rem", letterSpacing: "0.25em", color: soft }}>THE 28TH AMENDMENT</div>
+              <div style={{ fontFamily: mono, fontSize: "0.6rem", letterSpacing: "0.25em", color: soft }}>THE POWER OF ZERO</div>
             </div>
           </Reveal>
           <Spacer h={40} />
@@ -743,24 +625,7 @@ But the impact for us is priceless!
         </div>
       </section>
 
-      {/* 14. THIS ENDS */}
-      <Slide bg={dark} style={{ color: warm }}>
-        <Big size="clamp(2rem,5vw,3.5rem)" color={gold}>This ends when the<br />28th Amendment passes.</Big>
-        <Spacer h={20} />
-        <Reveal delay={0.15}>
-          <div style={{ fontFamily: body, fontSize: "clamp(1rem,2vw,1.2rem)", color: "rgba(245,240,232,0.5)", lineHeight: 1.8, maxWidth: 480 }}>
-            A constitutional amendment requires <span style={{ color: warm, fontWeight: 600 }}>38 states</span> to ratify.<br />
-            That's three-quarters of the country.<br /><br />
-            Right now, <span style={{ color: gold, fontWeight: 700 }}>{ratifiedCount} states</span> have called for an amendment<br />
-            to overturn corporate personhood.<br /><br />
-            We need <span style={{ color: red, fontWeight: 700 }}>{neededCount} more.</span>
-          </div>
-        </Reveal>
-        <Spacer h={48} />
-        <Reveal delay={0.25}><InteractiveMap /></Reveal>
-      </Slide>
-
-      {/* 15. FRANCHISEES */}
+      {/* 16. FRANCHISEES */}
       <Slide>
         <Big size="clamp(1.8rem,4vw,3rem)" weight={400} color={soft}>Now let's talk about</Big>
         <Big size="clamp(2rem,5vw,3.5rem)">the people on the front lines.</Big>
@@ -779,7 +644,7 @@ But the impact for us is priceless!
         </Reveal>
       </Slide>
 
-      {/* 16. AMERICAN HEROES */}
+      {/* 17. AMERICAN HEROES */}
       <Slide bg="#FAF6F0">
         <Big size="clamp(2rem,5vw,4rem)" color={gold}>And they are American Heroes.</Big>
         <Sub color={dark}>The franchisees who stand with us<br />are on the front lines of<br />taking back our country.</Sub>
@@ -790,20 +655,24 @@ But the impact for us is priceless!
           We support their families through the transition.<br />
           We make sure the world knows what they sacrificed.
         </Sub>
-        <Chant color={gold}>The pain is temporary.<br />The amendment is forever.</Chant>
+        <Chant color={gold}>The pain is temporary.<br />The goal is zero.</Chant>
       </Slide>
 
-      {/* 17. TO DIVIDE US */}
+      {/* 18. TO DIVIDE US */}
       <Slide bg={dark} style={{ color: warm }}>
-        <Big size="clamp(2.5rem,7vw,5.5rem)" color={gold}>Trying To Divide Us</Big>
-        <Big size="clamp(2.5rem,7vw,5.5rem)" color={gold} style={{ marginTop: 8 }}>Only Multiplies Us!</Big>
+        <Big size="clamp(2.5rem,7vw,5.5rem)" color={gold}>They Divide Us</Big>
+        <Big size="clamp(2.5rem,7vw,5.5rem)" color={gold} style={{ marginTop: 8 }}>You Unite Us!</Big>
+        <Spacer h={20} />
+        <Reveal delay={0.15}>
+          <div style={{ fontFamily: heading, fontSize: "clamp(2rem,5vw,3.5rem)", fontWeight: 900, color: warm }}>The goal is <span style={{ color: gold }}>ZERO.</span></div>
+        </Reveal>
         <Spacer h={12} />
         <Big size="clamp(2rem,5vw,3.5rem)" color={warm}>Pass the Pump.</Big>
         <Spacer h={48} />
         <Reveal delay={0.3}><LogoScrollDark /></Reveal>
       </Slide>
 
-      {/* 18. SIGNUP */}
+      {/* 19. SIGNUP */}
       <section id="signup" style={{ padding: "clamp(80px,12vw,140px) 32px", background: dark, textAlign: "center" }}>
         <div style={{ maxWidth: 700, margin: "0 auto" }}>
           <Reveal><Counter /></Reveal>
@@ -815,7 +684,7 @@ But the impact for us is priceless!
         </div>
       </section>
 
-      {/* 19. PATREON */}
+      {/* 20. PATREON */}
       <Slide bg="#FAF6F0">
         <Big size="clamp(1.8rem,4vw,3rem)" weight={700}>Keep this going.</Big>
         <Sub color={dark}>This site, this movement, this pressure —<br />it runs on people, not corporations.<br />That's the whole point.</Sub>
@@ -831,7 +700,7 @@ But the impact for us is priceless!
         <Reveal delay={0.25}>
           <button onClick={() => {
             if (navigator.share) {
-              navigator.share({ title: "Pass the Pump — The 28th Amendment", text: "me + you = democracy. Pass the Pump.", url: window.location.href });
+              navigator.share({ title: "Pass the Pump — The Power of Zero", text: "Give zero. Take zero. Pass the Pump.", url: window.location.href });
             } else {
               navigator.clipboard.writeText(window.location.href);
               const btn = document.getElementById("share-btn");
@@ -847,7 +716,7 @@ But the impact for us is priceless!
         </Reveal>
       </Slide>
 
-      {/* 20. FINAL */}
+      {/* 21. FINAL */}
       <Slide bg={dark} style={{ color: warm }}>
         <Big size="clamp(2.5rem,7vw,5.5rem)" color={warm}>me + you</Big>
         <Reveal delay={0.2}><div style={{ fontFamily: heading, fontSize: "clamp(2rem,5vw,3.5rem)", fontStyle: "italic", color: gold, marginTop: 20 }}>= america</div></Reveal>
@@ -862,7 +731,8 @@ But the impact for us is priceless!
         <Reveal delay={0.7}>
           <div style={{ fontFamily: body, fontSize: "clamp(1rem,2.2vw,1.3rem)", color: "rgba(245,240,232,0.4)", lineHeight: 1.8 }}>
             They divide us.<br />
-            <span style={{ color: warm, fontWeight: 600 }}>You</span> unite us.
+            <span style={{ color: warm, fontWeight: 600 }}>You</span> unite us.<br />
+            The goal is <span style={{ color: gold, fontWeight: 700 }}>ZERO.</span>
           </div>
         </Reveal>
         <Spacer h={16} />
@@ -871,10 +741,9 @@ But the impact for us is priceless!
             Pass the Pump.
           </div>
         </Reveal>
-        <Reveal delay={1}><div style={{ fontFamily: mono, fontSize: "0.6rem", letterSpacing: "0.25em", color: "rgba(245,240,232,0.15)", marginTop: 32 }}>THE 28TH AMENDMENT</div></Reveal>
+        <Reveal delay={1}><div style={{ fontFamily: mono, fontSize: "0.6rem", letterSpacing: "0.25em", color: "rgba(245,240,232,0.15)", marginTop: 32 }}>THE POWER OF ZERO</div></Reveal>
       </Slide>
     </div>);
-
 };
 
 export default Index;
