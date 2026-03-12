@@ -613,7 +613,7 @@ But the impact for us is priceless!
         <Reveal delay={0.1}>
           <div style={{ maxWidth: 600, margin: "0 auto" }}>
             {[{ num: "1", text: "\"Our company will fully fund all campaigns to pass the 28th Amendment in all 50 states, until it is ratified.\"" }, { num: "2", text: "\"Corporations are not people. The Constitution belongs only to citizens, who are living people.\"" },
-            { num: "3", text: "\"We are proud to support Pass the Pump to pass the 28th Amendment. We call on every other company to join us in giving complete power back to the people.\"" }].
+            { num: "3", text: "\"We are proud to support Pass the Pump and pass the 28th Amendment. We call on every other company to join us in giving complete democratic power back to the people.\"" }].
             map((d, i) =>
             <div key={i} style={{ display: "flex", gap: 20, alignItems: "flex-start", textAlign: "left", marginBottom: 32, paddingBottom: 32, borderBottom: i < 2 ? "1px solid rgba(245,240,232,0.06)" : "none" }}>
                 <div style={{ fontFamily: heading, fontSize: "2.5rem", fontWeight: 900, color: gold, lineHeight: 1, minWidth: 40 }}>{d.num}</div>
