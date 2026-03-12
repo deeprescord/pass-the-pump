@@ -70,7 +70,7 @@ function FlashZero() {
       <span style={{ color: red, fontSize: "0.7em", margin: "0 12px" }}>÷</span>
       <span className="flash-you">you</span>
       <span style={{ color: "#444", fontSize: "0.6em", margin: "0 12px" }}>=</span>
-      <span style={{ color: red }}>we all lose</span>
+      <span style={{ color: red }}>we lose everything</span>
     </div>);
 
 }
@@ -596,7 +596,9 @@ const Index = () => {
               12,283 stations × $4,200 avg. monthly corporate margin
             </div>
             <div style={{ width: 40, height: 2, background: gold, margin: "16px auto 0", opacity: 0.4 }} />
-            <div style={{ fontFamily: heading, fontSize: "clamp(1.1rem,2.5vw,1.4rem)", fontStyle: "italic", color: dark, marginTop: 16 }}>But the impact is priceless!</div>
+            <div style={{ fontFamily: heading, fontSize: "clamp(1.1rem,2.5vw,1.4rem)", fontStyle: "italic", color: dark, marginTop: 16 }}>May seem small, 
+But the impact is priceless!
+</div>
           </div>
         </Reveal>
         <Spacer h={20} />
@@ -610,9 +612,7 @@ const Index = () => {
         <Spacer h={40} />
         <Reveal delay={0.1}>
           <div style={{ maxWidth: 600, margin: "0 auto" }}>
-            {[
-            { num: "1", text: "\"Our company will fully fund all campaigns to pass the 28th Amendment in all 50 states, until it is ratified.\"" },
-            { num: "2", text: "\"Corporations are not people. The Constitution belongs only to citizens, who are living people.\"" },
+            {[{ num: "1", text: "\"Our company will fully fund all campaigns to pass the 28th Amendment in all 50 states, until it is ratified.\"" }, { num: "2", text: "\"Corporations are not people. The Constitution belongs only to citizens, who are living people.\"" },
             { num: "3", text: "\"We are proud to support Pass the Pump to pass the 28th Amendment. We call on every other company to join us in giving complete power back to the people.\"" }].
             map((d, i) =>
             <div key={i} style={{ display: "flex", gap: 20, alignItems: "flex-start", textAlign: "left", marginBottom: 32, paddingBottom: 32, borderBottom: i < 2 ? "1px solid rgba(245,240,232,0.06)" : "none" }}>
