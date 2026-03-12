@@ -502,7 +502,7 @@ const Index = () => {
       <Slide bg="#FAF6F0">
         <Reveal><AnimatedNotEqual /></Reveal>
         <Spacer h={24} />
-        <Big size="clamp(2rem,5vw,3.5rem)" color={red}>is how corporations win.</Big>
+        <Big size="clamp(2rem,5vw,3.5rem)" color={red}>and they've taken over everything</Big>
       </Slide>
 
       {/* 6. STAGE 4 */}
