@@ -513,10 +513,10 @@ const Index = () => {
         <Reveal delay={0.2}>
           <div style={{ maxWidth: 580, textAlign: "left" }}>
             {[
-            { num: "1", icon: "❤️", title: "Healthcare", l1: "When ", b: "corporations", l2: " take 30% of every dollar,", l3: "and totally dictate the access and use of the other 70%." },
-            { num: "2", icon: "🤖", title: "Technology", l1: "When ", b: "corporations", l2: " build machines optimized to amuse and confuse us, ", l3: "our eyes no longer know who or what to believe." },
-            { num: "3", icon: "🏛️", title: "Politics", l1: "When ", b: "corporations", l2: " buy the people who write the rules, ", l3: "the rules start to only apply to us." },
-            { num: "4", icon: "📺", title: "Media", l1: "When ", b: "corporations", l2: " only fill your feed with rage, ", l3: "you become the bait that converts more citizens into hate." }].
+            { num: "1", icon: "❤️", title: "Healthcare", l1: "When ", b: "corporations", l2: " take 30% of every dollar,", l3: "to dictate the access and use of the other 70%." },
+            { num: "2", icon: "🤖", title: "Technology", l1: "When ", b: "corporations", l2: " build machines optimized to amuse and confuse us, ", l3: "till we no longer know who or what to believe." },
+            { num: "3", icon: "🏛️", title: "Politics", l1: "When ", b: "corporations", l2: " own the lawmakers who write the rules, ", l3: "the rules will only apply to you." },
+            { num: "4", icon: "📺", title: "Media", l1: "When ", b: "corporations", l2: " fill your feed with rage, ", l3: "you're the bait that lures more citizens into hate." }].
             map((item, i) =>
             <div key={i} style={{ marginBottom: 36, paddingBottom: 36, borderBottom: i < 3 ? "1px solid rgba(245,240,232,0.06)" : "none" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 12 }}>
