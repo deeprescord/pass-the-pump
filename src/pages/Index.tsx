@@ -574,15 +574,15 @@ const Index = () => {
 
       {/* 11. WHAT DO YOU DO */}
       <Slide bg="#FAF6F0">
-        <Big size="clamp(2rem,5vw,3.5rem)">What do you do?</Big>
+        <Big size="clamp(2rem,5vw,3.5rem)">What do we need to do?</Big>
         <Spacer h={32} />
         <div style={{ maxWidth: 520, width: "100%", textAlign: "left" }}>
           <Step num={1} emoji="👀" title="See which gas station is on the list."
-          desc="Check who's up this month. Right now it's Shell." />
+          desc="Check who's up this month. Right now it's Shell only because they are the largest." />
           <Step num={2} emoji="🚗" title="Drive right past them. That's all!"
           desc="Skip that station. Honk to show them support. They're in this with us." />
           <Step num={3} emoji="⛽" title="Head to the next pump."
-          desc="Go to the next brand down the street. That's it. Every month we add the next largest company." />
+          desc="Go to the next brand down the street. That's it. Every 2 weeks we add the next largest company. And when any company takes the pledge we take them off the list." />
         </div>
         <Chant color={gold}>You pass the pump.<br />They get the message.</Chant>
         <Spacer h={24} />
