@@ -795,8 +795,8 @@ But the impact is priceless!
 
       {/* 17. TO DIVIDE US */}
       <Slide bg={dark} style={{ color: warm }}>
-        <Big size="clamp(2.5rem,7vw,5.5rem)" color={gold}>Trying To Divide Us</Big>
-        <Big size="clamp(2.5rem,7vw,5.5rem)" color={gold} style={{ marginTop: 8 }}>Only Multiplies Us!</Big>
+        <Big size="clamp(2.5rem,7vw,5.5rem)" color={gold}>To Divide Us</Big>
+        <Big size="clamp(2.5rem,7vw,5.5rem)" color={gold} style={{ marginTop: 8 }}>Multiplies Us!</Big>
         <Spacer h={12} />
         <Big size="clamp(2rem,5vw,3.5rem)" color={warm}>Pass the Pump.</Big>
         <Spacer h={48} />
