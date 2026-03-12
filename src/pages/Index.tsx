@@ -645,7 +645,7 @@ But the impact for us is priceless!
       {/* 13. THE LIST */}
       <section style={{ padding: "clamp(80px,12vw,140px) 32px", background: dark, textAlign: "center" }}>
         <div style={{ maxWidth: 700, margin: "0 auto" }}>
-          <Reveal><div style={{ fontFamily: mono, fontSize: "0.65rem", letterSpacing: "0.3em", color: soft, marginBottom: 12 }}>THE LIST</div></Reveal>
+          <Reveal><div style={{ fontFamily: mono, fontSize: "0.65rem", letterSpacing: "0.3em", color: soft, marginBottom: 12 }}>WHY THIS LIST?</div></Reveal>
 
           <Reveal>
             <div style={{ marginBottom: 56, maxWidth: 480, margin: "0 auto 56px" }}>
