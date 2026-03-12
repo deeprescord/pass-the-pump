@@ -544,7 +544,7 @@ const Index = () => {
           </div>
         </Reveal>
         <Spacer h={32} />
-        <Sub color="rgba(245,240,232,0.6)" size="clamp(1.1rem,2.5vw,1.4rem)">And today '<span style={{ color: warm, fontWeight: 600 }}>me</span>' means corporations (and ai?) too.</Sub>
+        <Sub color="rgba(245,240,232,0.6)" size="clamp(1.1rem,2.5vw,1.4rem)">And today '<span style={{ color: warm, fontWeight: 600 }}>me</span>' includes corporations (and ai?) too.</Sub>
       </Slide>
 
       {/* 8. WE ARE THE EQUATION */}
