@@ -574,7 +574,7 @@ const Index = () => {
 
       {/* 11. WHAT DO YOU DO */}
       <Slide bg="#FAF6F0">
-        <Big size="clamp(2rem,5vw,3.5rem)">What do you do?</Big>
+        <Big size="clamp(2rem,5vw,3.5rem)">What do you need to do?</Big>
         <Spacer h={32} />
         <div style={{ maxWidth: 520, width: "100%", textAlign: "left" }}>
           <Step num={1} emoji="👀" title="See which gas station is on the list."
