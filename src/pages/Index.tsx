@@ -507,7 +507,7 @@ const Index = () => {
 
       {/* 6. STAGE 4 */}
       <Slide bg={dark} style={{ color: warm }}>
-        <Big size="clamp(1.6rem,3.5vw,2.5rem)" color={warm}>Now Our Country Has...</Big>
+        <Big size="clamp(1.6rem,3.5vw,2.5rem)" color={warm}>Citizens United Caused America's...</Big>
         <Reveal delay={0.1}><div style={{ fontFamily: heading, fontSize: "clamp(2.5rem,7vw,5rem)", fontWeight: 900, color: red, marginTop: 8 }}>Stage 4 Cancer.</div></Reveal>
         <Spacer h={48} />
         <Reveal delay={0.2}>
