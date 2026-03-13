@@ -325,21 +325,21 @@ const Index = () => {
 
       {/* 2. NOT CORPORATIONS */}
       <Slide>
-        <Big size="clamp(1.8rem,4vw,3rem)" weight={400}>NOT CORPORATIONS.<br /><br />NOT FOREIGN NATIONS.<br /><br />NOT ALGORITHMS.</Big>
+        <Big size="clamp(1.8rem,4vw,3rem)" weight={400}>NOT CORPORATIONS.<br /><br />NOT FOREIGN NATIONS.<br /><br />NOT ALGORITHMS NOR AI.</Big>
       </Slide>
 
       {/* 3. CITIZENS UNITED */}
       <Slide>
-        <Big size="clamp(1.5rem,3vw,2.2rem)" weight={400} color={soft}>CITIZENS UNITED WAS DESIGNED <br />TO DIVIDE US</Big>
+        <Big size="clamp(1.5rem,3vw,2.2rem)" weight={400} color={soft}>CITIZENS UNITED WAS DESIGNED <br />TO DIVIDE US BECAUSE</Big>
         <FlashZero />
-        <Sub size="clamp(1rem,2vw,1.15rem)">How did we get so tricked into hating each other...<br />Even within our own families?<br /><br />It was all done under the disguise of a deceptive name:<br /><br />CITIZENS UNITED</Sub>
+        <Sub size="clamp(1rem,2vw,1.15rem)">How did we get so tricked into hating each other...<br />It's happening within our own families?<br /><br />It was all done under the simple disguise of a deceptive name:<br /><br />CITIZENS UNITED<br /><br />And all the sudden money was speech and corporations were people.<br /></Sub>
       </Slide>
 
       {/* 4. ANIMATED ≠ */}
       <Slide bg="#FAF6F0">
         <Reveal><AnimatedNotEqual /></Reveal>
         <Spacer h={24} />
-        <Big size="clamp(2rem,5vw,3.5rem)" color={red}>And they've taken over everything.</Big>
+        <Big size="clamp(1.3rem,3vw,2rem)" color={red}>And all the sudden money became speech and <br />corporations became people, and we stopped being <br />a part of the equation.<br /></Big>
       </Slide>
 
       {/* 5. CANCER / $5 BILLION TUMOR */}
