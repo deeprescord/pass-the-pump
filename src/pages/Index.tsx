@@ -360,7 +360,7 @@ const Index = () => {
           </div>
         </Reveal>
         <Spacer h={32} />
-        <Sub color="rgba(245,240,232,0.6)" size="clamp(1.1rem,2.5vw,1.4rem)">And today, corporate political spending is a<br /><span style={{ color: red, fontWeight: 700, fontSize: "1.3em" }}>$5 billion-a-year tumor</span><br />on our democracy!</Sub>
+        <Sub color="rgba(245,240,232,0.6)" size="clamp(1.1rem,2.5vw,1.4rem)"><Sub color="rgba(245,240,232,0.6)" size="clamp(1.1rem,2.5vw,1.4rem)">Corporate Political Spending Is A<br /><span style={{ color: red, fontWeight: 700, fontSize: "1.3em" }}>$5 Billion-A-Year Tumor</span><br />On Our Democracy!</Sub></Sub>
       </Slide>
 
       {/* 6. STAGE 4 */}
