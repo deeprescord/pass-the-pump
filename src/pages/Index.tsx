@@ -335,12 +335,6 @@ const Index = () => {
         <Sub size="clamp(1rem,2vw,1.15rem)">How did we get so tricked into hating each other...<br />It's happening within our own families?<br /><br />It was all done under the simple disguise of a deceptive name:<br /><br />CITIZENS UNITED<br /><br />And all the sudden money was speech and corporations were people.<br /></Sub>
       </Slide>
 
-      {/* 4. ANIMATED ≠ */}
-      <Slide bg="#FAF6F0">
-        <Reveal><AnimatedNotEqual /></Reveal>
-        <Spacer h={24} />
-        <Big size="clamp(1.3rem,3vw,2rem)" color={red}>And all the sudden money became speech and <br />corporations became people, and we stopped being <br />a part of the equation.<br /></Big>
-      </Slide>
 
       {/* 5. CANCER / $5 BILLION TUMOR */}
       <Slide bg={dark} style={{ color: warm }}>
