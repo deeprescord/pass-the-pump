@@ -332,7 +332,7 @@ const Index = () => {
       <Slide>
         <Big size="clamp(1.5rem,3vw,2.2rem)" weight={400} color={soft}>CITIZENS UNITED WAS DESIGNED <br />TO DIVIDE US BECAUSE</Big>
         <FlashZero />
-        <Sub size="clamp(1rem,2vw,1.15rem)">How did we get so tricked into hating each other...<br />It's happening within our own families?<br /><br />It was all done under the simple disguise of a deceptive name:</Sub>
+        <Sub size="clamp(1rem,2vw,1.15rem)">How did we get so tricked into hating each other...<br />To where it's happening within our own families?<br /><br />It was all done under the simple disguise of a deceptive name:</Sub>
         <Spacer h={16} />
         <Reveal delay={0.2}>
           <div style={{
@@ -344,13 +344,13 @@ const Index = () => {
           </div>
         </Reveal>
         <Spacer h={16} />
-        <Sub size="clamp(1rem,2vw,1.15rem)">And all the sudden money was speech and corporations were people.<br /></Sub>
+        <Sub size="clamp(1rem,2vw,1.15rem)">Where all the sudden money was speech<br />and corporations were people.<br /></Sub>
       </Slide>
 
 
       {/* 5. CANCER / $5 BILLION TUMOR */}
       <Slide bg={dark} style={{ color: warm }}>
-        <Big size="clamp(1.5rem,3vw,2.2rem)" color={soft} weight={400}>What is Cancer? Cancer is when a system only feeds itself.</Big>
+        <Big size="clamp(1.5rem,3vw,2.2rem)" color={soft} weight={400}>What is Cancer? <br /><br />Cancer is when a part feeds on the whole where...</Big>
         <Spacer h={16} />
         <Reveal delay={0.15}>
           <div style={{ fontFamily: heading, fontSize: "clamp(2.2rem,5.5vw,4rem)", fontWeight: 900 }}>
@@ -360,7 +360,7 @@ const Index = () => {
           </div>
         </Reveal>
         <Spacer h={32} />
-        <Sub color="rgba(245,240,232,0.6)" size="clamp(1.1rem,2.5vw,1.4rem)">And today, corporate political spending is a<br /><span style={{ color: red, fontWeight: 700, fontSize: "1.3em" }}>$5 billion-a-year tumor</span><br />on our democracy.</Sub>
+        <Sub color="rgba(245,240,232,0.6)" size="clamp(1.1rem,2.5vw,1.4rem)">And today, corporate political spending is a<br /><span style={{ color: red, fontWeight: 700, fontSize: "1.3em" }}>$5 billion-a-year tumor</span><br />on our democracy!</Sub>
       </Slide>
 
       {/* 6. STAGE 4 */}
@@ -394,23 +394,23 @@ const Index = () => {
       <Slide>
         <Big size="clamp(1.5rem,3vw,2.2rem)" weight={400} color={soft}>But here's what they forgot...</Big>
         <Spacer h={20} />
-        <Big size="clamp(2.2rem,6vw,4.5rem)">We the people are their<br />customers!</Big>
+        <Big size="clamp(2.2rem,6vw,4.5rem)">We the People are their<br />Customers!</Big>
         <Reveal delay={0.2}><SplitFlap /></Reveal>
       </Slide>
 
       {/* 8. CONTROL */}
       <Slide bg="#FAF6F0">
-        <Big size="clamp(1.5rem,3vw,2.2rem)" weight={400} color={soft}>So How Can We The People Re-Seize The System?<br /><br />We 'Pass The Pump!'<br /><br />Because...</Big>
+        <Big size="clamp(1.5rem,3vw,2.2rem)" weight={400} color={soft}>So how can we reclaim the system?<br /><br />Simple...<br /><br />We just 'Pass The Pump!'<br /><br />Where</Big>
         <Spacer h={24} />
         <Big size="clamp(2.5rem,7vw,5rem)" color={gold}>you + me = control</Big>
       </Slide>
 
       {/* 9. UNTIL ZERO */}
       <Slide>
-        <Big size="clamp(2.5rem,6vw,4.5rem)" color={gold}>Until The Spending Hits Zero...</Big>
+        <Big size="clamp(2.5rem,6vw,4.5rem)" color={gold}>And What Do We Want?!?</Big>
         <Spacer h={40} />
-        <Big size="clamp(3rem,8vw,6rem)">We Will All <br />Pass the Pump.</Big>
-        <Sub size="clamp(1.15rem,2.5vw,1.45rem)">Using our dollars to direct their influence.</Sub>
+        <Big size="clamp(3rem,8vw,6rem)">ZERO!<br /></Big>
+        <Sub size="clamp(1.15rem,2.5vw,1.45rem)">Zero Political Contributions from Corporations<br />Zero money taken by any Candidate</Sub>
         <Spacer h={40} />
         <Reveal delay={0.2}><LogoScroll /></Reveal>
       </Slide>
