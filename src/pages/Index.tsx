@@ -330,9 +330,9 @@ const Index = () => {
 
       {/* 3. CITIZENS UNITED */}
       <Slide>
-        <Big size="clamp(1.5rem,3vw,2.2rem)" weight={400} color={soft}>CITIZENS UNITED WAS DESIGNED <br />TO DIVIDE US</Big>
+        <Big size="clamp(1.5rem,3vw,2.2rem)" weight={400} color={soft}>CITIZENS UNITED WAS DESIGNED <br />TO DIVIDE US BECAUSE</Big>
         <FlashZero />
-        <Sub size="clamp(1rem,2vw,1.15rem)">How did we get so tricked into hating each other...<br />Even within our own families?<br /><br />It was all done under the disguise of a deceptive name:<br /><br />CITIZENS UNITED</Sub>
+        <Sub size="clamp(1rem,2vw,1.15rem)">How did we get so tricked into hating each other...<br />It's happening within our own families?<br /><br />It was all done under the simple disguise of a deceptive name:<br /><br />CITIZENS UNITED<br /><br />And all the sudden money was speech and corporations were people.<br /></Sub>
       </Slide>
 
       {/* 4. ANIMATED ≠ */}
