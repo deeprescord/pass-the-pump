@@ -69,7 +69,7 @@ function FlashZero() {
       <span style={{ color: red, fontSize: "0.7em", margin: "0 12px" }}>÷</span>
       <span className="flash-you">you</span>
       <span style={{ color: "#444", fontSize: "0.6em", margin: "0 12px" }}>=</span>
-      <span style={{ color: red }}>we lose everything</span>
+      <span style={{ color: red }}>cannot stand</span>
     </div>);
 }
 
@@ -126,18 +126,18 @@ const SplitFlap = memo(function SplitFlap() {
 });
 
 const companies = [
-  { name: "Shell", stations: "12,283", month: "March", bg: "#FFD500", text: "#DD0000", accent: "#FFD500" },
-  { name: "ExxonMobil", stations: "11,532", month: "April", bg: "#FFFFFF", text: "#222", accent: "#FF0000" },
-  { name: "BP", stations: "7,111", month: "May", bg: "#007B33", text: "#FFF", accent: "#FFCC00" },
-  { name: "Chevron", stations: "7,082", month: "June", bg: "#0051A5", text: "#FFF", accent: "#D4122A" },
-  { name: "Valero", stations: "4,907", month: "July", bg: "#002868", text: "#FFF", accent: "#BF0A30" },
-  { name: "Citgo", stations: "4,408", month: "August", bg: "#C8102E", text: "#FFF", accent: "#003DA5" },
-  { name: "Phillips 66", stations: "2,527", month: "September", bg: "#1C1C1C", text: "#D42626", accent: "#D42626" },
-  { name: "76", stations: "1,728", month: "October", bg: "#FF6200", text: "#FFF", accent: "#003B71" },
-  { name: "Sinclair", stations: "1,715", month: "November", bg: "#006B3F", text: "#FFF", accent: "#006B3F" },
-  { name: "Conoco", stations: "1,682", month: "December", bg: "#D42626", text: "#FFF", accent: "#D42626" },
-  { name: "Marathon", stations: "982", month: "January '27", bg: "#003082", text: "#FFF", accent: "#ED1C24" }
-];
+{ name: "Shell", stations: "12,283", month: "March", bg: "#FFD500", text: "#DD0000", accent: "#FFD500" },
+{ name: "ExxonMobil", stations: "11,532", month: "April", bg: "#FFFFFF", text: "#222", accent: "#FF0000" },
+{ name: "BP", stations: "7,111", month: "May", bg: "#007B33", text: "#FFF", accent: "#FFCC00" },
+{ name: "Chevron", stations: "7,082", month: "June", bg: "#0051A5", text: "#FFF", accent: "#D4122A" },
+{ name: "Valero", stations: "4,907", month: "July", bg: "#002868", text: "#FFF", accent: "#BF0A30" },
+{ name: "Citgo", stations: "4,408", month: "August", bg: "#C8102E", text: "#FFF", accent: "#003DA5" },
+{ name: "Phillips 66", stations: "2,527", month: "September", bg: "#1C1C1C", text: "#D42626", accent: "#D42626" },
+{ name: "76", stations: "1,728", month: "October", bg: "#FF6200", text: "#FFF", accent: "#003B71" },
+{ name: "Sinclair", stations: "1,715", month: "November", bg: "#006B3F", text: "#FFF", accent: "#006B3F" },
+{ name: "Conoco", stations: "1,682", month: "December", bg: "#D42626", text: "#FFF", accent: "#D42626" },
+{ name: "Marathon", stations: "982", month: "January '27", bg: "#003082", text: "#FFF", accent: "#ED1C24" }];
+
 
 function BrandLogo({ name, bg: bgc, text: tc, accent, targeted, float: fl }: {name: string;bg: string;text: string;accent: string;targeted?: boolean;float?: boolean;}) {
   return (
@@ -155,14 +155,14 @@ function BrandLogo({ name, bg: bgc, text: tc, accent, targeted, float: fl }: {na
         fontSize: "1.8rem", filter: "drop-shadow(0 3px 8px rgba(0,0,0,0.6))"
       }}>🎯</div>}
       {name === "76" ?
-        <div style={{ width: 32, height: 32, borderRadius: "50%", background: "#003B71", display: "flex", alignItems: "center", justifyContent: "center" }}>
+      <div style={{ width: 32, height: 32, borderRadius: "50%", background: "#003B71", display: "flex", alignItems: "center", justifyContent: "center" }}>
           <span style={{ fontFamily: heading, fontSize: "1rem", fontWeight: 900, color: "#FF6200" }}>76</span>
         </div> :
-        <span style={{
-          fontFamily: mono, fontSize: name.length > 8 ? "0.7rem" : "0.85rem",
-          fontWeight: 900, color: tc, letterSpacing: name.length > 8 ? "-0.01em" : "0.1em",
-          textTransform: "uppercase" as const, whiteSpace: "nowrap" as const
-        }}>{name}</span>
+      <span style={{
+        fontFamily: mono, fontSize: name.length > 8 ? "0.7rem" : "0.85rem",
+        fontWeight: 900, color: tc, letterSpacing: name.length > 8 ? "-0.01em" : "0.1em",
+        textTransform: "uppercase" as const, whiteSpace: "nowrap" as const
+      }}>{name}</span>
       }
       {accent && name !== "76" && <div style={{
         position: "absolute", bottom: 0, left: 0, right: 0, height: 3,
@@ -178,7 +178,7 @@ function LogoScroll({ bgColor = "#FAF6F0" }: {bgColor?: string;}) {
       <div style={{ position: "absolute", right: 0, top: 0, bottom: 0, width: 60, zIndex: 2, background: `linear-gradient(-90deg, ${bgColor}, transparent)` }} />
       <div className="logo-scroll-track" style={{ display: "flex", gap: 16, width: "max-content" }}>
         {[...companies, ...companies].map((c, i) =>
-          <BrandLogo key={`${c.name}-${i}`} name={c.name} bg={c.bg} text={c.text} accent={c.accent} targeted={i === 0 || i === companies.length} />
+        <BrandLogo key={`${c.name}-${i}`} name={c.name} bg={c.bg} text={c.text} accent={c.accent} targeted={i === 0 || i === companies.length} />
         )}
       </div>
     </div>);
@@ -191,7 +191,7 @@ function LogoScrollDark() {
       <div style={{ position: "absolute", right: 0, top: 0, bottom: 0, width: 60, zIndex: 2, background: `linear-gradient(-90deg, ${dark}, transparent)` }} />
       <div className="logo-scroll-track-dark" style={{ display: "flex", gap: 16, width: "max-content" }}>
         {[...companies, ...companies].map((c, i) =>
-          <BrandLogo key={`${c.name}-${i}`} name={c.name} bg={c.bg} text={c.text} accent={c.accent} targeted={i === 0 || i === companies.length} float />
+        <BrandLogo key={`${c.name}-${i}`} name={c.name} bg={c.bg} text={c.text} accent={c.accent} targeted={i === 0 || i === companies.length} float />
         )}
       </div>
     </div>);
@@ -262,8 +262,8 @@ function ZeroScoreboard() {
           <div style={{ fontFamily: body, fontSize: "0.85rem", color: soft, marginTop: 12 }}>Have pledged to take zero corporate money</div>
         </div>
       </div>
-    </Reveal>
-  );
+    </Reveal>);
+
 }
 
 const Index = () => {
@@ -288,28 +288,28 @@ const Index = () => {
         </div>
         <div style={{ height: 16, width: 1, background: "rgba(245,240,232,0.15)" }} />
         {headerSubmitted ?
-          <span style={{ fontFamily: heading, fontSize: "0.85rem", color: gold, fontWeight: 700 }}>You're in. 🇺🇸</span> :
-          <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+        <span style={{ fontFamily: heading, fontSize: "0.85rem", color: gold, fontWeight: 700 }}>You're in. 🇺🇸</span> :
+        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
             <span style={{ fontFamily: body, fontSize: "clamp(0.65rem, 1vw, 0.8rem)", color: soft, whiteSpace: "nowrap" }}>Join Your Fellow Americans</span>
             <input
-              value={headerEmail}
-              onChange={(e) => setHeaderEmail(e.target.value)}
-              placeholder="your@email.com"
-              type="email"
-              style={{
-                padding: "5px 12px", background: "rgba(245,240,232,0.06)",
-                border: "1px solid rgba(245,240,232,0.15)", borderRadius: 4,
-                color: warm, fontFamily: body, fontSize: "0.75rem",
-                outline: "none", width: 160
-              }} />
+            value={headerEmail}
+            onChange={(e) => setHeaderEmail(e.target.value)}
+            placeholder="your@email.com"
+            type="email"
+            style={{
+              padding: "5px 12px", background: "rgba(245,240,232,0.06)",
+              border: "1px solid rgba(245,240,232,0.15)", borderRadius: 4,
+              color: warm, fontFamily: body, fontSize: "0.75rem",
+              outline: "none", width: 160
+            }} />
             <button
-              onClick={() => {if (headerEmail.includes("@")) setHeaderSubmitted(true);}}
-              style={{
-                padding: "5px 16px", background: gold, color: dark,
-                fontFamily: heading, fontWeight: 700, fontSize: "0.7rem",
-                letterSpacing: "0.05em", border: "none", borderRadius: 4,
-                cursor: "pointer", whiteSpace: "nowrap"
-              }}>
+            onClick={() => {if (headerEmail.includes("@")) setHeaderSubmitted(true);}}
+            style={{
+              padding: "5px 16px", background: gold, color: dark,
+              fontFamily: heading, fontWeight: 700, fontSize: "0.7rem",
+              letterSpacing: "0.05em", border: "none", borderRadius: 4,
+              cursor: "pointer", whiteSpace: "nowrap"
+            }}>
               Join
             </button>
           </div>
@@ -365,12 +365,12 @@ const Index = () => {
         <Reveal delay={0.2}>
           <div style={{ maxWidth: 580, textAlign: "left" }}>
             {[
-              { num: "1", icon: "❤️", title: "Healthcare", l1: "When ", b: "corporations", l2: " take 30% of every dollar,", l3: "to dictate the access and use of the other 70%." },
-              { num: "2", icon: "🤖", title: "Technology", l1: "When ", b: "corporations", l2: " build machines optimized to amuse and confuse us, ", l3: "till we no longer know who or what to believe." },
-              { num: "3", icon: "🏛️", title: "Politics", l1: "When ", b: "corporations", l2: " own the lawmakers who write the rules, ", l3: "the rules will only apply to you." },
-              { num: "4", icon: "📺", title: "Media", l1: "When ", b: "corporations", l2: " fill your feed with rage, ", l3: "you're the bait that lures more citizens into hate." }
-            ].map((item, i) =>
-              <div key={i} style={{ marginBottom: 36, paddingBottom: 36, borderBottom: i < 3 ? "1px solid rgba(245,240,232,0.06)" : "none" }}>
+            { num: "1", icon: "❤️", title: "Healthcare", l1: "When ", b: "corporations", l2: " take 30% of every dollar,", l3: "to dictate the access and use of the other 70%." },
+            { num: "2", icon: "🤖", title: "Technology", l1: "When ", b: "corporations", l2: " build machines optimized to amuse and confuse us, ", l3: "till we no longer know who or what to believe." },
+            { num: "3", icon: "🏛️", title: "Politics", l1: "When ", b: "corporations", l2: " own the lawmakers who write the rules, ", l3: "the rules will only apply to you." },
+            { num: "4", icon: "📺", title: "Media", l1: "When ", b: "corporations", l2: " fill your feed with rage, ", l3: "you're the bait that lures more citizens into hate." }].
+            map((item, i) =>
+            <div key={i} style={{ marginBottom: 36, paddingBottom: 36, borderBottom: i < 3 ? "1px solid rgba(245,240,232,0.06)" : "none" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 12 }}>
                   <span style={{ fontSize: "1.4em" }}>{item.icon}</span>
                   <span style={{ fontFamily: heading, fontSize: "clamp(1.3rem,3vw,1.8rem)", fontWeight: 900, color: gold }}>{item.num}. {item.title}</span>
@@ -415,11 +415,11 @@ const Index = () => {
         <Spacer h={32} />
         <div style={{ maxWidth: 520, width: "100%", textAlign: "left" }}>
           <Step num={1} emoji="👀" title="See which gas station is on the active target list."
-            desc="Check who's up this month. Right now it's Shell only because they are the largest." />
+          desc="Check who's up this month. Right now it's Shell only because they are the largest." />
           <Step num={2} emoji="🚗" title="Drive right past them. That's all!"
-            desc="Skip that station. Honk to show them support. They're in this with us." />
+          desc="Skip that station. Honk to show them support. They're in this with us." />
           <Step num={3} emoji="⛽" title="Head to the next pump."
-            desc="Go to the next brand down the street. That's it. Every 2 weeks we add the next largest company. When any company takes the pledge, we celebrate them and take them off the list." />
+          desc="Go to the next brand down the street. That's it. Every 2 weeks we add the next largest company. When any company takes the pledge, we celebrate them and take them off the list." />
         </div>
         <Chant color={gold}>We pass the pump<br />They get the message.</Chant>
         <Spacer h={24} />
@@ -534,11 +534,11 @@ const Index = () => {
               <div style={{ fontFamily: heading, fontSize: "clamp(1.5rem,3vw,2.2rem)", fontWeight: 700, color: gold, marginBottom: 24 }}>Why gas stations?</div>
               <div style={{ textAlign: "left" }}>
                 {[
-                  { emoji: "🔄", text: "It's easy. You just vote with your steering wheel and go to the next one." },
-                  { emoji: "📍", text: "They're ubiquitous. 150,000 stations across America. Almost everyone can join in regardless of party." },
-                  { emoji: "🌍", text: "They're owned by the biggest corporations from all over the world — so most of the damage won't be felt here." }
-                ].map((b, i) =>
-                  <div key={i} style={{ display: "flex", gap: 14, alignItems: "flex-start", marginBottom: 16 }}>
+                { emoji: "🔄", text: "It's easy. You just vote with your steering wheel and go to the next one." },
+                { emoji: "📍", text: "They're ubiquitous. 150,000 stations across America. Almost everyone can join in regardless of party." },
+                { emoji: "🌍", text: "They're owned by the biggest corporations from all over the world — so most of the damage won't be felt here." }].
+                map((b, i) =>
+                <div key={i} style={{ display: "flex", gap: 14, alignItems: "flex-start", marginBottom: 16 }}>
                     <span style={{ fontSize: "1.2rem", flexShrink: 0, marginTop: 2 }}>{b.emoji}</span>
                     <span style={{ fontFamily: body, fontSize: "clamp(0.95rem,2vw,1.1rem)", color: "rgba(245,240,232,0.6)", lineHeight: 1.6 }}>{b.text}</span>
                   </div>
@@ -550,20 +550,20 @@ const Index = () => {
           <Reveal><div style={{ fontFamily: heading, fontSize: "clamp(1.8rem,4vw,2.8rem)", fontWeight: 700, color: warm, marginBottom: 40 }}>Largest to smallest.</div></Reveal>
 
           {companies.map((c, i) =>
-            <Reveal key={c.name} delay={i * 0.06}>
+          <Reveal key={c.name} delay={i * 0.06}>
               <div style={{
-                display: "grid", gridTemplateColumns: "52px 1fr auto",
-                alignItems: "center", gap: 16, padding: "14px 0",
-                borderBottom: "1px solid rgba(245,240,232,0.06)",
-                maxWidth: 560, margin: "0 auto"
-              }}>
+              display: "grid", gridTemplateColumns: "52px 1fr auto",
+              alignItems: "center", gap: 16, padding: "14px 0",
+              borderBottom: "1px solid rgba(245,240,232,0.06)",
+              maxWidth: 560, margin: "0 auto"
+            }}>
                 <div className={i === 0 ? "target-pulse" : ""} style={{
-                  width: 44, height: 44, borderRadius: "50%",
-                  background: i === 0 ? red : "rgba(245,240,232,0.06)",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  fontFamily: mono, fontSize: i === 0 ? "1.1rem" : "0.75rem",
-                  color: i === 0 ? "white" : soft, fontWeight: 700
-                }}>{i === 0 ? "🎯" : i + 1}</div>
+                width: 44, height: 44, borderRadius: "50%",
+                background: i === 0 ? red : "rgba(245,240,232,0.06)",
+                display: "flex", alignItems: "center", justifyContent: "center",
+                fontFamily: mono, fontSize: i === 0 ? "1.1rem" : "0.75rem",
+                color: i === 0 ? "white" : soft, fontWeight: 700
+              }}>{i === 0 ? "🎯" : i + 1}</div>
                 <div style={{ textAlign: "left" }}>
                   <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                     <div style={{ padding: "5px 14px", borderRadius: 5, background: c.bg, minWidth: 60, textAlign: "center", boxShadow: "0 2px 6px rgba(0,0,0,0.15)", borderBottom: `2px solid ${c.accent}` }}>
