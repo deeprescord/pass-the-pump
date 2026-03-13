@@ -106,7 +106,7 @@ const SplitFlap = memo(function SplitFlap() {
   }, []);
   return (
     <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 16, flexWrap: "wrap", marginTop: 32 }}>
-      <span style={{ fontFamily: heading, fontSize: "clamp(1.8rem,4vw,2.8rem)", fontWeight: 400, color: dark }}>We the people are their:</span>
+      <span style={{ fontFamily: heading, fontSize: "clamp(1.8rem,4vw,2.8rem)", fontWeight: 400, color: dark }}>We are their:</span>
       <div style={{
         display: "inline-flex", alignItems: "center", justifyContent: "center",
         width: 280, height: 60, background: "#111", borderRadius: 6,
@@ -338,7 +338,7 @@ const Index = () => {
           <div style={{
             fontFamily: heading, fontSize: "clamp(3rem,8vw,6rem)", fontWeight: 900,
             color: red, lineHeight: 1.05, letterSpacing: "-0.03em",
-            animation: "citizensReveal 1.2s cubic-bezier(0.16,1,0.3,1) forwards",
+            animation: "citizensReveal 1.2s cubic-bezier(0.16,1,0.3,1) forwards"
           }}>
             CITIZENS<br />UNITED
           </div>
@@ -354,7 +354,7 @@ const Index = () => {
         <Spacer h={16} />
         <Reveal delay={0.15}>
           <div style={{ fontFamily: heading, fontSize: "clamp(2.2rem,5.5vw,4rem)", fontWeight: 900 }}>
-            <span style={{ color: red }}>me </span>
+            <span style={{ color: red }}>corporations</span>
             <span style={{ color: soft, fontSize: "0.5em", margin: "0 16px" }}>{'>'}</span>
             <span style={{ color: gold }}> all of you</span>
           </div>
