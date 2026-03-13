@@ -344,7 +344,7 @@ const Index = () => {
           </div>
         </Reveal>
         <Spacer h={16} />
-        <Sub size="clamp(1rem,2vw,1.15rem)">And all the sudden money was speech and corporations were people.<br /></Sub>
+        <Sub size="clamp(1rem,2vw,1.15rem)">Where all the sudden money was speech<br />and corporations were people.<br /></Sub>
       </Slide>
 
 
