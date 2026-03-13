@@ -377,7 +377,7 @@ const Index = () => {
             { num: "4", icon: "📺", title: "Media", l1: "When ", b: "corporations", l2: " fill your feed with rage, ", l3: "you're the bait that lures more citizens into hate." }].
             map((item, i) =>
             <div key={i} style={{ marginBottom: 36, paddingBottom: 36, borderBottom: i < 3 ? "1px solid rgba(245,240,232,0.06)" : "none" }}>
-                <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 12 }}>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 12, marginBottom: 12 }}>
                   <span style={{ fontSize: "1.4em" }}>{item.icon}</span>
                   <span style={{ fontFamily: heading, fontSize: "clamp(1.3rem,3vw,1.8rem)", fontWeight: 900, color: gold }}>{item.num}. {item.title}</span>
                 </div>
