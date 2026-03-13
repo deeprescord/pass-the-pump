@@ -325,7 +325,7 @@ const Index = () => {
 
       {/* 2. NOT CORPORATIONS */}
       <Slide>
-        <Big size="clamp(1.8rem,4vw,3rem)" weight={400}>NOT CORPORATIONS.<br /><br />NOT FOREIGN NATIONS.<br /><br />NOT ALGORITHMS.</Big>
+        <Big size="clamp(1.8rem,4vw,3rem)" weight={400}>NOT CORPORATIONS.<br /><br />NOT FOREIGN NATIONS.<br /><br />NOT ALGORITHMS NOR AI.</Big>
       </Slide>
 
       {/* 3. CITIZENS UNITED */}
