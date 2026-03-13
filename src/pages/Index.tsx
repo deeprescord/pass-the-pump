@@ -339,7 +339,7 @@ const Index = () => {
       <Slide bg="#FAF6F0">
         <Reveal><AnimatedNotEqual /></Reveal>
         <Spacer h={24} />
-        <Big size="clamp(2rem,5vw,3.5rem)" color={red}>And they've taken over everything.</Big>
+        <Big size="clamp(1.3rem,3vw,2rem)" color={red}>And all the sudden money became speech and <br />corporations became people, and we stopped being <br />a part of the equation.<br /></Big>
       </Slide>
 
       {/* 5. CANCER / $5 BILLION TUMOR */}
