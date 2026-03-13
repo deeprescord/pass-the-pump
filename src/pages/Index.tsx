@@ -394,7 +394,7 @@ const Index = () => {
       <Slide>
         <Big size="clamp(1.5rem,3vw,2.2rem)" weight={400} color={soft}>But here's what they forgot...</Big>
         <Spacer h={20} />
-        <Big size="clamp(2.2rem,6vw,4.5rem)">We the people are their<br />customers!</Big>
+        <Big size="clamp(2.2rem,6vw,4.5rem)">We the People are their<br />Customers!</Big>
         <Reveal delay={0.2}><SplitFlap /></Reveal>
       </Slide>
 
