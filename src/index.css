@@ -256,3 +256,9 @@
   0%, 100% { box-shadow: 0 0 20px rgba(212,175,55,0.3), 0 0 60px rgba(212,175,55,0.1); }
   50% { box-shadow: 0 0 30px rgba(212,175,55,0.5), 0 0 80px rgba(212,175,55,0.2); }
 }
+
+@keyframes citizensReveal {
+  0% { opacity: 0; transform: scale(0.6) translateY(30px); filter: blur(8px); }
+  60% { opacity: 1; transform: scale(1.05) translateY(-4px); filter: blur(0); }
+  100% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+}

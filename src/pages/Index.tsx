@@ -332,7 +332,19 @@ const Index = () => {
       <Slide>
         <Big size="clamp(1.5rem,3vw,2.2rem)" weight={400} color={soft}>CITIZENS UNITED WAS DESIGNED <br />TO DIVIDE US BECAUSE</Big>
         <FlashZero />
-        <Sub size="clamp(1rem,2vw,1.15rem)">How did we get so tricked into hating each other...<br />It's happening within our own families?<br /><br />It was all done under the simple disguise of a deceptive name:<br /><br />CITIZENS UNITED<br /><br />And all the sudden money was speech and corporations were people.<br /></Sub>
+        <Sub size="clamp(1rem,2vw,1.15rem)">How did we get so tricked into hating each other...<br />It's happening within our own families?<br /><br />It was all done under the simple disguise of a deceptive name:</Sub>
+        <Spacer h={16} />
+        <Reveal delay={0.2}>
+          <div style={{
+            fontFamily: heading, fontSize: "clamp(3rem,8vw,6rem)", fontWeight: 900,
+            color: red, lineHeight: 1.05, letterSpacing: "-0.03em",
+            animation: "citizensReveal 1.2s cubic-bezier(0.16,1,0.3,1) forwards",
+          }}>
+            CITIZENS<br />UNITED
+          </div>
+        </Reveal>
+        <Spacer h={16} />
+        <Sub size="clamp(1rem,2vw,1.15rem)">And all the sudden money was speech and corporations were people.<br /></Sub>
       </Slide>
 
 
