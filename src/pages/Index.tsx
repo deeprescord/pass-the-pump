@@ -407,10 +407,10 @@ const Index = () => {
 
       {/* 9. UNTIL ZERO */}
       <Slide>
-        <Big size="clamp(2.5rem,6vw,4.5rem)" color={gold}>Until The Spending Hits Zero...</Big>
+        <Big size="clamp(2.5rem,6vw,4.5rem)" color={gold}>And What Do We Want?!?</Big>
         <Spacer h={40} />
-        <Big size="clamp(3rem,8vw,6rem)">We Will All <br />Pass the Pump.</Big>
-        <Sub size="clamp(1.15rem,2.5vw,1.45rem)">Using our dollars to direct their influence.</Sub>
+        <Big size="clamp(3rem,8vw,6rem)">ZERO!<br /></Big>
+        <Sub size="clamp(1.15rem,2.5vw,1.45rem)">Zero Political Contributions from Corporations<br />Zero money taken by any Candidate</Sub>
         <Spacer h={40} />
         <Reveal delay={0.2}><LogoScroll /></Reveal>
       </Slide>
