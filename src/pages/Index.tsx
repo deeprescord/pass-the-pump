@@ -350,7 +350,7 @@ const Index = () => {
 
       {/* 5. CANCER / $5 BILLION TUMOR */}
       <Slide bg={dark} style={{ color: warm }}>
-        <Big size="clamp(1.5rem,3vw,2.2rem)" color={soft} weight={400}><br /><br />What is Cancer? <br /><br />Cancer is when one part starts to feeds on the whole where...<br /></Big>
+        <Big size="clamp(1.5rem,3vw,2.2rem)" color={soft} weight={400}><br /><br />What is Cancer? <br /><br /><Big size="clamp(1.5rem,3vw,2.2rem)" color={soft} weight={400}><br /><br />What is Cancer? <br /><br />Cancer is when one part starts to feed on the whole where...<br /></Big>...<br /></Big>
         <Spacer h={16} />
         <Reveal delay={0.15}>
           <div style={{ fontFamily: heading, fontSize: "clamp(2.2rem,5.5vw,4rem)", fontWeight: 900 }}>
