@@ -317,6 +317,35 @@ const Index = () => {
       </header>
       <div style={{ height: 46 }} />
 
+      {/* TAGLINE BANNER */}
+      <div style={{
+        textAlign: "center",
+        padding: "48px 20px 32px",
+        maxWidth: 800,
+        margin: "0 auto"
+      }}>
+        <div style={{
+          fontFamily: heading,
+          fontSize: "clamp(1.4rem, 3.5vw, 2.2rem)",
+          fontWeight: 700,
+          color: dark,
+          lineHeight: 1.4,
+          fontStyle: "italic"
+        }}>
+          A Simple Idea...
+        </div>
+        <div style={{
+          fontFamily: body,
+          fontSize: "clamp(1rem, 2.2vw, 1.35rem)",
+          color: soft,
+          marginTop: 12,
+          lineHeight: 1.6
+        }}>
+          To leverage one Gas Company Nation Wide,<br />
+          To force Money Out of Politics.
+        </div>
+      </div>
+
       {/* 1. HERO */}
       <Slide>
         <Big size="clamp(3.5rem,10vw,8rem)">My Voice + Your Voice</Big>
