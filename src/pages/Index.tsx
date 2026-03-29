@@ -1,4 +1,4 @@
-import { useEffect, useRef, memo, useState, useCallback, ReactNode, CSSProperties } from "react";
+import { useEffect, useRef, memo, useState, ReactNode, CSSProperties } from "react";
 
 const gold = "#D4AF37";
 const red = "#9B3A3A";
@@ -359,7 +359,7 @@ const Index = () => {
 
       {/* 3. CITIZENS UNITED */}
       <Slide>
-        <Big size="clamp(1.5rem,3vw,2.2rem)" weight={400} color={soft}><Big size="clamp(1.5rem,3vw,2.2rem)" weight={400} color={soft}>CITIZENS UNITED WAS DESIGNED <br />TO DIVIDE US BECAUSE THEY KNOW</Big></Big>
+        <Big size="clamp(1.5rem,3vw,2.2rem)" weight={400} color={soft}>CITIZENS UNITED WAS DESIGNED <br />TO DIVIDE US BECAUSE THEY KNOW</Big>
         <FlashZero />
         <Sub size="clamp(1rem,2vw,1.15rem)">How did we get so tricked into hating each other...<br />To where it's happening within our own families?<br /><br />It was all done under the simple disguise of a deceptive name:</Sub>
         <Spacer h={16} />
@@ -379,7 +379,11 @@ const Index = () => {
 
       {/* 5. CANCER / $5 BILLION TUMOR */}
       <Slide bg={dark} style={{ color: warm }}>
-        <Big size="clamp(1.5rem,3vw,2.2rem)" color={soft} weight={400}><br /><br />What is Cancer? <br /><br /><Big size="clamp(1.5rem,3vw,2.2rem)" color={soft} weight={400}><br /><br />What is Cancer? <br /><br />Cancer is when one part starts to feed on the whole where...<br /></Big>...<br /></Big>
+        <Big size="clamp(1.5rem,3vw,2.2rem)" color={soft} weight={400}>
+          What is Cancer?
+          <br /><br />
+          Cancer is when one part starts to feed on the whole where...
+        </Big>
         <Spacer h={16} />
         <Reveal delay={0.15}>
           <div style={{ fontFamily: heading, fontSize: "clamp(2.2rem,5.5vw,4rem)", fontWeight: 900 }}>
@@ -389,7 +393,7 @@ const Index = () => {
           </div>
         </Reveal>
         <Spacer h={32} />
-        <Sub color="rgba(245,240,232,0.6)" size="clamp(1.1rem,2.5vw,1.4rem)"><Sub color="rgba(245,240,232,0.6)" size="clamp(1.1rem,2.5vw,1.4rem)">Corporate Political Spending Is A<br /><span style={{ color: red, fontWeight: 700, fontSize: "1.3em" }}>$5 Billion-A-Year Tumor</span><br />On Our Democracy!</Sub></Sub>
+        <Sub color="rgba(245,240,232,0.6)" size="clamp(1.1rem,2.5vw,1.4rem)">Corporate Political Spending Is A<br /><span style={{ color: red, fontWeight: 700, fontSize: "1.3em" }}>$5 Billion-A-Year Tumor</span><br />On Our Democracy!</Sub>
       </Slide>
 
       {/* 6. STAGE 4 */}
