@@ -1,0 +1,16 @@
+{
+  "projectId": "prj_W6pu3uupFBl0mNDvv6F80gUI2D45",
+  "orgId": "team_6dqCZUw9zv2yoeKC2DsXe2Bx",
+  "projectName": "pass-the-pump",
+  "settings": {
+    "createdAt": 1774671156757,
+    "framework": "vite",
+    "devCommand": null,
+    "installCommand": null,
+    "buildCommand": null,
+    "outputDirectory": null,
+    "rootDirectory": null,
+    "directoryListing": false,
+    "nodeVersion": "24.x"
+  }
+}

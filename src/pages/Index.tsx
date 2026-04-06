@@ -317,34 +317,17 @@ const Index = () => {
       </header>
       <div style={{ height: 46 }} />
 
-      {/* TAGLINE BANNER */}
-      <div style={{
-        textAlign: "center",
-        padding: "48px 20px 32px",
-        maxWidth: 800,
-        margin: "0 auto"
-      }}>
-        <div style={{
-          fontFamily: heading,
-          fontSize: "clamp(1.4rem, 3.5vw, 2.2rem)",
-          fontWeight: 700,
-          color: dark,
-          lineHeight: 1.4,
-          fontStyle: "italic"
-        }}>
-          A Simple Idea...
+      {/* THE CHANT */}
+      <Slide bg={dark} style={{ color: warm }}>
+        <Reveal><div style={{ fontFamily: mono, fontSize: "0.8rem", letterSpacing: "0.3em", color: soft, marginBottom: 20 }}>THE CHANT</div></Reveal>
+        <div style={{ fontFamily: heading, fontWeight: 900, lineHeight: 1.05, letterSpacing: "-0.02em" }}>
+          <Reveal delay={0}><div style={{ fontSize: "clamp(2.5rem,8vw,6rem)", color: warm }}>See Shell.</div></Reveal>
+          <Reveal delay={0.25}><div style={{ fontSize: "clamp(2.5rem,8vw,6rem)", color: gold, marginTop: 8 }}>Leave Shell.</div></Reveal>
+          <Reveal delay={0.5}><div style={{ fontSize: "clamp(2.5rem,8vw,6rem)", color: red, marginTop: 8 }}>Buy no more!</div></Reveal>
         </div>
-        <div style={{
-          fontFamily: body,
-          fontSize: "clamp(1rem, 2.2vw, 1.35rem)",
-          color: soft,
-          marginTop: 12,
-          lineHeight: 1.6
-        }}>
-          To leverage one Gas Company Nation Wide,<br />
-          To force Money Out of Politics.
-        </div>
-      </div>
+        <Spacer h={40} />
+        <Reveal delay={0.8}><Sub color="rgba(245,240,232,0.55)" size="clamp(1rem,2vw,1.2rem)">Say it out loud. Put it on your bumper.<br />Make the logo a liability.</Sub></Reveal>
+      </Slide>
 
       {/* 1. HERO */}
       <Slide>
@@ -423,29 +406,104 @@ const Index = () => {
         </Reveal>
       </Slide>
 
+      {/* RECEIPT 1 — THE LIFEBOAT */}
+      <Slide bg={dark} style={{ color: warm }}>
+        <Reveal><div style={{ fontFamily: mono, fontSize: "0.75rem", letterSpacing: "0.3em", color: soft, marginBottom: 8 }}>THE RECEIPTS · THREE FACTS · ZERO SPIN</div></Reveal>
+        <Reveal><div style={{ fontFamily: mono, fontSize: "0.7rem", letterSpacing: "0.25em", color: gold, marginBottom: 18 }}>№ 01 — THE LIFEBOAT</div></Reveal>
+        <Big size="clamp(1.5rem,3.2vw,2.2rem)" color={warm} weight={400}>In 1991, Shell made a film called</Big>
+        <Reveal delay={0.15}><div style={{ fontFamily: heading, fontSize: "clamp(2rem,5.5vw,4rem)", fontWeight: 900, color: gold, fontStyle: "italic", margin: "12px 0" }}>"Climate of Concern."</div></Reveal>
+        <Reveal delay={0.3}>
+          <div style={{ fontFamily: body, fontSize: "clamp(1.05rem,2.2vw,1.3rem)", color: "rgba(245,240,232,0.75)", lineHeight: 1.8, maxWidth: 620, marginTop: 8 }}>
+            They warned of <span style={{ color: warm, fontWeight: 700 }}>floods, extreme weather, rising seas.</span><br /><br />
+            Then they spent <span style={{ color: gold, fontWeight: 700 }}>three decades</span> funding climate denial.
+          </div>
+        </Reveal>
+        <Spacer h={28} />
+        <Reveal delay={0.5}>
+          <div style={{ background: "rgba(155,58,58,0.12)", border: `1px solid ${red}`, borderRadius: 12, padding: "24px 32px", maxWidth: 560 }}>
+            <div style={{ fontFamily: heading, fontSize: "clamp(1.2rem,2.8vw,1.6rem)", fontWeight: 700, color: warm, lineHeight: 1.5 }}>
+              And quietly raised their own oil rigs<br />
+              <span style={{ color: red }}>higher out of the water.</span>
+            </div>
+            <div style={{ fontFamily: body, fontSize: "clamp(0.95rem,1.8vw,1.1rem)", color: "rgba(245,240,232,0.6)", marginTop: 12, fontStyle: "italic" }}>
+              They built themselves a lifeboat.<br />They told you the ship wasn't sinking.
+            </div>
+          </div>
+        </Reveal>
+        <Spacer h={20} />
+        <Reveal delay={0.7}><div style={{ fontFamily: mono, fontSize: "0.7rem", letterSpacing: "0.2em", color: "rgba(245,240,232,0.35)" }}>SOURCE: SHELL INTERNAL FILM (1991) · LA TIMES INVESTIGATION · DE CORRESPONDENT</div></Reveal>
+      </Slide>
+
+      {/* RECEIPT 2 — THE CELEBRATION */}
+      <Slide bg="#FAF6F0">
+        <Reveal><div style={{ fontFamily: mono, fontSize: "0.75rem", letterSpacing: "0.3em", color: soft, marginBottom: 14 }}>RECEIPT № 02 — THE CELEBRATION</div></Reveal>
+        <Big size="clamp(1.5rem,3.2vw,2.2rem)" weight={400} color={soft}>In 2022, while you were choosing<br />between groceries and gas...</Big>
+        <Spacer h={24} />
+        <Reveal delay={0.2}>
+          <div style={{ fontFamily: heading, fontSize: "clamp(3rem,9vw,7rem)", fontWeight: 900, color: red, lineHeight: 1 }}>
+            $39.9 BILLION
+          </div>
+        </Reveal>
+        <Spacer h={12} />
+        <Reveal delay={0.35}>
+          <div style={{ fontFamily: heading, fontSize: "clamp(1.2rem,2.8vw,1.6rem)", fontWeight: 700, color: dark, fontStyle: "italic" }}>
+            Shell's highest profit in <span style={{ color: gold }}>115 years.</span>
+          </div>
+        </Reveal>
+        <Spacer h={32} />
+        <Reveal delay={0.5}>
+          <div style={{ fontFamily: body, fontSize: "clamp(1.05rem,2.2vw,1.3rem)", color: soft, lineHeight: 1.8, maxWidth: 600 }}>
+            They didn't lower prices.<br />
+            They didn't increase supply.<br />
+            <span style={{ color: dark, fontWeight: 700 }}>They bought back their own stock.</span>
+          </div>
+        </Reveal>
+        <Spacer h={24} />
+        <Reveal delay={0.7}>
+          <div style={{ fontFamily: heading, fontSize: "clamp(1.3rem,3vw,1.8rem)", fontWeight: 900, color: gold, fontStyle: "italic", maxWidth: 600 }}>
+            Your inflation wasn't an accident.<br />It was their business model.
+          </div>
+        </Reveal>
+        <Spacer h={20} />
+        <Reveal delay={0.85}><div style={{ fontFamily: mono, fontSize: "0.7rem", letterSpacing: "0.2em", color: "rgba(26,24,20,0.35)" }}>SOURCE: SHELL Q4 2022 EARNINGS · SEC FILINGS · BLS CPI DATA</div></Reveal>
+      </Slide>
+
+      {/* RECEIPT 3 — THE DOUBLE CHARGE */}
+      <Slide bg={dark} style={{ color: warm }}>
+        <Reveal><div style={{ fontFamily: mono, fontSize: "0.75rem", letterSpacing: "0.3em", color: soft, marginBottom: 14 }}>RECEIPT № 03 — THE DOUBLE CHARGE</div></Reveal>
+        <Big size="clamp(1.5rem,3.2vw,2.2rem)" color={warm} weight={400}>Every gallon you buy,<br />you pay for twice.</Big>
+        <Spacer h={36} />
+        <Reveal delay={0.2}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 20, maxWidth: 640, width: "100%" }}>
+            <div style={{ background: "rgba(245,240,232,0.05)", border: "1px solid rgba(245,240,232,0.1)", borderRadius: 12, padding: "28px 20px" }}>
+              <div style={{ fontFamily: mono, fontSize: "0.7rem", letterSpacing: "0.2em", color: soft, marginBottom: 10 }}>AT THE PUMP</div>
+              <div style={{ fontFamily: heading, fontSize: "clamp(1.8rem,5vw,3rem)", fontWeight: 900, color: warm }}>$40</div>
+              <div style={{ fontFamily: body, fontSize: "0.95rem", color: "rgba(245,240,232,0.55)", marginTop: 6 }}>you give them directly</div>
+            </div>
+            <div style={{ background: "rgba(212,175,55,0.08)", border: `1px solid ${gold}`, borderRadius: 12, padding: "28px 20px" }}>
+              <div style={{ fontFamily: mono, fontSize: "0.7rem", letterSpacing: "0.2em", color: gold, marginBottom: 10 }}>ON YOUR TAXES</div>
+              <div style={{ fontFamily: heading, fontSize: "clamp(1.8rem,5vw,3rem)", fontWeight: 900, color: gold }}>$20B / yr</div>
+              <div style={{ fontFamily: body, fontSize: "0.95rem", color: "rgba(245,240,232,0.55)", marginTop: 6 }}>oil subsidies you cover</div>
+            </div>
+          </div>
+        </Reveal>
+        <Spacer h={32} />
+        <Reveal delay={0.45}>
+          <div style={{ fontFamily: body, fontSize: "clamp(1.05rem,2.2vw,1.3rem)", color: "rgba(245,240,232,0.75)", lineHeight: 1.8, maxWidth: 620 }}>
+            They spend <span style={{ color: gold, fontWeight: 700 }}>$7M/yr lobbying Congress</span> to keep a tax loophole from <span style={{ color: warm, fontWeight: 700 }}>1913</span> alive.<br /><br />
+            <span style={{ color: gold, fontWeight: 700, fontStyle: "italic" }}>That's not a business. That's a machine built to tax you.</span>
+          </div>
+        </Reveal>
+        <Spacer h={20} />
+        <Reveal delay={0.65}><div style={{ fontFamily: mono, fontSize: "0.7rem", letterSpacing: "0.2em", color: "rgba(245,240,232,0.35)" }}>SOURCE: OPENSECRETS · EESI · IRS TAX CODE § 263(c)</div></Reveal>
+      </Slide>
+
       {/* 7. WE ARE THE EQUATION */}
       <Slide>
         <Big size="clamp(1.5rem,3vw,2.2rem)" weight={400} color={soft}>But here's what they forgot...</Big>
         <Spacer h={20} />
         <Big size="clamp(2.2rem,6vw,4.5rem)">We the People are their<br />Customers!</Big>
         <Reveal delay={0.2}><SplitFlap /></Reveal>
-      </Slide>
-
-      {/* 8. CONTROL */}
-      <Slide bg="#FAF6F0">
-        <Big size="clamp(1.5rem,3vw,2.2rem)" weight={400} color={soft}>So how can we reclaim the system?<br /><br />Simple...<br /><br />We just 'Pass The Pump!'<br /><br />Where</Big>
-        <Spacer h={24} />
-        <Big size="clamp(2.5rem,7vw,5rem)" color={gold}>you + me = control</Big>
-      </Slide>
-
-      {/* 9. UNTIL ZERO */}
-      <Slide>
-        <Big size="clamp(2.5rem,6vw,4.5rem)" color={gold}>And What Do We Want?!?</Big>
-        <Spacer h={40} />
-        <Big size="clamp(3rem,8vw,6rem)">ZERO!<br /></Big>
-        <Sub size="clamp(1.15rem,2.5vw,1.45rem)">Zero Political Contributions from Corporations<br />Zero money taken by any Candidate</Sub>
-        <Spacer h={40} />
-        <Reveal delay={0.2}><LogoScroll /></Reveal>
       </Slide>
 
       {/* 10. WHAT DO WE DO */}
@@ -538,18 +596,38 @@ const Index = () => {
             </div>
           </div>
         </Reveal>
+      </Slide>
+
+      {/* THE PEOPLE'S PLEDGE */}
+      <Slide bg="#FAF6F0">
+        <Reveal><div style={{ fontFamily: mono, fontSize: "0.8rem", letterSpacing: "0.3em", color: soft, marginBottom: 16 }}>THE PEOPLE'S PLEDGE</div></Reveal>
+        <Big size="clamp(2.2rem,6vw,4rem)" color={gold}>We're out.</Big>
         <Spacer h={40} />
-        <Reveal delay={0.3}>
-          <div style={{ maxWidth: 440, margin: "0 auto", display: "flex", flexDirection: "column", gap: 16 }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 16, padding: "16px 24px", borderRadius: 8, background: "rgba(212,175,55,0.08)", border: "1px solid rgba(212,175,55,0.2)" }}>
-              <span style={{ fontSize: "1.4rem" }}>✅</span>
-              <div style={{ fontFamily: heading, fontSize: "1.1rem", fontWeight: 700, color: gold }}>Pledge = Celebrated and off the list.</div>
-            </div>
-            <div style={{ display: "flex", alignItems: "center", gap: 16, padding: "16px 24px", borderRadius: 8, background: "rgba(155,58,58,0.08)", border: "1px solid rgba(155,58,58,0.2)" }}>
-              <span style={{ fontSize: "1.4rem" }}>🔴</span>
-              <div style={{ fontFamily: heading, fontSize: "1.1rem", fontWeight: 700, color: red }}>Failure = Back on the list to be skipped.</div>
+        <Reveal delay={0.15}>
+          <div style={{
+            maxWidth: 680, margin: "0 auto", padding: "44px 48px",
+            background: "linear-gradient(135deg, rgba(212,175,55,0.08), rgba(212,175,55,0.02))",
+            border: `2px solid ${gold}`, borderRadius: 16
+          }}>
+            <div style={{ fontFamily: heading, fontSize: "clamp(1.2rem,2.8vw,1.55rem)", fontStyle: "italic", color: dark, lineHeight: 1.7 }}>
+              "We will give <span style={{ color: red, fontWeight: 900, fontSize: "1.15em" }}>no money</span> to any candidate or sitting member of Congress who takes corporate money.<br /><br />
+              We will <span style={{ color: gold, fontWeight: 900, fontSize: "1.15em" }}>fund</span> the candidates who pledge to vote money out of Congress."
             </div>
           </div>
+        </Reveal>
+        <Spacer h={32} />
+        <Reveal delay={0.35}>
+          <div style={{ fontFamily: body, fontSize: "clamp(1rem,2vw,1.2rem)", color: soft, lineHeight: 1.7, maxWidth: 560 }}>
+            Our dollars go to the people fighting for us.<br />
+            <span style={{ color: dark, fontWeight: 700 }}>That's how we out-fund the machine.</span>
+          </div>
+        </Reveal>
+        <Spacer h={36} />
+        <Reveal delay={0.55}>
+          <button onClick={() => document.getElementById("signup")?.scrollIntoView({ behavior: "smooth" })} style={{
+            padding: "18px 48px", background: dark, color: warm, border: "none", borderRadius: 6,
+            fontFamily: heading, fontSize: "clamp(1rem,2vw,1.2rem)", fontWeight: 700, cursor: "pointer", letterSpacing: "0.04em"
+          }}>I Take the Pledge</button>
         </Reveal>
       </Slide>
 
@@ -664,36 +742,21 @@ const Index = () => {
         </div>
       </section>
 
-      {/* 16. FRANCHISEES */}
+      {/* 16. FRANCHISEES + HEROES (merged) */}
       <Slide>
-        <Big size="clamp(1.8rem,4vw,3rem)" weight={400} color={soft}>Now let's talk about</Big>
-        <Big size="clamp(2rem,5vw,3.5rem)">the people on the front lines.</Big>
+        <Big size="clamp(1.8rem,4vw,3rem)" weight={400} color={soft}>The people on the front lines</Big>
+        <Big size="clamp(2rem,5vw,3.5rem)" color={gold}>are America's heroes.</Big>
         <Spacer h={32} />
         <Reveal delay={0.1}>
           <div style={{ fontFamily: body, fontSize: "clamp(1.05rem,2.2vw,1.3rem)", color: soft, lineHeight: 1.9, maxWidth: 580 }}>
             Most gas stations aren't owned by these companies.<br />
             They're owned by <span style={{ color: dark, fontWeight: 600 }}>families.</span><br /><br />
-            People who wake up at 5am.<br />
-            People who built something from nothing.<br />
-            People who serve their communities every day.<br /><br />
-            <span style={{ color: dark, fontWeight: 600 }}>They aren't to blame for this.</span><br />
-            But unfortunately,<br />they are stuck in the middle.<br /><br />
-            <span style={{ color: dark, fontWeight: 600 }}>But now they are America's heroes.</span>
+            They aren't to blame. <span style={{ color: dark, fontWeight: 600 }}>They're stuck in the middle.</span><br /><br />
+            <span style={{ color: dark, fontWeight: 600 }}>We don't fight them. We work with them.</span><br />
+            We help them pressure their parent companies to pledge.<br />
+            We make sure the world knows what they sacrificed.
           </div>
         </Reveal>
-      </Slide>
-
-      {/* 17. AMERICAN HEROES */}
-      <Slide bg="#FAF6F0">
-        <Big size="clamp(2rem,5vw,4rem)" color={gold}>And they are American Heroes.</Big>
-        <Sub color={dark}>The franchisees who stand with us<br />are on the front lines of<br />taking back our country.</Sub>
-        <Spacer h={24} />
-        <Sub color={dark} size="clamp(1rem,2.2vw,1.25rem)">
-          We don't fight them. <span style={{ fontWeight: 600 }}>We work with them.</span><br />
-          We help them pressure their parent companies to pledge.<br />
-          We support their families through the transition.<br />
-          We make sure the world knows what they sacrificed.
-        </Sub>
         <Chant color={gold}>The pain is temporary.<br />The goal is zero.</Chant>
       </Slide>
 
@@ -753,6 +816,31 @@ const Index = () => {
             cursor: "pointer", transition: "all 0.2s"
           }}>🔗 Share This Movement</button>
         </Reveal>
+      </Slide>
+
+      {/* COMMUNITY INVITE */}
+      <Slide>
+        <Reveal><div style={{ fontFamily: mono, fontSize: "0.8rem", letterSpacing: "0.3em", color: soft, marginBottom: 16 }}>BUILD THIS WITH US</div></Reveal>
+        <Big size="clamp(2.2rem,6vw,4rem)" color={gold}>Got a receipt? An idea?<br />A better move?</Big>
+        <Spacer h={32} />
+        <Big size="clamp(1.5rem,3.2vw,2.2rem)" weight={400} color={dark}>
+          Post it at <span style={{ color: gold, fontWeight: 900 }}>the Universal</span> —<br />the open space where this movement evolves.
+        </Big>
+        <Spacer h={24} />
+        <Sub size="clamp(1rem,2vw,1.2rem)" color={soft}>
+          Share a fact. Draft a chant. Propose the next company.<br />
+          This is a process, not a poster.
+        </Sub>
+        <Spacer h={40} />
+        <Reveal delay={0.2}>
+          <a href="https://theuniversal.io" target="_blank" rel="noopener noreferrer" style={{
+            display: "inline-block", padding: "20px 56px", background: gold, color: dark, border: "none", borderRadius: 4,
+            fontFamily: heading, fontSize: "clamp(1rem,2vw,1.3rem)", fontWeight: 700, cursor: "pointer", letterSpacing: "0.05em",
+            textDecoration: "none"
+          }}>Open theuniversal.io →</a>
+        </Reveal>
+        <Spacer h={40} />
+        <Reveal delay={0.3}><LogoScroll /></Reveal>
       </Slide>
 
       {/* 21. FINAL */}
