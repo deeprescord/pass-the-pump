@@ -6,8 +6,8 @@ const dark = "#1A1814";
 const warm = "#F5F0E8";
 const soft = "#8A8478";
 
-const heading = "Playfair Display,Georgia,serif";
-const body = "Source Serif 4,Georgia,serif";
+const heading = "Fraunces,Georgia,serif";
+const body = "Lora,Georgia,serif";
 const mono = "JetBrains Mono,monospace";
 
 function Reveal({ children, delay = 0 }: {children: ReactNode;delay?: number;}) {
@@ -106,16 +106,15 @@ const SplitFlap = memo(function SplitFlap() {
   }, []);
   return (
     <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 16, flexWrap: "wrap", marginTop: 32 }}>
-      <span style={{ fontFamily: heading, fontSize: "clamp(1.8rem,4vw,2.8rem)", fontWeight: 400, color: dark }}>We are their:</span>
       <div style={{
         display: "inline-flex", alignItems: "center", justifyContent: "center",
-        width: 280, height: 60, background: "#111", borderRadius: 6,
+        width: 420, height: 90, background: "#111", borderRadius: 10,
         boxShadow: "0 4px 20px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.05)",
         border: "1px solid #333", position: "relative", overflow: "hidden"
       }}>
         <div style={{ position: "absolute", top: "50%", left: 0, right: 0, height: 1, background: "rgba(255,255,255,0.08)", zIndex: 2 }} />
         <div style={{
-          fontFamily: mono, fontSize: "clamp(1.1rem,2.2vw,1.5rem)",
+          fontFamily: mono, fontSize: "clamp(1.5rem,3.5vw,2.2rem)",
           fontWeight: 700, color: gold, letterSpacing: "0.12em", textTransform: "uppercase" as const,
           textAlign: "center" as const, width: "100%",
           transition: flipping ? "all 0.2s ease-in" : "all 0.2s ease-out",
@@ -206,10 +205,44 @@ const Counter = memo(function Counter() {
 const EmailSignup = memo(function EmailSignup() {
   const [email, setEmail] = useState("");
   const [done, setDone] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const shareUrl = "https://passthepump.org";
+  const shareText = "See Shell. Leave Shell. Gas Up No More. I just joined — now it's your turn.";
+
   if (done) return (
-    <div style={{ textAlign: "center", padding: 40 }}>
-      <div style={{ fontFamily: heading, fontSize: "1.5rem", color: gold, fontWeight: 700 }}>You're in the equation.</div>
-      <div style={{ fontFamily: body, fontSize: "1rem", color: soft, marginTop: 12 }}>We'll be in touch.</div>
+    <div style={{ textAlign: "center", padding: 40, maxWidth: 480, margin: "0 auto" }}>
+      <div style={{ fontFamily: heading, fontSize: "1.8rem", color: gold, fontWeight: 700 }}>You're in the equation.</div>
+      <div style={{ fontFamily: body, fontSize: "1rem", color: soft, marginTop: 12, marginBottom: 32 }}>Now pass the pump to <span style={{ color: warm, fontWeight: 700 }}>one person.</span></div>
+      <div style={{
+        background: "rgba(212,175,55,0.08)", border: `2px solid ${gold}`, borderRadius: 16,
+        padding: "32px 28px"
+      }}>
+        <div style={{ fontFamily: heading, fontSize: "1.3rem", fontWeight: 900, color: warm, marginBottom: 8 }}>1 for 1</div>
+        <div style={{ fontFamily: body, fontSize: "0.95rem", color: soft, lineHeight: 1.7, marginBottom: 24 }}>
+          You joined. Now text this to <span style={{ color: gold, fontWeight: 700 }}>one friend.</span><br />
+          They text one friend. That's how we win.
+        </div>
+        <div style={{ display: "flex", gap: 10, flexWrap: "wrap", justifyContent: "center" }}>
+          <button onClick={() => {
+            if (navigator.share) {
+              navigator.share({ title: "Pass the Pump", text: shareText, url: shareUrl });
+            } else {
+              navigator.clipboard.writeText(`${shareText} ${shareUrl}`);
+              setCopied(true);
+              setTimeout(() => setCopied(false), 2000);
+            }
+          }} style={{
+            padding: "14px 28px", background: gold, color: dark, border: "none", borderRadius: 6,
+            fontFamily: heading, fontSize: "1rem", fontWeight: 700, cursor: "pointer"
+          }}>{copied ? "Copied!" : "Pass the Pump"}</button>
+          <a href={`sms:?&body=${encodeURIComponent(`${shareText} ${shareUrl}`)}`} style={{
+            padding: "14px 28px", background: "transparent", color: warm,
+            border: `2px solid rgba(245,240,232,0.3)`, borderRadius: 6,
+            fontFamily: heading, fontSize: "1rem", fontWeight: 700, cursor: "pointer",
+            textDecoration: "none", display: "inline-flex", alignItems: "center"
+          }}>Text It</a>
+        </div>
+      </div>
     </div>);
 
   return (
@@ -246,7 +279,7 @@ function ZeroScoreboard() {
           background: "linear-gradient(135deg, rgba(212,175,55,0.1), rgba(212,175,55,0.02))",
           border: `2px solid ${gold}`, textAlign: "center"
         }}>
-          <div style={{ fontFamily: mono, fontSize: "0.6rem", letterSpacing: "0.3em", color: soft, marginBottom: 16 }}>CORPORATIONS</div>
+          <div style={{ fontFamily: mono, fontSize: "1.1rem", letterSpacing: "0.3em", color: soft, marginBottom: 16 }}>CORPORATIONS</div>
           <div style={{ fontFamily: heading, fontSize: "clamp(3rem,8vw,5rem)", fontWeight: 900, color: gold }}>{corpsAtZero}</div>
           <div style={{ fontFamily: heading, fontSize: "clamp(1rem,2vw,1.3rem)", fontWeight: 700, color: warm, marginTop: 8 }}>at $0.00</div>
           <div style={{ fontFamily: body, fontSize: "0.85rem", color: soft, marginTop: 12 }}>Have pledged zero political spending</div>
@@ -256,7 +289,7 @@ function ZeroScoreboard() {
           background: "linear-gradient(135deg, rgba(245,240,232,0.08), rgba(245,240,232,0.02))",
           border: "2px solid rgba(245,240,232,0.2)", textAlign: "center"
         }}>
-          <div style={{ fontFamily: mono, fontSize: "0.6rem", letterSpacing: "0.3em", color: soft, marginBottom: 16 }}>2026 CANDIDATES</div>
+          <div style={{ fontFamily: mono, fontSize: "1.1rem", letterSpacing: "0.3em", color: soft, marginBottom: 16 }}>2026 CANDIDATES</div>
           <div style={{ fontFamily: heading, fontSize: "clamp(3rem,8vw,5rem)", fontWeight: 900, color: warm }}>{candidatesAtZero}</div>
           <div style={{ fontFamily: heading, fontSize: "clamp(1rem,2vw,1.3rem)", fontWeight: 700, color: warm, marginTop: 8 }}>at $0.00</div>
           <div style={{ fontFamily: body, fontSize: "0.85rem", color: soft, marginTop: 12 }}>Have pledged to take zero corporate money</div>
@@ -306,7 +339,7 @@ const Index = () => {
             onClick={() => {if (headerEmail.includes("@")) setHeaderSubmitted(true);}}
             style={{
               padding: "5px 16px", background: gold, color: dark,
-              fontFamily: heading, fontWeight: 700, fontSize: "0.7rem",
+              fontFamily: heading, fontWeight: 700, fontSize: "0.85rem",
               letterSpacing: "0.05em", border: "none", borderRadius: 4,
               cursor: "pointer", whiteSpace: "nowrap"
             }}>
@@ -319,14 +352,24 @@ const Index = () => {
 
       {/* THE CHANT */}
       <Slide bg={dark} style={{ color: warm }}>
-        <Reveal><div style={{ fontFamily: mono, fontSize: "0.8rem", letterSpacing: "0.3em", color: soft, marginBottom: 20 }}>THE CHANT</div></Reveal>
-        <div style={{ fontFamily: heading, fontWeight: 900, lineHeight: 1.05, letterSpacing: "-0.02em" }}>
-          <Reveal delay={0}><div style={{ fontSize: "clamp(2.5rem,8vw,6rem)", color: warm }}>See Shell.</div></Reveal>
-          <Reveal delay={0.25}><div style={{ fontSize: "clamp(2.5rem,8vw,6rem)", color: gold, marginTop: 8 }}>Leave Shell.</div></Reveal>
-          <Reveal delay={0.5}><div style={{ fontSize: "clamp(2.5rem,8vw,6rem)", color: red, marginTop: 8 }}>We Fill No More!</div></Reveal>
+        <Reveal>
+          <img src="/shell-logo.png" alt="Shell" style={{ width: 120, height: "auto", marginBottom: 32 }} />
+        </Reveal>
+        <Reveal><div style={{ fontFamily: mono, fontSize: "1.1rem", letterSpacing: "0.3em", color: soft, marginBottom: 20 }}>THE CHANT</div></Reveal>
+        <div style={{ fontFamily: heading, fontWeight: 900, lineHeight: 1.05, letterSpacing: "-0.02em", position: "relative" }}>
+          <span className="float-note n1" style={{ position: "absolute", left: "-60px", top: "10%", fontSize: "2rem", opacity: 0.3 }}>&#9835;</span>
+          <span className="float-note n2" style={{ position: "absolute", right: "-50px", top: "5%", fontSize: "1.5rem", opacity: 0.25 }}>&#9834;</span>
+          <span className="float-note n3" style={{ position: "absolute", left: "-40px", top: "45%", fontSize: "1.8rem", opacity: 0.2 }}>&#9833;</span>
+          <span className="float-note n4" style={{ position: "absolute", right: "-65px", top: "40%", fontSize: "2.2rem", opacity: 0.3 }}>&#9835;</span>
+          <span className="float-note n5" style={{ position: "absolute", left: "-55px", top: "75%", fontSize: "1.6rem", opacity: 0.25 }}>&#9834;</span>
+          <span className="float-note n6" style={{ position: "absolute", right: "-45px", top: "80%", fontSize: "1.4rem", opacity: 0.2 }}>&#9833;</span>
+          <Reveal delay={0}><div style={{ fontSize: "clamp(2.5rem,8vw,6rem)", color: warm }}>See Shell</div></Reveal>
+          <Reveal delay={0.2}><div style={{ fontSize: "clamp(2.5rem,8vw,6rem)", color: gold, marginTop: 8 }}>We Shall</div></Reveal>
+          <Reveal delay={0.4}><div style={{ fontSize: "clamp(2.5rem,8vw,6rem)", color: gold, marginTop: 8 }}>Fill Up</div></Reveal>
+          <Reveal delay={0.6}><div style={{ fontSize: "clamp(2.5rem,8vw,6rem)", color: red, marginTop: 8 }}>No More!</div></Reveal>
         </div>
         <Spacer h={40} />
-        <Reveal delay={0.8}><Sub color="rgba(245,240,232,0.55)" size="clamp(1rem,2vw,1.2rem)">Say it loud. Say it proud.<br />Get the gas out of our government.</Sub></Reveal>
+        <Reveal delay={0.8}><div style={{ fontFamily: heading, fontSize: "clamp(1.3rem,2.8vw,1.8rem)", fontWeight: 900, color: warm, marginTop: 28, lineHeight: 1.4 }}>Say it loud. Say it proud.<br />And get the gas out of our government.</div></Reveal>
       </Slide>
 
       {/* THE THESIS */}
@@ -345,12 +388,12 @@ const Index = () => {
       {/* HOW IT WORKS — Shell centered */}
       <Slide bg={dark} style={{ color: warm }}>
         <Reveal>
-          <div style={{ fontFamily: mono, fontSize: "0.85rem", letterSpacing: "0.3em", color: soft, marginBottom: 32 }}>HERE'S HOW</div>
+          <div style={{ fontFamily: mono, fontSize: "1.1rem", letterSpacing: "0.3em", color: soft, marginBottom: 32 }}>HERE'S HOW</div>
         </Reveal>
         <Reveal delay={0.1}>
           <div style={{ background: "rgba(155,58,58,0.15)", border: `2px solid ${red}`, borderRadius: 16, padding: "36px 48px", marginBottom: 24, maxWidth: 600 }}>
-            <div className="step-icon-1" style={{ fontSize: "3.5rem", marginBottom: 12 }}>⛽</div>
-            <div style={{ fontFamily: mono, fontSize: "0.7rem", color: soft, letterSpacing: "0.2em", marginBottom: 8 }}>STEP 01</div>
+            <img src="/shell-logo.png" alt="Shell" style={{ width: 160, height: "auto", display: "block", margin: "0 auto 16px" }} />
+            <div style={{ fontFamily: mono, fontSize: "0.85rem", color: soft, letterSpacing: "0.2em", marginBottom: 8 }}>STEP 01</div>
             <div style={{ fontFamily: heading, fontSize: "clamp(2.5rem,7vw,4.5rem)", fontWeight: 900, color: warm, lineHeight: 1.1 }}>
               See <span style={{ color: red }}>Shell.</span>
             </div>
@@ -359,7 +402,7 @@ const Index = () => {
         <Reveal delay={0.3}>
           <div className="pulse-button" style={{ background: "rgba(212,175,55,0.12)", border: `2px solid ${gold}`, borderRadius: 16, padding: "44px 48px", marginBottom: 24, maxWidth: 600, transform: "scale(1.05)" }}>
             <div className="step-icon-2" style={{ fontSize: "3.5rem", marginBottom: 12 }}>🚗💨</div>
-            <div style={{ fontFamily: mono, fontSize: "0.7rem", color: gold, letterSpacing: "0.2em", marginBottom: 8 }}>STEP 02</div>
+            <div style={{ fontFamily: mono, fontSize: "0.85rem", color: gold, letterSpacing: "0.2em", marginBottom: 8 }}>STEP 02</div>
             <div style={{ fontFamily: heading, fontSize: "clamp(3.5rem,10vw,7rem)", fontWeight: 900, lineHeight: 1 }}>
               <span className="gold-shimmer">Leave Shell.</span>
             </div>
@@ -368,7 +411,7 @@ const Index = () => {
         <Reveal delay={0.5}>
           <div style={{ background: "rgba(245,240,232,0.06)", border: "1px solid rgba(245,240,232,0.15)", borderRadius: 16, padding: "36px 48px", maxWidth: 600 }}>
             <div className="step-icon-3" style={{ fontSize: "3.5rem", marginBottom: 12 }}>✅</div>
-            <div style={{ fontFamily: mono, fontSize: "0.7rem", color: soft, letterSpacing: "0.2em", marginBottom: 8 }}>STEP 03</div>
+            <div style={{ fontFamily: mono, fontSize: "0.85rem", color: soft, letterSpacing: "0.2em", marginBottom: 8 }}>STEP 03</div>
             <div style={{ fontFamily: heading, fontSize: "clamp(2.5rem,7vw,4.5rem)", fontWeight: 900, color: warm, lineHeight: 1.1 }}>
               Fill up <span style={{ color: gold }}>Anywhere Else.</span>
             </div>
@@ -380,31 +423,68 @@ const Index = () => {
             <span className="gold-shimmer">That's it. That's the whole movement.</span>
           </div>
         </Reveal>
+        <Spacer h={20} />
+        <Reveal delay={0.85}>
+          <div style={{ fontFamily: heading, fontSize: "clamp(1.8rem,4vw,2.8rem)", fontWeight: 900, fontStyle: "italic", color: warm }}>They Must Comply — <span style={{ color: gold }}>Or We Will Drive By.</span></div>
+        </Reveal>
       </Slide>
 
       {/* HOW THIS WORKS */}
       <Slide bg={dark} style={{ color: warm }}>
-        <Reveal><div style={{ fontFamily: mono, fontSize: "0.8rem", letterSpacing: "0.3em", color: soft, marginBottom: 20 }}>HOW THIS WORKS</div></Reveal>
+        <Reveal><div style={{ fontFamily: mono, fontSize: "1.1rem", letterSpacing: "0.3em", color: soft, marginBottom: 20 }}>HOW THIS WORKS</div></Reveal>
         <Reveal delay={0.1}>
           <div style={{ fontFamily: body, fontSize: "clamp(1.15rem,2.5vw,1.45rem)", color: "rgba(245,240,232,0.8)", lineHeight: 1.9, maxWidth: 640 }}>
-            By skipping <span style={{ color: red, fontWeight: 700 }}>Shell</span>, we force them to take a pledge:<br /><br />
-            <span style={{ color: gold, fontWeight: 700, fontSize: "1.1em" }}>Redirect their political money toward candidates<br />who will pass laws to get money out of politics.</span>
+            By all of us skipping past <span style={{ color: red, fontWeight: 700 }}>Shell</span>,<br />we force CEO <span style={{ color: warm, fontWeight: 700 }}>Wael Sawan</span> to take the pledge...<br /><br />
+            <span style={{ color: gold, fontWeight: 700, fontSize: "1.15em", fontStyle: "italic" }}>"We Pledge to Get Our Money<br />Out of Your Government!"</span><br /><br />
+            <span style={{ color: "rgba(245,240,232,0.55)", fontSize: "0.95em" }}>On YouTube. For all of us to see.</span>
           </div>
         </Reveal>
         <Spacer h={40} />
         <Reveal delay={0.3}>
           <div style={{ fontFamily: heading, fontSize: "clamp(1.6rem,4vw,2.8rem)", fontWeight: 900, color: warm, lineHeight: 1.4 }}>
-            And Candidates who take the pledge<br />get support from <span style={{ color: gold }}>Allied Corporations</span><br />and <span style={{ color: gold }}>All of Us.</span>
+            And for Candidates in the<br />upcoming elections:
+          </div>
+        </Reveal>
+        <Spacer h={32} />
+        <Reveal delay={0.4}>
+          <div style={{ background: "rgba(212,175,55,0.08)", border: `2px solid ${gold}`, borderRadius: 16, padding: "36px 44px", maxWidth: 600 }}>
+            <div style={{ fontFamily: mono, fontSize: "0.85rem", letterSpacing: "0.25em", color: gold, marginBottom: 20, textAlign: "center" }}>THE CANDIDATE PLEDGE</div>
+            <div style={{ fontFamily: heading, fontSize: "clamp(1.2rem,2.5vw,1.5rem)", fontWeight: 900, color: warm, fontStyle: "italic", lineHeight: 1.6, textAlign: "center", marginBottom: 24 }}>
+              "I pledge to co-sponsor legislation to:"
+            </div>
+            <div style={{ fontFamily: body, fontSize: "clamp(1rem,2vw,1.15rem)", color: "rgba(245,240,232,0.8)", lineHeight: 2.2 }}>
+              <span style={{ color: gold, fontWeight: 700 }}>1.</span> Pass the <span style={{ color: warm, fontWeight: 700 }}>DISCLOSE Act</span> — force all political spending over $10K into the open.<br />
+              <span style={{ color: gold, fontWeight: 700 }}>2.</span> Make <span style={{ color: warm, fontWeight: 700 }}>fossil fuel subsidies conditional</span> — any company that spends on politics loses their Section 263(c) tax deduction. Drill or lobby. Not both.<br />
+              <span style={{ color: gold, fontWeight: 700 }}>3.</span> Make <span style={{ color: warm, fontWeight: 700 }}>lobbying non-deductible</span> — corporations can't write off buying Congress.<br />
+              <span style={{ color: gold, fontWeight: 700 }}>4.</span> Support a <span style={{ color: warm, fontWeight: 700 }}>constitutional amendment</span> to overturn Citizens United.
+            </div>
+            <div style={{ marginTop: 24, textAlign: "center" }}>
+              <div style={{ fontFamily: heading, fontSize: "clamp(1rem,2vw,1.2rem)", fontWeight: 700, color: gold }}>35 Senate seats up in November 2026.</div>
+              <div style={{ fontFamily: body, fontSize: "0.95rem", color: "rgba(245,240,232,0.5)", marginTop: 6 }}>On this, there are no sides. Just Us vs. Them.</div>
+            </div>
           </div>
         </Reveal>
         <Spacer h={40} />
         <Reveal delay={0.5}>
           <div style={{ background: "rgba(245,240,232,0.06)", border: "1px solid rgba(245,240,232,0.12)", borderRadius: 12, padding: "32px 40px", maxWidth: 560 }}>
-            <div style={{ fontFamily: body, fontSize: "clamp(1.05rem,2.2vw,1.3rem)", color: "rgba(245,240,232,0.65)", lineHeight: 1.8 }}>
-              We keep a list. Once <span style={{ color: red, fontWeight: 700 }}>Shell</span> pledges,<br />
-              we move to the <span style={{ color: gold, fontWeight: 700 }}>next largest company.</span><br /><br />
-              And we keep a list of <span style={{ color: gold, fontWeight: 700 }}>candidates</span> who have taken the pledge.<br /><br />
-              <span style={{ color: warm, fontWeight: 700 }}>One by one. Until they all comply.</span>
+            <div style={{ fontFamily: heading, fontSize: "clamp(1.3rem,3vw,1.8rem)", color: "rgba(245,240,232,0.75)", lineHeight: 2.2, fontWeight: 700 }}>
+              We keep a list of companies...<br />
+              Starting with <span style={{ color: red }}>Shell.</span><br /><br />
+              And when Shell takes the pledge,<br />
+              we move on to the <span style={{ color: gold }}>next company.</span><br />
+              <span style={{ color: "rgba(245,240,232,0.4)", fontSize: "0.85em" }}>Next up: ExxonMobil. Then BP. Then Chevron.</span><br /><br />
+              And we keep a list of <span style={{ color: gold }}>Candidates...</span><br />
+              from all sides.<br />
+              The ones who take the pledge<br />
+              get financial support from <span style={{ color: gold }}>All of Us.</span><br /><br />
+              <span style={{ color: warm }}>And we keep going.</span><br />
+              <span style={{ color: warm }}>One by one.</span><br />
+              <span style={{ color: warm }}>Till they all comply.</span>
+            </div>
+            <Spacer h={24} />
+            <div style={{ fontFamily: heading, fontSize: "clamp(1.8rem,4.5vw,3rem)", fontWeight: 900, fontStyle: "italic", color: gold, lineHeight: 1.4 }}>
+              AND WE TAKE OUR<br />
+              GOVERNMENT BACK!
             </div>
           </div>
         </Reveal>
@@ -430,7 +510,7 @@ const Index = () => {
 
       {/* 3. CITIZENS UNITED */}
       <Slide style={{ minHeight: "auto", padding: "clamp(60px,10vw,100px) 32px" }}>
-        <Big size="clamp(1.5rem,3vw,2.2rem)" weight={400} color={soft}>CITIZENS UNITED WAS DESIGNED <br />TO DIVIDE US BECAUSE THEY KNOW</Big>
+        <Big size="clamp(1.5rem,3vw,2.2rem)" weight={400} color={soft}>CITIZENS UNITED = CITIZENS DIVIDED<br />BECAUSE THEY KNOW</Big>
         <FlashZero />
       </Slide>
 
@@ -462,6 +542,10 @@ const Index = () => {
             On Our Democracy!
           </div>
         </Reveal>
+        <Spacer h={16} />
+        <Reveal delay={0.6}><div style={{ fontFamily: mono, fontSize: "0.75rem", letterSpacing: "0.1em", color: "rgba(245,240,232,0.35)" }}>
+          SOURCE: <a href="https://www.opensecrets.org/federal-lobbying" target="_blank" rel="noopener noreferrer" style={{ color: "rgba(245,240,232,0.5)", textDecoration: "underline" }}>OPENSECRETS</a> — lobbying ($4.2B) + outside spending ($1.1B), 2024 cycle
+        </div></Reveal>
       </Slide>
 
       {/* 6. STAGE 4 */}
@@ -490,31 +574,29 @@ const Index = () => {
 
       {/* THE INVITATION */}
       <Slide>
-        <Reveal><div style={{ fontFamily: mono, fontSize: "0.8rem", letterSpacing: "0.3em", color: soft, marginBottom: 24 }}>TO THE PEOPLE SICK OF WAR · WORLDWIDE</div></Reveal>
-        <Big size="clamp(2.2rem,6vw,4.5rem)">This isn't about the Money.</Big>
-        <Spacer h={24} />
-        <Big size="clamp(2.2rem,6vw,4.5rem)" color={gold}>It's about their Brand.</Big>
-        <Spacer h={48} />
-        <Reveal delay={0.2}>
-          <div style={{ fontFamily: body, fontSize: "clamp(1.15rem,2.5vw,1.5rem)", color: soft, lineHeight: 1.9, maxWidth: 620 }}>
-            If we all come together <span style={{ color: dark, fontWeight: 700 }}>worldwide</span><br />around <span style={{ color: dark, fontWeight: 700 }}>this one thing,</span><br />
-            <span style={{ color: dark, fontWeight: 700 }}>this one time...</span>
-          </div>
-        </Reveal>
+        <Reveal><div style={{ fontFamily: mono, fontSize: "1.1rem", letterSpacing: "0.3em", color: soft, marginBottom: 24 }}>TO THE PEOPLE SICK OF WAR WORLDWIDE</div></Reveal>
+        <Big size="clamp(2.2rem,6vw,4.5rem)">This isn't about their Profit.</Big>
+        <Spacer h={12} />
+        <Reveal delay={0.1}><div style={{ fontFamily: body, fontSize: "clamp(0.85rem,1.5vw,1rem)", color: soft, fontStyle: "italic" }}>we won't make a dent</div></Reveal>
+        <Spacer h={12} />
+        <Big size="clamp(2.2rem,6vw,4.5rem)">It's about their Brand.</Big>
         <Spacer h={32} />
-        <Reveal delay={0.4}>
-          <Big size="clamp(2rem,5vw,3.5rem)" color={gold}>We can use them to take our countries back.</Big>
+        <Reveal delay={0.2}><LogoScroll /></Reveal>
+        <Spacer h={32} />
+        <Reveal delay={0.3}>
+          <Big size="clamp(2rem,5vw,3.5rem)">And about us finally taking a stand together.</Big>
         </Reveal>
         <Spacer h={32} />
         <Reveal delay={0.55}>
-          <Big size="clamp(3rem,8vw,6rem)">Unite.</Big>
+          <Big size="clamp(3rem,8vw,6rem)">We Are The<br /><span style={{ whiteSpace: "nowrap" }}><span style={{ textDecoration: "underline", textDecorationColor: gold, textUnderlineOffset: "6px" }}>UNITED</span> States!</span></Big>
         </Reveal>
       </Slide>
 
       {/* RECEIPT 1 — THE LIFEBOAT */}
       <Slide bg={dark} style={{ color: warm }}>
-        <Reveal><div style={{ fontFamily: mono, fontSize: "0.85rem", letterSpacing: "0.3em", color: soft, marginBottom: 8 }}>THE RECEIPTS · THREE FACTS · ZERO SPIN</div></Reveal>
-        <Reveal><div style={{ fontFamily: mono, fontSize: "0.85rem", letterSpacing: "0.25em", color: gold, marginBottom: 18 }}>№ 01 — THE LIFEBOAT</div></Reveal>
+        <Reveal><div style={{ fontFamily: mono, fontSize: "clamp(1.2rem,2.5vw,1.6rem)", letterSpacing: "0.3em", color: soft, marginBottom: 8 }}>AND IN CASE YOU DON'T KNOW WHAT THEIR MONEY DOES TO YOU</div></Reveal>
+        <Reveal><div style={{ fontFamily: heading, fontSize: "clamp(1.5rem,3.5vw,2.2rem)", fontWeight: 900, color: gold, marginBottom: 18 }}>The Receipts</div></Reveal>
+        <Reveal><div style={{ fontFamily: mono, fontSize: "1.1rem", letterSpacing: "0.25em", color: gold, marginBottom: 18 }}>№ 01 — THE LIFEBOAT</div></Reveal>
         <Big size="clamp(1.5rem,3.2vw,2.2rem)" color={warm} weight={400}>In 1991, Shell made a film called</Big>
         <Reveal delay={0.15}><div style={{ fontFamily: heading, fontSize: "clamp(2rem,5.5vw,4rem)", fontWeight: 900, color: gold, fontStyle: "italic", margin: "12px 0" }}>"Climate of Concern."</div></Reveal>
         <Reveal delay={0.3}>
@@ -528,15 +610,15 @@ const Index = () => {
           <div style={{ background: "rgba(155,58,58,0.12)", border: `1px solid ${red}`, borderRadius: 12, padding: "24px 32px", maxWidth: 560 }}>
             <div style={{ fontFamily: heading, fontSize: "clamp(1.2rem,2.8vw,1.6rem)", fontWeight: 700, color: warm, lineHeight: 1.5 }}>
               And quietly raised their own oil rigs<br />
-              <span style={{ color: red }}>higher out of the water.</span>
+              <span style={{ color: red }}>higher out of the water!</span>
             </div>
             <div style={{ fontFamily: body, fontSize: "clamp(0.95rem,1.8vw,1.1rem)", color: "rgba(245,240,232,0.6)", marginTop: 12, fontStyle: "italic" }}>
-              They built themselves a lifeboat.<br />They told you the ship wasn't sinking.
+              They built themselves a lifeboat<br />while telling us the ship wasn't sinking.
             </div>
           </div>
         </Reveal>
         <Spacer h={20} />
-        <Reveal delay={0.7}><div style={{ fontFamily: mono, fontSize: "0.7rem", letterSpacing: "0.15em", color: "rgba(245,240,232,0.35)", display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "4px 16px" }}>
+        <Reveal delay={0.7}><div style={{ fontFamily: mono, fontSize: "0.85rem", letterSpacing: "0.15em", color: "rgba(245,240,232,0.35)", display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "4px 16px" }}>
           SOURCE:
           <a href="https://www.youtube.com/watch?v=0VOWi8oVXmo" target="_blank" rel="noopener noreferrer" style={{ color: "rgba(245,240,232,0.5)", textDecoration: "underline" }}>SHELL FILM (1991)</a> ·
           <a href="https://www.latimes.com/environment/story/2024-01-30/oil-companies-climate-change-fossil-fuels" target="_blank" rel="noopener noreferrer" style={{ color: "rgba(245,240,232,0.5)", textDecoration: "underline" }}>LA TIMES</a> ·
@@ -546,7 +628,7 @@ const Index = () => {
 
       {/* RECEIPT 2 — THE CELEBRATION */}
       <Slide bg="#FAF6F0">
-        <Reveal><div style={{ fontFamily: mono, fontSize: "0.85rem", letterSpacing: "0.3em", color: soft, marginBottom: 14 }}>RECEIPT № 02 — THE CELEBRATION</div></Reveal>
+        <Reveal><div style={{ fontFamily: mono, fontSize: "1.1rem", letterSpacing: "0.3em", color: soft, marginBottom: 14 }}>RECEIPT № 02 — THE CELEBRATION</div></Reveal>
         <Big size="clamp(1.5rem,3.2vw,2.2rem)" weight={400} color={soft}>In 2022, while you were choosing<br />between groceries and gas...</Big>
         <Spacer h={24} />
         <Reveal delay={0.2}>
@@ -571,11 +653,11 @@ const Index = () => {
         <Spacer h={24} />
         <Reveal delay={0.7}>
           <div style={{ fontFamily: heading, fontSize: "clamp(1.3rem,3vw,1.8rem)", fontWeight: 900, color: gold, fontStyle: "italic", maxWidth: 600 }}>
-            Your inflation wasn't an accident.<br />It was their business model.
+            Our inflation wasn't an accident.<br />It was their business model!
           </div>
         </Reveal>
         <Spacer h={20} />
-        <Reveal delay={0.85}><div style={{ fontFamily: mono, fontSize: "0.7rem", letterSpacing: "0.15em", color: "rgba(26,24,20,0.35)", display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "4px 16px" }}>
+        <Reveal delay={0.85}><div style={{ fontFamily: mono, fontSize: "0.85rem", letterSpacing: "0.15em", color: "rgba(26,24,20,0.35)", display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "4px 16px" }}>
           SOURCE:
           <a href="https://www.shell.com/investors/results-and-reporting/annual-reports/2022.html" target="_blank" rel="noopener noreferrer" style={{ color: "rgba(26,24,20,0.5)", textDecoration: "underline" }}>SHELL Q4 2022</a> ·
           <a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=SHEL&type=10-K" target="_blank" rel="noopener noreferrer" style={{ color: "rgba(26,24,20,0.5)", textDecoration: "underline" }}>SEC FILINGS</a> ·
@@ -585,18 +667,18 @@ const Index = () => {
 
       {/* RECEIPT 3 — THE DOUBLE CHARGE */}
       <Slide bg={dark} style={{ color: warm }}>
-        <Reveal><div style={{ fontFamily: mono, fontSize: "0.85rem", letterSpacing: "0.3em", color: soft, marginBottom: 14 }}>RECEIPT № 03 — THE DOUBLE CHARGE</div></Reveal>
+        <Reveal><div style={{ fontFamily: mono, fontSize: "1.1rem", letterSpacing: "0.3em", color: soft, marginBottom: 14 }}>RECEIPT № 03 — THE DOUBLE CHARGE</div></Reveal>
         <Big size="clamp(1.5rem,3.2vw,2.2rem)" color={warm} weight={400}>Every gallon you buy,<br />you pay for twice.</Big>
         <Spacer h={36} />
         <Reveal delay={0.2}>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 20, maxWidth: 640, width: "100%" }}>
             <div style={{ background: "rgba(245,240,232,0.05)", border: "1px solid rgba(245,240,232,0.1)", borderRadius: 12, padding: "28px 20px" }}>
-              <div style={{ fontFamily: mono, fontSize: "0.7rem", letterSpacing: "0.2em", color: soft, marginBottom: 10 }}>AT THE PUMP</div>
+              <div style={{ fontFamily: mono, fontSize: "0.85rem", letterSpacing: "0.2em", color: soft, marginBottom: 10 }}>AT THE PUMP</div>
               <div style={{ fontFamily: heading, fontSize: "clamp(1.8rem,5vw,3rem)", fontWeight: 900, color: warm }}>$40</div>
               <div style={{ fontFamily: body, fontSize: "0.95rem", color: "rgba(245,240,232,0.55)", marginTop: 6 }}>you give them directly</div>
             </div>
             <div style={{ background: "rgba(212,175,55,0.08)", border: `1px solid ${gold}`, borderRadius: 12, padding: "28px 20px" }}>
-              <div style={{ fontFamily: mono, fontSize: "0.7rem", letterSpacing: "0.2em", color: gold, marginBottom: 10 }}>ON YOUR TAXES</div>
+              <div style={{ fontFamily: mono, fontSize: "0.85rem", letterSpacing: "0.2em", color: gold, marginBottom: 10 }}>ON YOUR TAXES</div>
               <div style={{ fontFamily: heading, fontSize: "clamp(1.8rem,5vw,3rem)", fontWeight: 900, color: gold }}>$20B / yr</div>
               <div style={{ fontFamily: body, fontSize: "0.95rem", color: "rgba(245,240,232,0.55)", marginTop: 6 }}>oil subsidies you cover</div>
             </div>
@@ -610,7 +692,7 @@ const Index = () => {
           </div>
         </Reveal>
         <Spacer h={20} />
-        <Reveal delay={0.65}><div style={{ fontFamily: mono, fontSize: "0.7rem", letterSpacing: "0.15em", color: "rgba(245,240,232,0.35)", display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "4px 16px" }}>
+        <Reveal delay={0.65}><div style={{ fontFamily: mono, fontSize: "0.85rem", letterSpacing: "0.15em", color: "rgba(245,240,232,0.35)", display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "4px 16px" }}>
           SOURCE:
           <a href="https://www.opensecrets.org/industries/indus?ind=E01" target="_blank" rel="noopener noreferrer" style={{ color: "rgba(245,240,232,0.5)", textDecoration: "underline" }}>OPENSECRETS</a> ·
           <a href="https://www.eesi.org/papers/view/fact-sheet-fossil-fuel-subsidies-a-closer-look-at-tax-breaks-and-societal-costs" target="_blank" rel="noopener noreferrer" style={{ color: "rgba(245,240,232,0.5)", textDecoration: "underline" }}>EESI</a> ·
@@ -618,24 +700,124 @@ const Index = () => {
         </div></Reveal>
       </Slide>
 
+
       {/* 7. WE ARE THE EQUATION */}
       <Slide>
         <Big size="clamp(1.5rem,3vw,2.2rem)" weight={400} color={soft}>But here's what they forgot...</Big>
-        <Spacer h={20} />
-        <Big size="clamp(2.2rem,6vw,4.5rem)">We the People are their<br />Customers!</Big>
+        <Spacer h={40} />
+        <Big size="clamp(2.2rem,6vw,4.5rem)">We the People are their...</Big>
+        <Spacer h={40} />
         <Reveal delay={0.2}><SplitFlap /></Reveal>
+      </Slide>
+
+      {/* THE PLEDGE SCOREBOARD */}
+      <Slide bg={dark} style={{ color: warm }}>
+        <Reveal><div style={{ fontFamily: mono, fontSize: "1.1rem", letterSpacing: "0.3em", color: soft, marginBottom: 24 }}>THE PLEDGE SCOREBOARD</div></Reveal>
+        <Big size="clamp(2rem,5vw,3.5rem)" color={warm}>Who has the courage?</Big>
+        <Spacer h={48} />
+
+        {/* THREE COUNTERS */}
+        <Reveal delay={0.1}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20, maxWidth: 640, width: "100%", marginBottom: 40 }}>
+            <div style={{ background: "rgba(245,240,232,0.04)", border: "1px solid rgba(245,240,232,0.1)", borderRadius: 12, padding: "28px 16px", textAlign: "center" }}>
+              <div style={{ fontFamily: mono, fontSize: "0.85rem", letterSpacing: "0.2em", color: soft, marginBottom: 10 }}>COMPANIES</div>
+              <div style={{ fontFamily: heading, fontSize: "clamp(2.5rem,7vw,4rem)", fontWeight: 900, color: gold, lineHeight: 1 }}>0</div>
+              <div style={{ fontFamily: body, fontSize: "0.85rem", color: "rgba(245,240,232,0.4)", marginTop: 8 }}>pledged</div>
+            </div>
+            <div style={{ background: "rgba(245,240,232,0.04)", border: "1px solid rgba(245,240,232,0.1)", borderRadius: 12, padding: "28px 16px", textAlign: "center" }}>
+              <div style={{ fontFamily: mono, fontSize: "0.85rem", letterSpacing: "0.2em", color: soft, marginBottom: 10 }}>CANDIDATES</div>
+              <div style={{ fontFamily: heading, fontSize: "clamp(2.5rem,7vw,4rem)", fontWeight: 900, color: gold, lineHeight: 1 }}>0</div>
+              <div style={{ fontFamily: body, fontSize: "0.85rem", color: "rgba(245,240,232,0.4)", marginTop: 8 }}>pledged</div>
+            </div>
+            <a href="#signup" style={{ background: "rgba(212,175,55,0.08)", border: `1px solid ${gold}`, borderRadius: 12, padding: "28px 16px", textAlign: "center", textDecoration: "none", display: "block", cursor: "pointer" }}>
+              <div style={{ fontFamily: mono, fontSize: "0.85rem", letterSpacing: "0.2em", color: gold, marginBottom: 10 }}>PEOPLE</div>
+              <Counter />
+              <div style={{ fontFamily: body, fontSize: "0.85rem", color: "rgba(245,240,232,0.4)", marginTop: 8 }}>of 100,000 goal</div>
+              <div style={{ fontFamily: heading, fontSize: "0.9rem", fontWeight: 700, color: gold, marginTop: 12, textDecoration: "underline", textUnderlineOffset: "4px" }}>Join ↓</div>
+            </a>
+          </div>
+        </Reveal>
+
+        {/* SHELL HIGHLIGHT */}
+        <Reveal delay={0.2}>
+          <div style={{
+            maxWidth: 560, margin: "0 auto 40px", padding: "32px 40px",
+            background: "rgba(155,58,58,0.15)", border: `2px solid ${red}`, borderRadius: 16,
+            textAlign: "center"
+          }}>
+            <div style={{ fontFamily: mono, fontSize: "0.85rem", letterSpacing: "0.25em", color: soft, marginBottom: 12 }}>CURRENT TARGET</div>
+            <img src="/shell-logo.png" alt="Shell" style={{ width: 100, height: "auto", display: "block", margin: "0 auto 16px" }} />
+            <div style={{ fontFamily: heading, fontSize: "clamp(1.5rem,3.5vw,2.2rem)", fontWeight: 900, color: red }}>Shell has not pledged.</div>
+            <div style={{ fontFamily: body, fontSize: "1rem", color: "rgba(245,240,232,0.5)", marginTop: 8 }}>12,283 stations · $39.9B profit (2022) · $0 pledged</div>
+          </div>
+        </Reveal>
+
+        {/* CANDIDATE LEDGER */}
+        <Reveal delay={0.25}>
+          <div style={{ maxWidth: 560, margin: "0 auto", textAlign: "left" }}>
+            <div style={{ fontFamily: mono, fontSize: "1.1rem", letterSpacing: "0.25em", color: gold, marginBottom: 20, textAlign: "center" }}>PUMP UP YOUR CANDIDATE</div>
+            <div style={{
+              background: "rgba(245,240,232,0.04)", border: "1px solid rgba(245,240,232,0.1)",
+              borderRadius: 12, overflow: "hidden"
+            }}>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr auto auto", gap: 16, padding: "14px 24px", borderBottom: "1px solid rgba(245,240,232,0.1)", background: "rgba(245,240,232,0.03)" }}>
+                <div style={{ fontFamily: mono, fontSize: "0.8rem", letterSpacing: "0.15em", color: soft }}>CANDIDATE</div>
+                <div style={{ fontFamily: mono, fontSize: "0.8rem", letterSpacing: "0.15em", color: soft }}>VIDEO</div>
+                <div style={{ fontFamily: mono, fontSize: "0.8rem", letterSpacing: "0.15em", color: soft }}>STATUS</div>
+              </div>
+              <div style={{ padding: "40px 24px", textAlign: "center" }}>
+                <div style={{ fontFamily: heading, fontSize: "clamp(1.2rem,2.5vw,1.5rem)", fontWeight: 700, color: "rgba(245,240,232,0.25)", fontStyle: "italic" }}>
+                  No candidates have pledged yet.
+                </div>
+                <div style={{ fontFamily: body, fontSize: "0.95rem", color: "rgba(245,240,232,0.15)", marginTop: 8 }}>
+                  Be the first. The country is watching.
+                </div>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+
+        <Spacer h={40} />
+
+        {/* SUBMIT */}
+        <Reveal delay={0.4}>
+          <div style={{ maxWidth: 560, margin: "0 auto", textAlign: "center" }}>
+            <div style={{ fontFamily: body, fontSize: "clamp(1rem,2vw,1.15rem)", color: "rgba(245,240,232,0.6)", lineHeight: 1.8, marginBottom: 20 }}>
+              Post a video on your <span style={{ fontWeight: 700, color: warm }}>verified YouTube account</span> taking the pledge.<br />
+              Submit the link. Once verified: <span style={{ color: "#22c55e", fontWeight: 700, fontSize: "1.2em" }}>&#10003;</span>
+            </div>
+            <div style={{ display: "flex", gap: 12, maxWidth: 480, margin: "0 auto" }}>
+              <input type="url" placeholder="Paste YouTube pledge link..." style={{
+                flex: 1, padding: "14px 20px", borderRadius: 6, border: "1px solid rgba(245,240,232,0.2)",
+                fontFamily: body, fontSize: "1rem", background: "rgba(245,240,232,0.05)", color: warm,
+                outline: "none"
+              }} />
+              <button style={{
+                padding: "14px 28px", background: gold, color: dark, border: "none", borderRadius: 6,
+                fontFamily: heading, fontSize: "1rem", fontWeight: 700, cursor: "pointer"
+              }}>Submit</button>
+            </div>
+          </div>
+        </Reveal>
+
+        <Spacer h={40} />
+        <Reveal delay={0.5}>
+          <div style={{ fontFamily: heading, fontSize: "clamp(1.3rem,3vw,1.8rem)", fontWeight: 900, fontStyle: "italic", color: gold }}>
+            The empty ledger is the statement.<br />Until someone has the courage to go first.
+          </div>
+        </Reveal>
       </Slide>
 
       {/* A NOTE ABOUT THE FRANCHISEES */}
       <Slide bg={dark} style={{ color: warm }}>
-        <Reveal><div style={{ fontFamily: mono, fontSize: "0.85rem", letterSpacing: "0.3em", color: soft, marginBottom: 24 }}>A NOTE ABOUT THE FAMILIES</div></Reveal>
+        <Reveal><div style={{ fontFamily: mono, fontSize: "1.1rem", letterSpacing: "0.3em", color: soft, marginBottom: 24 }}>AN IMPORTANT NOTE ABOUT THE FRANCHISEES</div></Reveal>
         <Big size="clamp(2.2rem,6vw,4.5rem)" color={warm}>We know.</Big>
         <Spacer h={32} />
         <Reveal delay={0.15}>
           <div style={{ fontFamily: body, fontSize: "clamp(1.2rem,2.5vw,1.5rem)", color: "rgba(245,240,232,0.8)", lineHeight: 1.9, maxWidth: 620 }}>
-            The person behind the counter at your <span style={{ color: red, fontWeight: 700 }}>Shell</span> station<br />
-            didn't lobby Congress.<br /><br />
-            They wake up at <span style={{ color: warm, fontWeight: 700 }}>5am.</span><br />
+            The hard workers and franchise owners<br />
+            aren't the enemy.<br /><br />
+            They wake up <span style={{ color: warm, fontWeight: 700 }}>early</span> and work really <span style={{ color: warm, fontWeight: 700 }}>late.</span><br />
             They built something from <span style={{ color: warm, fontWeight: 700 }}>nothing.</span><br />
             They serve their community <span style={{ color: warm, fontWeight: 700 }}>every single day.</span>
           </div>
@@ -643,10 +825,6 @@ const Index = () => {
         <Spacer h={40} />
         <Reveal delay={0.3}>
           <div style={{ background: "rgba(212,175,55,0.08)", border: `2px solid ${gold}`, borderRadius: 16, padding: "36px 44px", maxWidth: 580 }}>
-            <div style={{ fontFamily: heading, fontSize: "clamp(1.8rem,4vw,2.8rem)", fontWeight: 900, color: gold, lineHeight: 1.4 }}>
-              They're not the enemy.<br />They're in this with us.
-            </div>
-            <Spacer h={20} />
             <div style={{ fontFamily: body, fontSize: "clamp(1.05rem,2.2vw,1.3rem)", color: "rgba(245,240,232,0.65)", lineHeight: 1.8 }}>
               Honk when you drive past. Wave.<br />
               Let them know this isn't about them —<br />
@@ -679,6 +857,11 @@ const Index = () => {
                 display: "inline-block", padding: "14px 36px", background: gold, color: dark, borderRadius: 6, textDecoration: "none",
                 fontFamily: heading, fontSize: "1rem", fontWeight: 700
               }}>Support on Patreon</a>
+              </div>
+              <div style={{ fontFamily: body, fontSize: "0.8rem", color: "rgba(245,240,232,0.35)", marginTop: 12, maxWidth: 480, margin: "12px auto 16px" }}>
+                100% goes to: digital ads targeting Shell's brand keywords, legal support for franchisees seeking to rebrand, and campaign infrastructure.
+              </div>
+              <div style={{ display: "flex", justifyContent: "center", gap: 16, flexWrap: "wrap" }}>
               <button onClick={() => {
                 if (navigator.share) {
                   navigator.share({ title: "Pass the Pump — The Power of Zero", text: "See Shell. Leave Shell. Buy Gas No More.", url: window.location.href });
@@ -699,58 +882,15 @@ const Index = () => {
         </div>
       </section>
 
-      {/* COMMUNITY INVITE */}
+      {/* CLOSING */}
       <Slide>
-        <Reveal><div style={{ fontFamily: mono, fontSize: "0.8rem", letterSpacing: "0.3em", color: soft, marginBottom: 16 }}>BUILD THIS WITH US</div></Reveal>
-        <Big size="clamp(2.2rem,6vw,4rem)" color={gold}>Got a receipt? An idea?<br />A better move?</Big>
-        <Spacer h={32} />
-        <Big size="clamp(1.5rem,3.2vw,2.2rem)" weight={400} color={dark}>
-          Post it at <span style={{ color: gold, fontWeight: 900 }}>the Universal</span> —<br />the open space where this movement evolves.
-        </Big>
-        <Spacer h={24} />
-        <Sub size="clamp(1rem,2vw,1.2rem)" color={soft}>
-          Share a fact. Draft a chant. Propose the next company.<br />
-          This is a process, not a poster.
-        </Sub>
-        <Spacer h={40} />
-        <Reveal delay={0.2}>
-          <a href="https://theuniversal.io" target="_blank" rel="noopener noreferrer" style={{
-            display: "inline-block", padding: "20px 56px", background: gold, color: dark, border: "none", borderRadius: 4,
-            fontFamily: heading, fontSize: "clamp(1rem,2vw,1.3rem)", fontWeight: 700, cursor: "pointer", letterSpacing: "0.05em",
-            textDecoration: "none"
-          }}>Open theuniversal.io →</a>
-        </Reveal>
-        <Spacer h={40} />
-        <Reveal delay={0.3}><LogoScroll /></Reveal>
+        <Big size="clamp(2.5rem,7vw,5rem)" color={gold}>Pass the Pump.</Big>
+        <Spacer h={20} />
+        <Sub color={soft}>One company at a time. Until they all comply.</Sub>
+        <Spacer h={48} />
+        <Reveal delay={0.3}><div style={{ fontFamily: heading, fontSize: "clamp(1.5rem,3.5vw,2.2rem)", fontStyle: "italic", fontWeight: 700, color: soft }}>They've been playing a shell game with our money.<br />Now we're playing one with their brand.</div></Reveal>
       </Slide>
 
-      {/* 21. FINAL */}
-      <Slide bg={dark} style={{ color: warm }}>
-        <Big size="clamp(2.5rem,7vw,5.5rem)" color={warm}>me + you</Big>
-        <Reveal delay={0.2}><div style={{ fontFamily: heading, fontSize: "clamp(2rem,5vw,3.5rem)", fontStyle: "italic", color: gold, marginTop: 20 }}>= america</div></Reveal>
-        <Spacer h={48} />
-        <Reveal delay={0.5}>
-          <button onClick={() => document.getElementById("signup")?.scrollIntoView({ behavior: "smooth" })} style={{
-            padding: "20px 56px", background: gold, color: dark, border: "none", borderRadius: 4,
-            fontFamily: heading, fontSize: "clamp(1rem,2vw,1.3rem)", fontWeight: 700, cursor: "pointer", letterSpacing: "0.05em"
-          }}>Join the Equation</button>
-        </Reveal>
-        <Spacer h={60} />
-        <Reveal delay={0.7}>
-          <div style={{ fontFamily: body, fontSize: "clamp(1rem,2.2vw,1.3rem)", color: "rgba(245,240,232,0.4)", lineHeight: 1.8 }}>
-            They divide us.<br />
-            <span style={{ color: warm, fontWeight: 600 }}>You</span> unite us.<br />
-            The goal is <span style={{ color: gold, fontWeight: 700 }}>ZERO.</span>
-          </div>
-        </Reveal>
-        <Spacer h={16} />
-        <Reveal delay={0.85}>
-          <div style={{ fontFamily: heading, fontSize: "clamp(1.3rem,3vw,2rem)", fontWeight: 700, color: gold }}>
-            Pass the Pump.
-          </div>
-        </Reveal>
-        <Reveal delay={1}><div style={{ fontFamily: mono, fontSize: "0.6rem", letterSpacing: "0.25em", color: "rgba(245,240,232,0.15)", marginTop: 32 }}>THE POWER OF ZERO</div></Reveal>
-      </Slide>
     </div>);
 };
 
