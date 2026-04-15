@@ -1,9 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <circle cx="16" cy="16" r="15.5" fill="#1B2A4A"/>
-  <circle cx="16" cy="16" r="14.5" stroke="#D4AF37" stroke-width="1" fill="none"/>
-  <rect x="7" y="11" width="5" height="13" rx="1.5" fill="#BF0A30"/>
-  <rect x="12" y="13" width="10" height="3.5" rx="1" fill="#F5F0E8"/>
-  <rect x="20" y="11" width="3.5" height="8" rx="1" fill="#F5F0E8"/>
-  <ellipse cx="21.5" cy="22" rx="1.8" ry="2.5" fill="#D4AF37"/>
-  <polygon points="16,3 17,5.5 19.5,5.5 17.5,7 18.2,9.5 16,8 13.8,9.5 14.5,7 12.5,5.5 15,5.5" fill="#F5F0E8"/>
+  <circle cx="16" cy="16" r="16" fill="#1B2A4A"/>
+  <!-- Pump body -->
+  <rect x="8" y="10" width="11" height="14" rx="2" fill="#BF0A30"/>
+  <!-- Pump screen -->
+  <rect x="10" y="12" width="7" height="5" rx="1" fill="#F5F0E8"/>
+  <!-- Nozzle arm -->
+  <path d="M19 14 L24 11 L24 18 L22 18 L22 14 Z" fill="#D4AF37"/>
+  <!-- Drip -->
+  <ellipse cx="23" cy="21" rx="1.2" ry="1.8" fill="#D4AF37"/>
+  <!-- Base -->
+  <rect x="7" y="24" width="13" height="2" rx="1" fill="#F5F0E8"/>
 </svg>
